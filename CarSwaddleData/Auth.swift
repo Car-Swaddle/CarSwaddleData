@@ -14,6 +14,8 @@ public class Auth {
     private let authService = AuthService()
     private let authentication = AuthController()
     
+    public init() { }
+    
     @discardableResult
     public func signUp(email: String, password: String, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
         return authService.signUp(email: email, password: password) { [weak self] token, error in
