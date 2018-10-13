@@ -8,6 +8,8 @@
 
 import Authentication
 import CarSwaddleNetworkRequest
+import CoreData
+import Store
 
 public class Auth {
     
@@ -17,29 +19,34 @@ public class Auth {
     public init() { }
     
     @discardableResult
-    public func signUp(email: String, password: String, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
-        return authService.signUp(email: email, password: password) { [weak self] token, error in
-            self?.complete(token: token, error: error, completion: completion)
+    public func signUp(email: String, password: String, context: NSManagedObjectContext, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
+        return authService.signUp(email: email, password: password) { [weak self] userJSON, token, error in
+            self?.complete(userJSON: userJSON, token: token, error: error, context: context, completion: completion)
         }
     }
     
     @discardableResult
-    public func login(email: String, password: String, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
-        return authService.login(email: email, password: password) { [weak self] token, error in
-            self?.complete(token: token, error: error, completion: completion)
+    public func login(email: String, password: String, context: NSManagedObjectContext, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
+        return authService.login(email: email, password: password) { [weak self] userJSON, token, error in
+            self?.complete(userJSON: userJSON, token: token, error: error, context: context, completion: completion)
         }
     }
     
-    private func complete(token: String?, error: Error?, completion: (_ error: Error?) -> Void) {
-        var error: Error?
-        defer {
-            completion(error)
+    private func complete(userJSON: JSONObject?, token: String?, error: Error?, context: NSManagedObjectContext, completion: @escaping (_ error: Error?) -> Void) {
+        context.perform { [weak self] in
+            var error: Error?
+            defer {
+                completion(error)
+            }
+            if let userJSON = userJSON {
+                print("userJSON: \(userJSON)")
+                _ = User(json: userJSON, context: context)
+                context.persist()
+            }
+            if let token = token {
+                self?.authentication.setToken(token)
+            }
         }
-        guard let token = token else {
-            // TODO: error
-            return
-        }
-        authentication.setToken(token)
     }
     
     @discardableResult
