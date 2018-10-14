@@ -38,9 +38,9 @@ public class Auth {
             defer {
                 completion(error)
             }
-            if let userJSON = userJSON {
-                print("userJSON: \(userJSON)")
+            if let userJSON = userJSON, let userID = userJSON["id"] as? String {
                 _ = User(json: userJSON, context: context)
+                User.setCurrentUserID(userID)
                 context.persist()
             }
             if let token = token {
