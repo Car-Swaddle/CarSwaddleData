@@ -22,6 +22,7 @@
     </entity>
     <entity name="Mechanic" representedClassName="Mechanic" syncable="YES">
         <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="isActive" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="scheduleTimeSpans" toMany="YES" deletionRule="Nullify" destinationEntity="TemplateTimeSpan" inverseName="mechanic" inverseEntity="TemplateTimeSpan" syncable="YES"/>
         <relationship name="services" toMany="YES" deletionRule="Nullify" destinationEntity="AutoService" inverseName="mechanic" inverseEntity="AutoService" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="mechanic" inverseEntity="User" syncable="YES"/>
@@ -77,7 +78,7 @@
     <elements>
         <element name="AutoService" positionX="-63" positionY="-18" width="128" height="225"/>
         <element name="Location" positionX="-36" positionY="27" width="128" height="105"/>
-        <element name="Mechanic" positionX="-27" positionY="99" width="128" height="105"/>
+        <element name="Mechanic" positionX="-27" positionY="99" width="128" height="120"/>
         <element name="OilChange" positionX="-18" positionY="54" width="128" height="90"/>
         <element name="Price" positionX="-9" positionY="90" width="128" height="90"/>
         <element name="PricePart" positionX="0" positionY="108" width="128" height="90"/>

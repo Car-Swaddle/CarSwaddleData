@@ -18,7 +18,6 @@ extension TemplateTimeSpan {
 
     @NSManaged public var startTime: Date
     @NSManaged public var duration: Double
-    @NSManaged public var weekday: Int16
     @NSManaged public var mechanic: Mechanic
 
 }

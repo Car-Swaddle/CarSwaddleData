@@ -255,6 +255,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
+@property (nonatomic) BOOL isActive;
 @property (nonatomic, strong) User * _Nullable user;
 @property (nonatomic, copy) NSSet<TemplateTimeSpan *> * _Nonnull scheduleTimeSpans;
 @property (nonatomic, copy) NSSet<AutoService *> * _Nonnull services;
@@ -315,6 +316,7 @@ SWIFT_CLASS_NAMED("PricePart")
 
 SWIFT_CLASS_NAMED("TemplateTimeSpan")
 @interface TemplateTimeSpan : NSManagedObject
+@property (nonatomic) int16_t primitiveWeekday;
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -322,7 +324,6 @@ SWIFT_CLASS_NAMED("TemplateTimeSpan")
 @interface TemplateTimeSpan (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSDate * _Nonnull startTime;
 @property (nonatomic) double duration;
-@property (nonatomic) int16_t weekday;
 @property (nonatomic, strong) Mechanic * _Nonnull mechanic;
 @end
 
