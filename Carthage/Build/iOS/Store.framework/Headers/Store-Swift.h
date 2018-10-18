@@ -316,13 +316,13 @@ SWIFT_CLASS_NAMED("PricePart")
 
 SWIFT_CLASS_NAMED("TemplateTimeSpan")
 @interface TemplateTimeSpan : NSManagedObject
-@property (nonatomic) int16_t primitiveWeekday;
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 @interface TemplateTimeSpan (SWIFT_EXTENSION(Store))
-@property (nonatomic, copy) NSDate * _Nonnull startTime;
+/// The minute of the day
+@property (nonatomic) int64_t startTime;
 @property (nonatomic) double duration;
 @property (nonatomic, strong) Mechanic * _Nonnull mechanic;
 @end
