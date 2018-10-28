@@ -13,7 +13,7 @@ import CoreData
 
 public class TemplateTimeSpanNetwork {
     
-    let availabilityService = AvailabilityService()
+    private let availabilityService = AvailabilityService()
     
     public init() {}
     
@@ -38,36 +38,30 @@ public class TemplateTimeSpanNetwork {
 }
 
 
-public extension TemplateTimeSpan {
-    
-    private static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss zzz"
-        return formatter
-    }()
-    
-    public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
-        guard let identifier = json["id"] as? String,
-            let duration = json["duration"] as? Double,
-            let weekdayInt = json["weekDay"] as? Int16,
-            let mechanicID = json["mechanicID"] as? String,
-            let mechanic = Mechanic.fetch(with: mechanicID, in: context),
-            let weekday = Weekday(rawValue: weekdayInt) else { return nil }
-        
-        
-        print("startTime: \(json["startTime"] as? String)")
-        
-        if let str = json["startTime"] as? String {
-            let date = TemplateTimeSpan.dateFormatter.date(from: str)
-            print(date)
-        }
-        
-        self.init(context: context)
-        self.identifier = identifier
-        self.duration = duration
-        self.startTime = 0
-        self.weekday = weekday
-        self.mechanic = mechanic
-    }
-    
-}
+//public extension TemplateTimeSpan {
+//
+//    private static let dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "HH:mm:ss"
+//        return formatter
+//    }()
+//
+//    public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
+//        guard let identifier = json["id"] as? String,
+//            let duration = json["duration"] as? Double,
+//            let weekdayInt = json["weekDay"] as? Int16,
+//            let mechanicID = json["mechanicID"] as? String,
+//            let mechanic = Mechanic.fetch(with: mechanicID, in: context),
+//            let weekday = Weekday(rawValue: weekdayInt),
+//            let dateString = json["startTime"] as? String,
+//            let date = TemplateTimeSpan.dateFormatter.date(from: dateString) else { return nil }
+//
+//        self.init(context: context)
+//        self.identifier = identifier
+//        self.duration = duration
+//        self.startTime = Int64(date.secondsSinceMidnight())
+//        self.weekday = weekday
+//        self.mechanic = mechanic
+//    }
+//
+//}

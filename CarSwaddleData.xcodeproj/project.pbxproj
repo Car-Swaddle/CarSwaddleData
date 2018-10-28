@@ -39,6 +39,8 @@
 		99F026E1218026BB005FEFC7 /* Authentication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9912CDCB216C84290006FDDF /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99F026E2218026BB005FEFC7 /* NetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9912CDC9216C84290006FDDF /* NetworkRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99F026EC21803F4E005FEFC7 /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F026EB21803F4E005FEFC7 /* LoginTestCase.swift */; };
+		99F02784218580C0005FEFC7 /* Region+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F02783218580C0005FEFC7 /* Region+Requests.swift */; };
+		99F0278E21858983005FEFC7 /* RegionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0278D21858983005FEFC7 /* RegionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		99F026D121802132005FEFC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99F026E3218028B0005FEFC7 /* CarSwaddleDataHostApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarSwaddleDataHostApp.entitlements; sourceTree = "<group>"; };
 		99F026EB21803F4E005FEFC7 /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
+		99F02783218580C0005FEFC7 /* Region+Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Region+Requests.swift"; sourceTree = "<group>"; };
+		99F0278D21858983005FEFC7 /* RegionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 			children = (
 				9912CDAF216C81760006FDDF /* CarSwaddleData.h */,
 				99F026BB217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift */,
+				99F02783218580C0005FEFC7 /* Region+Requests.swift */,
 				9912CDC6216C81AE0006FDDF /* Auth.swift */,
 				9912CDB0216C81760006FDDF /* Info.plist */,
 			);
@@ -188,6 +193,7 @@
 			children = (
 				9912CDBA216C81760006FDDF /* CarSwaddleDataTests.swift */,
 				99F026BD217F061A005FEFC7 /* TemplateTimeSpanTests.swift */,
+				99F0278D21858983005FEFC7 /* RegionTests.swift */,
 				99F026EB21803F4E005FEFC7 /* LoginTestCase.swift */,
 				9912CDBC216C81760006FDDF /* Info.plist */,
 			);
@@ -431,6 +437,7 @@
 			files = (
 				99F026BC217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift in Sources */,
 				9912CDC7216C81AE0006FDDF /* Auth.swift in Sources */,
+				99F02784218580C0005FEFC7 /* Region+Requests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +448,7 @@
 				99F026BE217F061A005FEFC7 /* TemplateTimeSpanTests.swift in Sources */,
 				99F026EC21803F4E005FEFC7 /* LoginTestCase.swift in Sources */,
 				9912CDBB216C81760006FDDF /* CarSwaddleDataTests.swift in Sources */,
+				99F0278E21858983005FEFC7 /* RegionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +689,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MG7WLQ6J4A;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = CarSwaddleDataTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,6 +710,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MG7WLQ6J4A;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = CarSwaddleDataTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
