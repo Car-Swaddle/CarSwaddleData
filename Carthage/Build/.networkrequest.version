@@ -1,14 +1,5 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "commitish" : "1.031",
+  "commitish" : "1.032",
   "iOS" : [
 
   ]

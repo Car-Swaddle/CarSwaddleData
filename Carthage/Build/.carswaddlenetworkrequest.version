@@ -1,18 +1,9 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "commitish" : "1.932",
+  "commitish" : "1.933",
   "iOS" : [
     {
       "name" : "CarSwaddleNetworkRequest",
-      "hash" : "a26ed8eda799aa43d9e2ab295d2571bc96f0b188b721b3bfdc9f3b17cace1dbb"
+      "hash" : "6315cbb724cb1687e9976fb20ce9d5ed97741403bf35767d107599f9164286a7"
     }
   ]
 }

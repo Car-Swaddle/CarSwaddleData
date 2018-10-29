@@ -1,18 +1,9 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "commitish" : "1.100",
+  "commitish" : "1.102",
   "iOS" : [
     {
       "name" : "Store",
-      "hash" : "118feb071063f07ee4e8d81f1f324dd5513c5c97144b027ed4f6058cd43587a3"
+      "hash" : "379b7ed1575c3e3641f6839a093d3066c7c1adca59845fbd36c572495204348d"
     }
   ]
 }
