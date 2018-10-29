@@ -13,6 +13,8 @@ import CarSwaddleNetworkRequest
 
 public final class RegionNetwork {
     
+    public init() { }
+    
     let regionService = RegionService()
     
     @discardableResult
