@@ -13,7 +13,7 @@ import Authentication
 #if targetEnvironment(simulator)
     private let domain = "127.0.0.1"
 #else
-    private let domain = "kkenda2-ml.local"
+    private let domain = "Kyles-MacBook-Pro.local"
 #endif
 
 public let serverRequest: Request = {
