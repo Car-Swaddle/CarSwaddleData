@@ -47,4 +47,21 @@ public final class RegionNetwork {
         }
     }
     
+    
+    @discardableResult
+    public func getRegion(in context: NSManagedObjectContext, completion: @escaping (_ regionID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return regionService.getRegion { json, error in
+            context.perform {
+                var regionID: NSManagedObjectID?
+                defer {
+                    completion(regionID, error)
+                }
+                guard let json = json else { return }
+                let region = Region(json: json, in: context)
+                context.persist()
+                regionID = region?.objectID
+            }
+        }
+    }
+    
 }
