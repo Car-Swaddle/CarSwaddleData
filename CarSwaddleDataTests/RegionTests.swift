@@ -13,13 +13,13 @@ import Store
 
 class RegionTests: LoginTestCase {
     
-    let regionNetwork = RegionNetwork()
+    let regionNetwork = RegionNetwork(serviceRequest: serviceRequest)
     
     func testRegion() {
         let exp = expectation(description: "\(#function)\(#line)")
         let context = store.mainContext
-        let latitude: CGFloat = 11.3
-        let longitude: CGFloat = -89.37
+        let latitude: Double = 11.3
+        let longitude: Double = -89.37
         let radius: Double = 360
         regionNetwork.postRegion(latitude: latitude, longitude: longitude, radius: radius, in: context) { objectID, error in
             guard let objectID = objectID else {

@@ -13,9 +13,13 @@ import CarSwaddleNetworkRequest
 
 public final class RegionNetwork {
     
-    public init() { }
+    public let serviceRequest: Request
     
-    let regionService = RegionService()
+    public init(serviceRequest: Request) {
+        self.serviceRequest = serviceRequest
+    }
+    
+    private lazy var regionService = RegionService(serviceRequest: serviceRequest)
     
     @discardableResult
     public func postRegion(region: Region, in context: NSManagedObjectContext, completion: @escaping (_ regionID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {

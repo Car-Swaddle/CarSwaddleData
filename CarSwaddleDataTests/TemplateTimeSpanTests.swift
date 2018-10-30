@@ -13,7 +13,7 @@ import Store
 
 class TemplateTimeSpanTests: LoginTestCase {
     
-    let network = TemplateTimeSpanNetwork()
+    let network = TemplateTimeSpanNetwork(serviceRequest: serviceRequest)
     
     override func setUp() {
         super.setUp()

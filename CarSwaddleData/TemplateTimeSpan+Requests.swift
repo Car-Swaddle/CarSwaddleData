@@ -13,9 +13,13 @@ import CoreData
 
 public class TemplateTimeSpanNetwork {
     
-    private let availabilityService = AvailabilityService()
+    public let serviceRequest: Request
     
-    public init() {}
+    public init(serviceRequest: Request) {
+        self.serviceRequest = serviceRequest
+    }
+    
+    private lazy var availabilityService = AvailabilityService(serviceRequest: serviceRequest)
     
     @discardableResult
     public func getTimeSpans(in context: NSManagedObjectContext, completion: @escaping (_ timeSpans: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
