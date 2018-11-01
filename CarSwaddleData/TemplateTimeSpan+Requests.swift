@@ -39,6 +39,77 @@ public class TemplateTimeSpanNetwork {
         }
     }
     
+    @discardableResult
+    public func postTimeSpans(templateTimeSpans: [TemplateTimeSpan], in context: NSManagedObjectContext, completion: @escaping (_ timeSpans: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+        
+        var jsonArray: [JSONObject] = []
+        for timeSpan in templateTimeSpans {
+            jsonArray.append(timeSpan.toJSON)
+        }
+        
+        return availabilityService.postAvailability(jsonArray: jsonArray) { jsonArray, error in
+            context.perform {
+                var timeSpans: [NSManagedObjectID] = []
+                defer {
+                    completion(timeSpans, error)
+                }
+                
+                for json in jsonArray ?? [] {
+                    guard let span = TemplateTimeSpan(json: json, context: context) else { continue }
+                    timeSpans.append(span.objectID)
+                }
+                context.persist()
+            }
+        }
+    }
+    
+}
+
+public extension TemplateTimeSpan {
+    
+    var toJSON: JSONObject {
+        return ["startTime": startTime, "duration": duration, "weekDay": weekday.rawValue]
+    }
+    
+    var startTimeStringFormat: String {
+        return startTime.timeOfDayFormattedString
+    }
+    
+}
+
+extension Int64 {
+    
+    var numberOfDigits: Int {
+        var numberOfDigits: Int = 0
+        var dividedValue = self
+        while dividedValue > 0 {
+            dividedValue = dividedValue / 10
+            numberOfDigits += 1
+        }
+        return numberOfDigits
+    }
+    
+    var timeOfDayFormattedString: String {
+        let hours = self / (60*60)
+        let minutes = (self / 60) % 60
+        let seconds = self % 60
+        
+        var hoursString: String = String(hours)
+        if hours.numberOfDigits < 2 {
+            hoursString = "0" + hoursString
+        }
+        var minutesString: String = String(minutes)
+        if minutes.numberOfDigits < 2 {
+            minutesString = "0" + minutesString
+        }
+        var secondsString: String = String(seconds)
+        if seconds.numberOfDigits < 2 {
+            secondsString = "0" + secondsString
+        }
+        
+        return hoursString + ":" + minutesString + ":" + secondsString
+    }
+    
 }
 
 
