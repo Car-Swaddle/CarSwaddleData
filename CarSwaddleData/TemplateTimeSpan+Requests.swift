@@ -32,6 +32,7 @@ public class TemplateTimeSpanNetwork {
                 
                 for json in jsonArray ?? [] {
                     guard let span = TemplateTimeSpan(json: json, context: context) else { continue }
+                    (try? context.obtainPermanentIDs(for: [span]))
                     timeSpans.append(span.objectID)
                 }
                 context.persist()
@@ -56,6 +57,7 @@ public class TemplateTimeSpanNetwork {
                 
                 for json in jsonArray ?? [] {
                     guard let span = TemplateTimeSpan(json: json, context: context) else { continue }
+                    (try? context.obtainPermanentIDs(for: [span]))
                     timeSpans.append(span.objectID)
                 }
                 context.persist()
