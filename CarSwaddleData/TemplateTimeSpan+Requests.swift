@@ -27,7 +27,9 @@ public class TemplateTimeSpanNetwork {
             context.perform {
                 var timeSpans: [NSManagedObjectID] = []
                 defer {
-                    completion(timeSpans, error)
+                    DispatchQueue.global().async {
+                        completion(timeSpans, error)
+                    }
                 }
                 
                 let mechanic = Mechanic.currentLoggedInMechanic(in: context)
@@ -55,7 +57,9 @@ public class TemplateTimeSpanNetwork {
             context.perform {
                 var timeSpans: [NSManagedObjectID] = []
                 defer {
-                    completion(timeSpans, error)
+                    DispatchQueue.global().async {
+                        completion(timeSpans, error)
+                    }
                 }
                 
                 let mechanic = Mechanic.currentLoggedInMechanic(in: context)

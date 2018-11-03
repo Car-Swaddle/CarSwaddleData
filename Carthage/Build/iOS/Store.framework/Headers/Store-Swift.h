@@ -342,7 +342,7 @@ SWIFT_CLASS_NAMED("TemplateTimeSpan")
 /// The second of the day
 @property (nonatomic) int64_t startTime;
 /// The number of seconds
-@property (nonatomic) double duration;
+@property (nonatomic) NSTimeInterval duration;
 @property (nonatomic, strong) Mechanic * _Nonnull mechanic;
 @end
 
