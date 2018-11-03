@@ -30,6 +30,9 @@ public class TemplateTimeSpanNetwork {
                     completion(timeSpans, error)
                 }
                 
+                let mechanic = Mechanic.currentLoggedInMechanic(in: context)
+                mechanic?.deleteAllCurrentScheduleTimeSpans()
+                
                 for json in jsonArray ?? [] {
                     guard let span = TemplateTimeSpan(json: json, context: context) else { continue }
                     (try? context.obtainPermanentIDs(for: [span]))
@@ -54,6 +57,9 @@ public class TemplateTimeSpanNetwork {
                 defer {
                     completion(timeSpans, error)
                 }
+                
+                let mechanic = Mechanic.currentLoggedInMechanic(in: context)
+                mechanic?.deleteAllCurrentScheduleTimeSpans()
                 
                 for json in jsonArray ?? [] {
                     guard let span = TemplateTimeSpan(json: json, context: context) else { continue }
