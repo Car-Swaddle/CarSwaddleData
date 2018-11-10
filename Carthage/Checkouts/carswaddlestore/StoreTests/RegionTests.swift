@@ -14,7 +14,7 @@ class RegionTests: XCTestCase {
     
     func testCreateRegion() {
         let context = store.mainContext
-        let region = Region(json: regionJSON, in: context)
+        let region = Region(json: regionJSON, context: context)
         XCTAssert(region != nil, "Must have region from: \(regionJSON)")
     }
     
@@ -23,7 +23,7 @@ class RegionTests: XCTestCase {
         let mechanic = Mechanic(context: store.mainContext)
         mechanic.identifier = "someid"
         
-        let region = Region(json: regionJSON, in: context)
+        let region = Region(json: regionJSON, context: context)
         mechanic.serviceRegion = region
         
         store.mainContext.persist()

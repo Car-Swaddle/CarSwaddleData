@@ -79,7 +79,7 @@ struct Template {
     let weekDay: Int
     
     var json: JSONObject {
-        return ["startTime":startTime, "duration": duration, "weekDay": weekDay]
+        return ["startTime": startTime, "duration": duration, "weekDay": weekDay]
     }
     
 }

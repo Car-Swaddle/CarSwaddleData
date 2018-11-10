@@ -5,7 +5,6 @@ _$S5Store7WeekdayOSHAASH4hash4intoys6HasherVz_tFTW
 _$S5Store7WeekdayOSYAASY8rawValuexSg03RawD0Qz_tcfCTW
 _$S5Store7WeekdayOSYAASY8rawValue03RawD0QzvgTW
 _$S5Store7WeekdayOs12CaseIterableAAsADP8allCases03AllF0QzvgZTW
-_$S10Foundation4DateV5StoreE20secondsSinceMidnightSiyF
 _$S5Store16TemplateTimeSpanC7weekdayAA7WeekdayOvmytfU_
 _globalinit_33_BAE911BDAB778BC663595F64FC5829DA_func0
 _$S5Store16TemplateTimeSpanC6entity10insertIntoACSo19NSEntityDescriptionC_So22NSManagedObjectContextCSgtcfcTo
@@ -19,6 +18,8 @@ _$S5Store16TemplateTimeSpanCAA24NSManagedObjectFetchableA2aDP5fetch4with2inxSg2I
 _$S5Store16TemplateTimeSpanCAA24NSManagedObjectFetchableA2aDP15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0eF7ContextCtFZTW
 _$S5Store16TemplateTimeSpanCAA24NSManagedObjectFetchableA2aDP12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0eF7ContextCtFZTW
 _$S5Store16TemplateTimeSpanCAA24NSManagedObjectFetchableA2aDP13deleteObjects2in12whileKeeping10fetchLimitySo0eF7ContextC_SayxGSitFZTW
+_$S5Store16TemplateTimeSpanCAA12JSONInitableA2aDP4json7contextxSgSDySSypG_So22NSManagedObjectContextCtcfCTW
+_$S5Store16TemplateTimeSpanCAA12JSONInitableA2aDP13fetchOrCreate4json7contextxSgSDySSypG_So22NSManagedObjectContextCtFZTW
 _$SSiSHsSH4hash4intoys6HasherVz_tFTW
 _$SSSSQsSQ2eeoiySbx_xtFZTW
 _$SSSSHsSH4hash4intoys6HasherVz_tFTW
@@ -30,6 +31,7 @@ _$SSS2eeoiySbSS_SStFZTf4xxd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA8MechanicC_Tg5Tf4xnd_n
 _$SypWOc
 _$SypWOb
+_$SSD17dictionaryLiteralSDyxq_Gx_q_td_tcfCSS_ypTg5Tf4gd_n
 _$S5Store7WeekdayOSHAAWI
 _$SSay5Store7WeekdayOGMa
 _$SSay5Store7WeekdayOGSayxGSlsWl
@@ -42,6 +44,7 @@ _$S5Store7WeekdayOwxg
 _$S5Store7WeekdayOwug
 _$S5Store7WeekdayOwup
 _$S5Store7WeekdayOwui
+_$SSS_yptWOc
 _globalinit_33_BAE911BDAB778BC663595F64FC5829DA_token0
 _$S5Store16TemplateTimeSpanC13dateFormatter33_BAE911BDAB778BC663595F64FC5829DALLSo06NSDateF0CvpZ
 _globalinit_33_90EBDEFF3A497A11E5979061FC65675A_token3
@@ -51,6 +54,8 @@ _$S5Store11AutoServiceC0bC4TypeO8rawValueAESgSS_tcfCTv_
 _$S5Store11AutoServiceC0bC4TypeOSYAASY8rawValuexSg03RawF0Qz_tcfCTWTv_
 _$S5Store11AutoServiceC4typeAC0bC4TypeOvgTv_
 _$S5Store16TemplateTimeSpanC10weekdayKey33_BAE911BDAB778BC663595F64FC5829DALLSSvpWvd
+_$Ss23_ContiguousArrayStorageCySS_yptGML
+_$SSS_yptML
 _$S5Store7WeekdayOSQAAWp
 _$S5Store7WeekdayOSQAAWG
 _$S5Store7WeekdayOSQAAWr
@@ -89,6 +94,7 @@ __swift_FORCE_LOAD_$_swiftCoreImage_$_Store
 __swift_FORCE_LOAD_$_swiftMetal_$_Store
 __swift_FORCE_LOAD_$_swiftQuartzCore_$_Store
 __swift_FORCE_LOAD_$_swiftCoreLocation_$_Store
+_$Ss37_HashableTypedNativeDictionaryStorageCySSypGML
 _$Ss23_ContiguousArrayStorageCy5Store7WeekdayOGML
 _symbolic 5Store7WeekdayO
 _symbolic $Ss16RawRepresentableP
@@ -103,13 +109,14 @@ _$S5Store16TemplateTimeSpanCAA24NSManagedObjectFetchableAAMA
 ___swift_reflection_version
 _objc_classes
 Apple LLVM version 10.0.0 (clang-1000.11.45.1)
--emit-bc /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/TemplateTimeSpan+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Location+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Store.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Region+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/VehicleDescription+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/VehicleDescription+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/User+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Region+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/OilChange+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/OilChange+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/PricePart+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/PricePart+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Extensions/DateExtension.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Vehicle+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Extensions/NSManagedObjectExtension.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/NSManagedObjectFetchable.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/TemplateTimeSpan+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Price+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/AutoService+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Vehicle+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Mechanic+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Location+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/User+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Mechanic+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/AutoService+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Price+CoreDataProperties.swift -supplementary-output-file-map <temporary-file> -target arm64-apple-ios11.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk -I /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/BuildProductsPath/Release-iphoneos -F /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/BuildProductsPath/Release-iphoneos -g -import-underlying-module -module-cache-path /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/ModuleCache.noindex -swift-version 4.2 -O -serialize-debugging-options -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Store-generated-files.hmap -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Store-own-target-headers.hmap -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Store-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Store-project-headers.hmap -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/BuildProductsPath/Release-iphoneos/include -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/DerivedSources/arm64 -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore -module-name Store -num-threads 8 -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/TemplateTimeSpan+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Location+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Store.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Region+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/VehicleDescription+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/VehicleDescription+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/User+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Region+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/OilChange+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/OilChange+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/PricePart+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/PricePart+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/DateExtension.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Vehicle+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/NSManagedObjectExtension.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/NSManagedObjectFetchable.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/TemplateTimeSpan+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Price+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/AutoService+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Vehicle+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Mechanic+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Location+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/User+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Mechanic+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/AutoService+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Price+CoreDataProperties.bc -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
+-emit-bc /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/TemplateTimeSpan+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Location+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Extensions/PrimitiveExtensions.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Store.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Region+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/VehicleDescription+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/VehicleDescription+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/User+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Region+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/OilChange+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/OilChange+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/PricePart+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/PricePart+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Extensions/DateExtension.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Vehicle+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Extensions/NSManagedObjectExtension.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/NSManagedObjectFetchable.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/TemplateTimeSpan+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Price+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/AutoService+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Vehicle+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Mechanic+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Location+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/User+CoreDataProperties.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Mechanic+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/AutoService+CoreDataClass.swift /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Price+CoreDataProperties.swift -supplementary-output-file-map <temporary-file> -target arm64-apple-ios11.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk -I /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/BuildProductsPath/Release-iphoneos -F /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/BuildProductsPath/Release-iphoneos -g -import-underlying-module -module-cache-path /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/ModuleCache.noindex -swift-version 4.2 -O -serialize-debugging-options -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Store-generated-files.hmap -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Store-own-target-headers.hmap -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Store-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Store-project-headers.hmap -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/BuildProductsPath/Release-iphoneos/include -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/DerivedSources/arm64 -Xcc -I/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore -module-name Store -num-threads 8 -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/TemplateTimeSpan+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Location+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/PrimitiveExtensions.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Store.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Region+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/VehicleDescription+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/VehicleDescription+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/User+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Region+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/OilChange+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/OilChange+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/PricePart+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/PricePart+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/DateExtension.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Vehicle+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/NSManagedObjectExtension.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/NSManagedObjectFetchable.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/TemplateTimeSpan+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Price+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/AutoService+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Vehicle+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Mechanic+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Location+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/User+CoreDataProperties.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Mechanic+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/AutoService+CoreDataClass.bc -o /Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/Objects-normal/arm64/Price+CoreDataProperties.bc -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
 <swift-imported-modules>
 /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore
-Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)
+Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)
 /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/TemplateTimeSpan+CoreDataClass.swift
-$S5Store7WeekdayOMa
+$SSS_yptWOc
 <compiler-generated>
+$S5Store7WeekdayOMa
 $S5Store7WeekdayOwui
 $S5Store7WeekdayOwup
 $S5Store7WeekdayOwug
@@ -119,6 +126,7 @@ $S5Store7WeekdayOwst
 $S5Store7WeekdayOwet
 __swift_noop_void_return
 __swift_memcpy1_1
+$S5Store16TemplateTimeSpanCAA12JSONInitableAAWa
 $S5Store16TemplateTimeSpanCAA24NSManagedObjectFetchableAAWa
 $S5Store7WeekdayOs12CaseIterableAAWa
 $SSay5Store7WeekdayOGSayxGSlsWl
@@ -129,6 +137,18 @@ $S5Store7WeekdayOACSQAAWl
 $S5Store7WeekdayOSQAAWa
 $S5Store7WeekdayOSHAAWa
 $S5Store16TemplateTimeSpanCMa
+init
+$SSSSQsSQ2eeoiySbx_xtFZTW
+$SSS2eeoiySbSS_SStFZ
+$SSa11_getElement_20wasNativeTypeChecked22matchingSubscriptCheckxSi_Sbs16_DependenceTokenVtFSS_ypt_Tg5
+$SSp10initialize9repeating5countyx_SitFSu_Tgq5
+$SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtFSS_ypt_Tg5
+$Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtFSS_ypt_Tg5
+$Ss16_UnmanagedStringVss5UInt8VRszrlE12compareASCII2toSiAByADG_tF
+$Ss11_StringGutsV19_unmanagedASCIIViews010_UnmanagedA0Vys5UInt8VGvg
+$SSSSHsSH4hash4intoys6HasherVz_tFTW
+$Ss37_HashableTypedNativeDictionaryStorageCySSypGMa
+$SSa9_getCountSiyFSS_ypt_Tg5
 $SypWOb
 $SypWOc
 __swift_destroy_boxed_opaque_existential_0
@@ -139,14 +159,17 @@ TemplateTimeSpan+CoreDataClass.swift
 _allocateUninitializedArray
 $SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZ5Store7WeekdayO_Tg5
 $Ss23_ContiguousArrayStorageCy5Store7WeekdayOGMa
-$SSSSHsSH4hash4intoys6HasherVz_tFTW
-$SSSSQsSQ2eeoiySbx_xtFZTW
-$SSS2eeoiySbSS_SStFZ
 $SSiSHsSH4hash4intoys6HasherVz_tFTW
 $S5StoreAAC0032persistentContainerstorage_hIADj33_0352B6A309269336FEEAC924A6579CFFLLSo21NSPersistentContainerCSgvpfi
 $S5StoreAAC0031managedObjectModelstorage_wFFIi33_0352B6A309269336FEEAC924A6579CFFLLSo20NSManagedObjectModelCSgvpfi
 deinit
-init
+startTimeStringFormat.get
+toJSON.get
+$Ss23_ContiguousArrayStorageCfDSS_ypt_Tg5
+$SSS_yptMa
+rawValue.get
+$SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSS_ypt_Tg5
+$Ss23_ContiguousArrayStorageCySS_yptGMa
 globalinit_33_BAE911BDAB778BC663595F64FC5829DA_func0
 $S5Store16TemplateTimeSpanC13dateFormatter33_BAE911BDAB778BC663595F64FC5829DALLSo06NSDateF0CvpZfiAGyXEfU_
 weekday.get
@@ -154,7 +177,6 @@ _bridgeAnyObjectToAny
 weekday.materialize
 $S5Store16TemplateTimeSpanC10weekdayKey33_BAE911BDAB778BC663595F64FC5829DALLSSvpfi
 weekday.set
-rawValue.get
 $S5Store16TemplateTimeSpanC13dateFormatter33_BAE911BDAB778BC663595F64FC5829DALLSo06NSDateF0Cvau
 subscript.get
 fetch
@@ -173,6 +195,15 @@ _$S5Store8LocationCMF
 Location+CoreDataClass.swift
 $S5Store8LocationCMa
 coordinate.get
+/Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Extensions/PrimitiveExtensions.swift
+numberOfDigits.get
+PrimitiveExtensions.swift
+/Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Extensions
+>
+timeOfDayFormattedString.get
+$Ss5Int64Vs23CustomStringConvertiblessACP11descriptionSSvgTW
+$Ss14_int64ToString_5radix9uppercaseSSs5Int64V_AESbtF
++
 _$S5StoreAAC11mainContextyyySo015NSManagedObjectC0CcFyycfU_
 _$SIeg_IeyB_TR
 _$SIeg_IyB_TR
@@ -342,6 +373,8 @@ _$S5Store4UserCAA24NSManagedObjectFetchableA2aDP5fetch4with2inxSg2IDQz_So0cD7Con
 _$S5Store4UserCAA24NSManagedObjectFetchableA2aDP15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0cD7ContextCtFZTW
 _$S5Store4UserCAA24NSManagedObjectFetchableA2aDP12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0cD7ContextCtFZTW
 _$S5Store4UserCAA24NSManagedObjectFetchableA2aDP13deleteObjects2in12whileKeeping10fetchLimitySo0cD7ContextC_SayxGSitFZTW
+_$S5Store4UserCAA12JSONInitableA2aDP4json7contextxSgSDySSypG_So22NSManagedObjectContextCtcfCTW
+_$S5Store4UserCAA12JSONInitableA2aDP13fetchOrCreate4json7contextxSgSDySSypG_So22NSManagedObjectContextCtFZTW
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA4UserC_Tg5Tf4xnd_n
 _$S5Store4UserC07currentB2IDSSSgvgZTf4d_n
 _$SypSgWOb
@@ -353,6 +386,7 @@ _symbolic 5Store4UserC
 _$S5Store4UserCAA24NSManagedObjectFetchableAAMA
 /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/User+CoreDataClass.swift
 $SypSgWOb
+$S5Store4UserCAA12JSONInitableAAWa
 $S5Store4UserCAA24NSManagedObjectFetchableAAWa
 $S5Store4UserCMa
 currentUserID.get
@@ -365,6 +399,8 @@ _$S5Store6RegionCAA24NSManagedObjectFetchableA2aDP5fetch4with2inxSg2IDQz_So0cD7C
 _$S5Store6RegionCAA24NSManagedObjectFetchableA2aDP15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0cD7ContextCtFZTW
 _$S5Store6RegionCAA24NSManagedObjectFetchableA2aDP12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0cD7ContextCtFZTW
 _$S5Store6RegionCAA24NSManagedObjectFetchableA2aDP13deleteObjects2in12whileKeeping10fetchLimitySo0cD7ContextC_SayxGSitFZTW
+_$S5Store6RegionCAA12JSONInitableA2aDP4json7contextxSgSDySSypG_So22NSManagedObjectContextCtcfCTW
+_$S5Store6RegionCAA12JSONInitableA2aDP13fetchOrCreate4json7contextxSgSDySSypG_So22NSManagedObjectContextCtFZTW
 _$S5Store6RegionCML
 _$S5Store6RegionCMf
 _symbolic ____ 5Store6RegionC
@@ -372,9 +408,11 @@ _$S5Store6RegionCMF
 _symbolic 5Store6RegionC
 _$S5Store6RegionCAA24NSManagedObjectFetchableAAMA
 /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Region+CoreDataClass.swift
+$S5Store6RegionCAA12JSONInitableAAWa
 $S5Store6RegionCAA24NSManagedObjectFetchableAAWa
 $S5Store6RegionCMa
 Region+CoreDataClass.swift
+centerCoordinate.get
 _globalinit_33_90EBDEFF3A497A11E5979061FC65675A_func3
 _$Ss23_ContiguousArrayStorageCySSGMa
 _$S5Store9OilChangeC7oilTypeAA0bE0OvmytfU_
@@ -505,13 +543,11 @@ $S10Foundation8CalendarV9ComponentOSQAASQ2eeoiySbx_xtFZTW
 $Ss16_NativeSetBufferVss8HashableRzlE17_exactBucketCountAByxGSi_tcfC10Foundation8CalendarV9ComponentO_Tg5
 $SSa9_getCountSiyF10Foundation8CalendarV9ComponentO_Tg5
 $Ss16_NativeSetBufferVss8HashableRzlE17_exactBucketCountAByxGSi_tcfC10Foundation8CalendarV9ComponentO_Tg5Tf4nd_n
-$SSp10initialize9repeating5countyx_SitFSu_Tgq5
 $Ss13_UnsafeBitMapV11sizeInWords07forSizeE4BitsS2i_tFZ
 $Ss30_HashableTypedNativeSetStorageCy10Foundation8CalendarV9ComponentOGMa
 $S10Foundation8CalendarV9ComponentOAESHAAWl
 secondsSinceMidnight
 DateExtension.swift
-/Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Extensions
 $SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZ10Foundation8CalendarV9ComponentO_Tg5
 $Ss23_ContiguousArrayStorageCy10Foundation8CalendarV9ComponentOGMa
 _$S5Store7VehicleC12creationDate10Foundation0D0VvmytfU_
@@ -572,6 +608,7 @@ _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeep
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeeping10fetchLimitySo0bC7ContextC_SayxGSitFZyyXEfU_AA11AutoServiceC_Tg5
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeeping10fetchLimitySo0bC7ContextC_SayxGSitFZyyXEfU_AA16TemplateTimeSpanC_Tg5
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeeping10fetchLimitySo0bC7ContextC_SayxGSitFZyyXEfU_
+_$SSD5StoreSSRszypRs_rlE10identifierSSSgvg
 _$S5Store5PriceCAA24NSManagedObjectFetchableA2aDP15formatSpecifierSSvgZTW
 _$S5Store5PriceCAA24NSManagedObjectFetchableA2aDP5fetch4with2inxSg2IDQz_So0cD7ContextCtFZTW
 _$S5Store5PriceCAA24NSManagedObjectFetchableA2aDP15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0cD7ContextCtFZTW
@@ -582,11 +619,13 @@ _$S5Store7VehicleCAA24NSManagedObjectFetchableA2aDP5fetch4with2inxSg2IDQz_So0cD7
 _$S5Store7VehicleCAA24NSManagedObjectFetchableA2aDP15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0cD7ContextCtFZTW
 _$S5Store7VehicleCAA24NSManagedObjectFetchableA2aDP12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0cD7ContextCtFZTW
 _$S5Store7VehicleCAA24NSManagedObjectFetchableA2aDP13deleteObjects2in12whileKeeping10fetchLimitySo0cD7ContextC_SayxGSitFZTW
+_$S5Store7VehicleCAA12JSONInitableA2aDP13fetchOrCreate4json7contextxSgSDySSypG_So22NSManagedObjectContextCtFZTW
 _$S5Store8MechanicCAA24NSManagedObjectFetchableA2aDP15formatSpecifierSSvgZTW
 _$S5Store8MechanicCAA24NSManagedObjectFetchableA2aDP5fetch4with2inxSg2IDQz_So0cD7ContextCtFZTW
 _$S5Store8MechanicCAA24NSManagedObjectFetchableA2aDP15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0cD7ContextCtFZTW
 _$S5Store8MechanicCAA24NSManagedObjectFetchableA2aDP12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0cD7ContextCtFZTW
 _$S5Store8MechanicCAA24NSManagedObjectFetchableA2aDP13deleteObjects2in12whileKeeping10fetchLimitySo0cD7ContextC_SayxGSitFZTW
+_$S5Store8MechanicCAA12JSONInitableA2aDP13fetchOrCreate4json7contextxSgSDySSypG_So22NSManagedObjectContextCtFZTW
 _$S5Store11AutoServiceCAA24NSManagedObjectFetchableA2aDP15formatSpecifierSSvgZTW
 _$S5Store11AutoServiceCAA24NSManagedObjectFetchableA2aDP5fetch4with2inxSg2IDQz_So0dE7ContextCtFZTW
 _$S5Store11AutoServiceCAA24NSManagedObjectFetchableA2aDP15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0dE7ContextCtFZTW
@@ -607,37 +646,44 @@ _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7
 ___swift_allocate_boxed_opaque_existential_1
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeeping10fetchLimitySo0bC7ContextC_SayxGSitFZyyXEfU_TA
 _$Ss5Error_pIgzo_ytsAA_pIegrzo_TRTA
+_$S2ID5Store24NSManagedObjectFetchablePQzSgSo0cD0CRbzAB12JSONInitableRzAbCRzlWOh
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeeping10fetchLimitySo0bC7ContextC_SayxGSitFZyyXEfU_AA11AutoServiceC_Tg5TA
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA16TemplateTimeSpanC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA16TemplateTimeSpanC_Tg5Tf4nnd_nTf4xn_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA16TemplateTimeSpanC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA16TemplateTimeSpanC_Tg5Tf4nnnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA4UserC_Tg5Tf4nnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA4UserC_Tg5Tf4nnnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA6RegionC_Tg5Tf4nnd_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA11AutoServiceC_Tg5Tf4nnd_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA7VehicleC_Tg5Tf4nnd_nTm
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA11AutoServiceC_Tg5Tf4nnd_nTf4xn_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA5PriceC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA16TemplateTimeSpanC_Tg5Tf4nnd_nTm
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA5PriceC_Tg5Tf4nnd_nTf4xn_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA6RegionC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA6RegionC_Tg5Tf4nnd_nTf4xn_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA6RegionC_Tg5Tf4nnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA6RegionC_Tg5Tf4nnnd_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA7VehicleC_Tg5Tf4nnd_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA7VehicleC_Tg5Tf4nnd_nTf4xn_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA11AutoServiceC_Tg5Tf4nnd_nTf4xn_nTm
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA9OilChangeC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA9OilChangeC_Tg5Tf4nnd_nTf4xn_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA8MechanicC_Tg5Tf4xnd_nTm
+_$S5Store12JSONInitablePAASo15NSManagedObjectCRbzAA0cD9FetchableRzrlE13fetchOrCreate4json7contextxSgSDySSypG_So0cD7ContextCtFZAA16TemplateTimeSpanC_Tg5Tf4nnd_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA4UserC_Tg5Tf4nnd_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA4UserC_Tg5Tf4nnnd_n
+_$S5Store12JSONInitablePAASo15NSManagedObjectCRbzAA0cD9FetchableRzrlE13fetchOrCreate4json7contextxSgSDySSypG_So0cD7ContextCtFZAA4UserC_Tg5Tf4nnd_n
+_$S5Store12JSONInitablePAASo15NSManagedObjectCRbzAA0cD9FetchableRzrlE13fetchOrCreate4json7contextxSgSDySSypG_So0cD7ContextCtFZAA16TemplateTimeSpanC_Tg5Tf4nnd_nTm
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA6RegionC_Tg5Tf4nnd_n
+_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA6RegionC_Tg5Tf4nnnd_n
+_$S5Store12JSONInitablePAASo15NSManagedObjectCRbzAA0cD9FetchableRzrlE13fetchOrCreate4json7contextxSgSDySSypG_So0cD7ContextCtFZAA6RegionC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA9OilChangeC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA9OilChangeC_Tg5Tf4nnnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA5PriceC_Tg5Tf4nnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA5PriceC_Tg5Tf4nnd_nTf4xn_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA8MechanicC_Tg5Tf4xnd_nTm
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA5PriceC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA5PriceC_Tg5Tf4nnnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA7VehicleC_Tg5Tf4nnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA11AutoServiceC_Tg5Tf4nnd_nTm
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA7VehicleC_Tg5Tf4nnd_nTf4xn_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA7VehicleC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA7VehicleC_Tg5Tf4nnnd_n
+_$S5Store12JSONInitablePAASo15NSManagedObjectCRbzAA0cD9FetchableRzrlE13fetchOrCreate4json7contextxSgSDySSypG_So0cD7ContextCtFZAA7VehicleC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA8MechanicC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA8MechanicC_Tg5Tf4nnnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12performFetch33_3AE62C6366F7209BA37BE3375B455A29LL4with2inxSgSo14NSFetchRequestCyxG_So0bC7ContextCtFZAA11AutoServiceC_Tg5Tf4nnd_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA11AutoServiceC_Tg5Tf4nnd_nTf4xn_n
-_$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE5fetch4with2inxSg2IDQz_So0bC7ContextCtFZAA7VehicleC_Tg5Tf4nnd_nTf4xn_nTm
+_$S5Store12JSONInitablePAASo15NSManagedObjectCRbzAA0cD9FetchableRzrlE13fetchOrCreate4json7contextxSgSDySSypG_So0cD7ContextCtFZAA8MechanicC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA11AutoServiceC_Tg5Tf4nnd_n
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE15fetchAllObjects4with2inSayxGSaySo16NSSortDescriptorCGSg_So0bC7ContextCtFZAA16TemplateTimeSpanC_Tg5Tf4nnd_nTm
 _$S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE12fetchObjects4with15sortDescriptors2inSayxGSay2IDQzG_SaySo16NSSortDescriptorCGSgSo0bC7ContextCtFZAA11AutoServiceC_Tg5Tf4nnnd_n
@@ -671,6 +717,13 @@ _symbolic Si
 _symbolic x
 _symbolic B0
 _symbolic s5Error_pIgzo_
+_$SypSgML
+_$SSaySo17NSManagedObjectIDCGML
+_$SSo17NSManagedObjectIDCML
+_$SSaySo17NSManagedObjectIDCGSayxGs7CVarArg10FoundationWL
+_symbolic $S5Store12JSONInitableP
+_$S5Store12JSONInitable_pMF
+_$S5Store12JSONInitableWR
 _$S5Store24NSManagedObjectFetchable_pMF
 _$S5Store24NSManagedObjectFetchableWR
 _$SSay5Store11AutoServiceCGML
@@ -736,31 +789,35 @@ $Ss7CVarArg_pMa
 $SSo11NSPredicateCMa
 $SSo16NSSortDescriptorCMa
 fetchAllObjects
+fetchOrCreate
+Vehicle+CoreDataClass.swift
+$SypSgMa
 $SS2Ss7CVarArg10FoundationWl
 first.get
 $Ss16IndexingIteratorVyxGStsSt4next7ElementQzSgyFTW
 $Ss16IndexingIteratorV4next7ElementQzSgyF
 $SSayxGSlsSly7ElementQz5IndexQzcigTW
-$SSayxSicig5Store11AutoServiceC_Tg5
-$SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtF5Store11AutoServiceC_Tg5
-$Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtF5Store11AutoServiceC_Tg5
+$SSayxSicig5Store16TemplateTimeSpanC_Tg5
+$SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtF5Store16TemplateTimeSpanC_Tg5
+$Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtF5Store16TemplateTimeSpanC_Tg5
 $SSa11_getElement_20wasNativeTypeChecked22matchingSubscriptCheckxSi_Sbs16_DependenceTokenVtF
-$SSa29_hoistableIsNativeTypeCheckedSbyF5Store11AutoServiceC_Tg5
+$SSa29_hoistableIsNativeTypeCheckedSbyF5Store16TemplateTimeSpanC_Tg5
 $SSayxGSlsSl8endIndex0B0QzvgTW
 $SSayxGSlsSl12makeIterator0B0QzyFTW
 $SSlss16IndexingIteratorVyxG0B0RtzrlE04makeB0ACyF
 $SSayxGSlsSl10startIndex0B0QzvgTW
 $SSa10startIndexSivg
 $SSa10startIndexSivgTf4d_n
-$SSa8endIndexSivg5Store11AutoServiceC_Tg5
-$SSa9_getCountSiyF5Store11AutoServiceC_Tg5
-$SSayxSicig5Store16TemplateTimeSpanC_Tg5
-$SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtF5Store16TemplateTimeSpanC_Tg5
-$Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtF5Store16TemplateTimeSpanC_Tg5
-$SSa29_hoistableIsNativeTypeCheckedSbyF5Store16TemplateTimeSpanC_Tg5
 $SSa8endIndexSivg5Store16TemplateTimeSpanC_Tg5
 $SSa9_getCountSiyF5Store16TemplateTimeSpanC_Tg5
+$SSayxSicig5Store7VehicleC_Tg5
+$SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtF5Store7VehicleC_Tg5
+$Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtF5Store7VehicleC_Tg5
+$SSa29_hoistableIsNativeTypeCheckedSbyF5Store7VehicleC_Tg5
+$SSa8endIndexSivg5Store7VehicleC_Tg5
+$SSa9_getCountSiyF5Store7VehicleC_Tg5
 objectdestroy.8
+$S2ID5Store24NSManagedObjectFetchablePQzSgSo0cD0CRbzAB12JSONInitableRzAbCRzlWOh
 $Ss5Error_pIgzo_ytsAA_pIegrzo_TRTA
 $Ss5Error_pIgzo_ytsAA_pIegrzo_TR
 objectdestroy.2
@@ -789,13 +846,18 @@ forEach
 $Ss16IndexingIteratorVyxGs0B8ProtocolsSt4next7ElementQzSgyFTWSay5Store11AutoServiceCG_Tg5
 $Ss16IndexingIteratorV4next7ElementQzSgyFSay5Store11AutoServiceCG_Tg5
 $SSayxGs10CollectionsSly7ElementQz5IndexQzcigTW5Store11AutoServiceC_Tg5
+$SSayxSicig5Store11AutoServiceC_Tg5
 $SSayxGs10CollectionsSl9formIndex5aftery0C0Qzz_tFTW5Store11AutoServiceC_Tg5
 $SSa9formIndex5afterySiz_tF5Store11AutoServiceC_Tg5
 $SSa9formIndex5afterySiz_tFTf4nd_n
 $SSayxGs10CollectionsSl8endIndex0C0QzvgTW5Store11AutoServiceC_Tg5
+$SSa8endIndexSivg5Store11AutoServiceC_Tg5
+$SSa9_getCountSiyF5Store11AutoServiceC_Tg5
 $Sxs5Error_pIggzo_xsAA_pIegnzo_So15NSManagedObjectCRbz5Store0bC9FetchableRzlTRAD11AutoServiceC_TG5
 $Sxs5Error_pIggzo_xsAA_pIegnzo_So15NSManagedObjectCRbz5Store0bC9FetchableRzlTRAD11AutoServiceC_Tg5
 $S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeeping10fetchLimitySo0bC7ContextC_SayxGSitFZyyXEfU_yxXEfU_AA11AutoServiceC_Tg5
+$SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtF5Store11AutoServiceC_Tg5
+$Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtF5Store11AutoServiceC_Tg5
 $SSiSQsSQ2eeoiySbx_xtFZTW
 count.get
 $S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeeping10fetchLimitySo0bC7ContextC_SayxGSitFZyyXEfU_AA9OilChangeC_Tg5
@@ -813,6 +875,9 @@ $Sxs5Error_pIggzo_xsAA_pIegnzo_So15NSManagedObjectCRbz5Store0bC9FetchableRzlTRAD
 $S5Store24NSManagedObjectFetchablePAASo0bC0CRbzrlE13deleteObjects2in12whileKeeping10fetchLimitySo0bC7ContextC_SayxGSitFZyyXEfU_yxXEfU_AA9OilChangeC_Tg5
 $SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtF5Store9OilChangeC_Tg5
 $Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtF5Store9OilChangeC_Tg5
+$SSaySo17NSManagedObjectIDCGSayxGs7CVarArg10FoundationWl
+$SSaySo17NSManagedObjectIDCGMa
+$SSo17NSManagedObjectIDCMa
 $SSo14NSFetchRequestCMa
 $SSay5Store16TemplateTimeSpanCGSayxGs7CVarArg10FoundationWl
 $SSay5Store16TemplateTimeSpanCGMa
@@ -880,6 +945,8 @@ AutoService+CoreDataClass.swift
 tempID.get
 $S5Store11AutoServiceC6tempIDSSvau
 _$S5Store7VehicleC6entity10insertIntoACSo19NSEntityDescriptionC_So22NSManagedObjectContextCSgtcfcTo
+_$S5Store7VehicleCAA12JSONInitableA2aDP4json7contextxSgSDySSypG_So22NSManagedObjectContextCtcfCTW
+_$SSSSgWOy
 _$S5Store7VehicleC4name12licensePlate4user7contextACSS_SSAA4UserCSo22NSManagedObjectContextCtcfcTf4xxnnn_n
 _$S5Store7VehicleC27fetchRequestRecentlyCreated9forUserIDSo07NSFetchD0CyACGSS_tFZTf4xd_n
 _$S5Store7VehicleCML
@@ -890,9 +957,9 @@ _$Ss23_ContiguousArrayStorageCySo16NSSortDescriptorCGML
 _symbolic 5Store7VehicleC
 _$S5Store7VehicleCAA24NSManagedObjectFetchableAAMA
 /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Vehicle+CoreDataClass.swift
+$S5Store7VehicleCAA12JSONInitableAAWa
 $S5Store7VehicleCAA24NSManagedObjectFetchableAAWa
 fetchRequestRecentlyCreated
-Vehicle+CoreDataClass.swift
 creationDateSort.get
 $SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSo16NSSortDescriptorC_Tg5
 $Ss23_ContiguousArrayStorageCySo16NSSortDescriptorCGMa
@@ -903,20 +970,14 @@ fetchFirstVehicle
 $Ss16IndexingIteratorVyxGs0B8ProtocolsSt4next7ElementQzSgyFTWSay5Store7VehicleCG_Tg5
 $Ss16IndexingIteratorV4next7ElementQzSgyFSay5Store7VehicleCG_Tg5
 $SSayxGs10CollectionsSly7ElementQz5IndexQzcigTW5Store7VehicleC_Tg5
-$SSayxSicig5Store7VehicleC_Tg5
-$SSa15_checkSubscript_20wasNativeTypeCheckeds16_DependenceTokenVSi_SbtF5Store7VehicleC_Tg5
-$Ss12_ArrayBufferV37_checkInoutAndNativeTypeCheckedBounds_03wasfgH0ySi_SbtF5Store7VehicleC_Tg5
 $SSa22_allocateUninitializedySayxG_SpyxGtSiFZ5Store7VehicleC_Tg5
 $SSa19_uninitializedCountSayxGSi_tcfC5Store7VehicleC_Tg5
 $SSa11_getElement_20wasNativeTypeChecked22matchingSubscriptCheckxSi_Sbs16_DependenceTokenVtF5Store7VehicleC_Tg5
-$SSa29_hoistableIsNativeTypeCheckedSbyF5Store7VehicleC_Tg5
 $SSayxGs10CollectionsSl8endIndex0C0QzvgTW5Store7VehicleC_Tg5
-$SSa8endIndexSivg5Store7VehicleC_Tg5
 $SSayxGs10CollectionsSl12makeIterator0C0QzyFTW5Store7VehicleC_Tg5
 $SSlss16IndexingIteratorVyxG0B0RtzrlE04makeB0ACyFSay5Store7VehicleCG_Tg5
 $SSayxGs10CollectionsSl10startIndex0C0QzvgTW5Store7VehicleC_Tg5
 $SSa10startIndexSivg5Store7VehicleC_Tg5
-$SSa9_getCountSiyF5Store7VehicleC_Tg5
 fetchVehicles
 _$S5Store8MechanicC10identifierSSvmytfU_
 _$S5Store8MechanicC8isActiveSbvmytfU_
@@ -962,6 +1023,9 @@ firstName.materialize
 lastName.materialize
 User+CoreDataProperties.swift
 _$S5Store8MechanicC6entity10insertIntoACSo19NSEntityDescriptionC_So22NSManagedObjectContextCSgtcfcTo
+_$S5Store8MechanicCAA12JSONInitableA2aDP4json7contextxSgSDySSypG_So22NSManagedObjectContextCtcfCTW
+_$Ss25SetIteratorRepresentationOy5Store16TemplateTimeSpanCGWOy
+_$Ss25SetIteratorRepresentationOy5Store16TemplateTimeSpanCGWOe
 _$S5Store8MechanicCML
 _$S5Store8MechanicCMf
 _symbolic ____ 5Store8MechanicC
@@ -969,9 +1033,21 @@ _$S5Store8MechanicCMF
 _symbolic 5Store8MechanicC
 _$S5Store8MechanicCAA24NSManagedObjectFetchableAAMA
 /Users/kylekendall/Projects/carswaddledata/Carthage/Checkouts/carswaddlestore/Store/Models/Mechanic+CoreDataClass.swift
+$S5Store8MechanicCAA12JSONInitableAAWa
 $S5Store8MechanicCAA24NSManagedObjectFetchableAAWa
 $S5Store8MechanicCMa
 Mechanic+CoreDataClass.swift
+deleteAllCurrentScheduleTimeSpans
+next
+$Ss17_CocoaSetIteratorC4nextyXlSgyF
+$Ss26_forceBridgeFromObjectiveCyxyXl_xmtlF5Store16TemplateTimeSpanC_Tg5
+$SSv4load14fromByteOffset2asxSi_xmtlFs9UnmanagedVyyXlG_Tgq5
+$Ss11SetIteratorV11_nativeNextxSgyF5Store16TemplateTimeSpanC_Tg5
+$Ss16_NativeSetBufferV12assertingGetyxs01_aB5IndexVyxGF5Store16TemplateTimeSpanC_Tg5
+$Ss16_NativeSetBufferV12assertingGetyxs01_aB5IndexVyxGF5Store16TemplateTimeSpanC_Tg5Tf4nn_g
+makeIterator
+$Ss17_CocoaSetIteratorCyABs6_NSSet_pcfc
+$Ss16_NativeSetBufferV5index5afters01_aB5IndexVyxGAG_tF5Store16TemplateTimeSpanC_Tg5
 currentLoggedInMechanic
 _$Ss2eeoiySbx_xts16RawRepresentableRzs9Equatable0B5ValueRpzlF5Store11AutoServiceC6StatusO_Tgq5
 _$S5Store11AutoServiceC6StatusOSQAASQ2eeoiySbx_xtFZTW
@@ -1069,9 +1145,7 @@ $S5Store11AutoServiceC6StatusOSYAAWa
 $S5Store11AutoServiceC6StatusOSHAAWa
 $S5Store11AutoServiceCMa
 $SSS2eeoiySbSS_SStFZTf4xxd_n
-$Ss16_UnmanagedStringVss5UInt8VRszrlE12compareASCII2toSiAByADG_tF
 $Ss16_UnmanagedStringVss5UInt8VRszrlE12compareASCII2toSiAByADG_tFTf4xx_n
-$Ss11_StringGutsV19_unmanagedASCIIViews010_UnmanagedA0Vys5UInt8VGvg
 $Ss11_StringGutsV19_unmanagedASCIIViews010_UnmanagedA0Vys5UInt8VGvgTf4x_n
 $Ss12_ArrayBufferV19_getElementSlowPathyyXlSiF5Store11AutoServiceC_Tg5
 recentlyUsedSort.get
@@ -1079,6 +1153,7 @@ fetchMostRecentlyUsed
 $SSa22_allocateUninitializedySayxG_SpyxGtSiFZ5Store11AutoServiceC_Tg5
 $SSa19_uninitializedCountSayxGSi_tcfC5Store11AutoServiceC_Tg5
 $SSa11_getElement_20wasNativeTypeChecked22matchingSubscriptCheckxSi_Sbs16_DependenceTokenVtF5Store11AutoServiceC_Tg5
+$SSa29_hoistableIsNativeTypeCheckedSbyF5Store11AutoServiceC_Tg5
 $Ss16_SmallUTF8StringVyABSgSRys5UInt8VGcfC
 type.get
 type.materialize
@@ -1093,5 +1168,5 @@ _$S5Store9PricePartCSo8NSObjectCSH10ObjectiveCWL
 parts.materialize
 $S5Store9PricePartCSo8NSObjectCSH10ObjectiveCWl
 Price+CoreDataProperties.swift
-Apple LLVM version 10.0.0 (clang-1000.11.45.2)
-/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.0_10A255/carswaddlestore/1.102/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/DerivedSources/Store_vers.c
+Apple LLVM version 10.0.0 (clang-1000.11.45.5)
+/Users/kylekendall/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10B61/carswaddlestore/1.107/Build/Intermediates.noindex/ArchiveIntermediates/Store/IntermediateBuildFilesPath/Store.build/Release-iphoneos/Store.build/DerivedSources/Store_vers.c

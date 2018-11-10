@@ -10,14 +10,21 @@ import Store
 import CarSwaddleNetworkRequest
 import CoreData
 
+//extension TemplateTimeSpan {
+//
+//    static func templateTimeSpan(with json: JSONObject, in context: NSManagedObjectContext) -> TemplateTimeSpan? {
+//        if let identifier = json.identifier {
+//            return TemplateTimeSpan.fetch(with: identifier, in: context) ?? TemplateTimeSpan(json: json, context: context)
+//        } else {
+//            return TemplateTimeSpan(json: json, context: context)
+//        }
+//    }
+//
+//}
 
-public class TemplateTimeSpanNetwork {
-    
-    public let serviceRequest: Request
-    
-    public init(serviceRequest: Request) {
-        self.serviceRequest = serviceRequest
-    }
+
+
+public class TemplateTimeSpanNetwork: Network {
     
     private lazy var availabilityService = AvailabilityService(serviceRequest: serviceRequest)
     
@@ -36,7 +43,7 @@ public class TemplateTimeSpanNetwork {
                 mechanic?.deleteAllCurrentScheduleTimeSpans()
                 
                 for json in jsonArray ?? [] {
-                    guard let span = TemplateTimeSpan(json: json, context: context) else { continue }
+                    guard let span = TemplateTimeSpan.fetchOrCreate(json: json, context: context) else { continue }
                     (try? context.obtainPermanentIDs(for: [span]))
                     timeSpans.append(span.objectID)
                 }
@@ -66,7 +73,7 @@ public class TemplateTimeSpanNetwork {
                 mechanic?.deleteAllCurrentScheduleTimeSpans()
                 
                 for json in jsonArray ?? [] {
-                    guard let span = TemplateTimeSpan(json: json, context: context) else { continue }
+                    guard let span = TemplateTimeSpan.fetchOrCreate(json: json, context: context) else { continue }
                     (try? context.obtainPermanentIDs(for: [span]))
                     timeSpans.append(span.objectID)
                 }

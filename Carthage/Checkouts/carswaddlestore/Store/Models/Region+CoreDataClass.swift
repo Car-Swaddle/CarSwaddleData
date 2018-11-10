@@ -12,9 +12,9 @@ import CoreData
 import CoreLocation
 
 @objc(Region)
-public final class Region: NSManagedObject, NSManagedObjectFetchable {
+public final class Region: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
 
-    public convenience init?(json: JSONObject, in context: NSManagedObjectContext) {
+    public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let latitude = json["latitude"] as? Double,
             let longitude = json["longitude"] as? Double,
             let radius = json["radius"] as? Double,

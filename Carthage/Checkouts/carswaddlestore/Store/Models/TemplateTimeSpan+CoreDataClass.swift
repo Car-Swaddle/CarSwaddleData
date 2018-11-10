@@ -22,7 +22,7 @@ public enum Weekday: Int16, CaseIterable {
 }
 
 @objc(TemplateTimeSpan)
-public final class TemplateTimeSpan: NSManagedObject, NSManagedObjectFetchable {
+public final class TemplateTimeSpan: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
     
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let identifier = json["id"] as? String,
