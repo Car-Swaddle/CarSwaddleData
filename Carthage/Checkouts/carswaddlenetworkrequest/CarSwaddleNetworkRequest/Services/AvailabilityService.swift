@@ -25,7 +25,6 @@ final public class AvailabilityService: Service {
         do {
             try urlRequest.authenticate()
         } catch { print("couldn't authenticate") }
-//        return urlRequest?.send { data, error in
         return serviceRequest.send(urlRequest: urlRequest) { data, error in
             guard let data = data,
                 let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [JSONObject] else {

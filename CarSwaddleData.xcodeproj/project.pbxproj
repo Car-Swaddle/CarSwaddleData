@@ -25,6 +25,8 @@
 		997DBC4B219418F70080F42C /* CarSwaddleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC4A219418F70080F42C /* CarSwaddleNetwork.swift */; };
 		997DBC4D21969F910080F42C /* JSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC4C21969F910080F42C /* JSONExtension.swift */; };
 		997DBC4F2196B8640080F42C /* MechanicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC4E2196B8640080F42C /* MechanicTests.swift */; };
+		997DBC5A21977A310080F42C /* User+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC5921977A310080F42C /* User+Requests.swift */; };
+		997DBC5C21977ED20080F42C /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC5B21977ED20080F42C /* UserTests.swift */; };
 		99F026BC217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F026BB217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift */; };
 		99F026BE217F061A005FEFC7 /* TemplateTimeSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F026BD217F061A005FEFC7 /* TemplateTimeSpanTests.swift */; };
 		99F026C621802131005FEFC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F026C521802131005FEFC7 /* AppDelegate.swift */; };
@@ -112,6 +114,8 @@
 		997DBC4A219418F70080F42C /* CarSwaddleNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSwaddleNetwork.swift; sourceTree = "<group>"; };
 		997DBC4C21969F910080F42C /* JSONExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtension.swift; sourceTree = "<group>"; };
 		997DBC4E2196B8640080F42C /* MechanicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicTests.swift; sourceTree = "<group>"; };
+		997DBC5921977A310080F42C /* User+Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Requests.swift"; sourceTree = "<group>"; };
+		997DBC5B21977ED20080F42C /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		99F026BB217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TemplateTimeSpan+Requests.swift"; sourceTree = "<group>"; };
 		99F026BD217F061A005FEFC7 /* TemplateTimeSpanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTimeSpanTests.swift; sourceTree = "<group>"; };
 		99F026C321802130005FEFC7 /* CarSwaddleDataHostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSwaddleDataHostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +195,7 @@
 				99F026BB217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift */,
 				99F02783218580C0005FEFC7 /* Region+Requests.swift */,
 				997DBC48219418830080F42C /* Mechanic+Requests.swift */,
+				997DBC5921977A310080F42C /* User+Requests.swift */,
 				997DBC4A219418F70080F42C /* CarSwaddleNetwork.swift */,
 				997DBC4C21969F910080F42C /* JSONExtension.swift */,
 				9912CDC6216C81AE0006FDDF /* Auth.swift */,
@@ -205,6 +210,7 @@
 				9912CDBA216C81760006FDDF /* CarSwaddleDataTests.swift */,
 				99F026BD217F061A005FEFC7 /* TemplateTimeSpanTests.swift */,
 				997DBC4E2196B8640080F42C /* MechanicTests.swift */,
+				997DBC5B21977ED20080F42C /* UserTests.swift */,
 				99F0278D21858983005FEFC7 /* RegionTests.swift */,
 				99F026EB21803F4E005FEFC7 /* LoginTestCase.swift */,
 				9912CDBC216C81760006FDDF /* Info.plist */,
@@ -451,6 +457,7 @@
 				997DBC4D21969F910080F42C /* JSONExtension.swift in Sources */,
 				99F026BC217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift in Sources */,
 				997DBC49219418830080F42C /* Mechanic+Requests.swift in Sources */,
+				997DBC5A21977A310080F42C /* User+Requests.swift in Sources */,
 				9912CDC7216C81AE0006FDDF /* Auth.swift in Sources */,
 				99F02784218580C0005FEFC7 /* Region+Requests.swift in Sources */,
 			);
@@ -460,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997DBC5C21977ED20080F42C /* UserTests.swift in Sources */,
 				997DBC4F2196B8640080F42C /* MechanicTests.swift in Sources */,
 				99F026BE217F061A005FEFC7 /* TemplateTimeSpanTests.swift in Sources */,
 				99F026EC21803F4E005FEFC7 /* LoginTestCase.swift in Sources */,
