@@ -39,6 +39,23 @@ public final class UserNetwork: Network {
     }
     
     
+    @discardableResult
+    public func requestCurrentUser(in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return userService.getCurrentUser { json, error in
+            context.perform {
+                var userObjectID: NSManagedObjectID?
+                defer {
+                    completion(userObjectID, error)
+                }
+                
+                guard let json = json else { return }
+                let user = User.fetchOrCreate(json: json, context: context)
+                context.persist()
+                userObjectID = user?.objectID
+            }
+        }
+    }
+    
     /*
      @discardableResult
      public func getNearestMechanics(limit: Int, latitude: Double, longitude: Double, maxDistance: Double, in context: NSManagedObjectContext, completion: @escaping (_ mechanicIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {

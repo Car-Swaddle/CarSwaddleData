@@ -41,4 +41,25 @@ class UserTests: LoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    
+    func testGetCurrentUser() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        store.privateContext { [weak self] context in
+            self?.userNetwork.requestCurrentUser(in: context) { userObjectID, error in
+                store.mainContext{ mainContext in
+                    guard let userObjectID = userObjectID else {
+                        XCTAssert(false, "userID doesn't exist")
+                        return
+                    }
+                    let user = mainContext.object(with: userObjectID) as? User
+                    XCTAssert(user != nil, "User doesn't exist")
+                    exp.fulfill()
+                }
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
 }
