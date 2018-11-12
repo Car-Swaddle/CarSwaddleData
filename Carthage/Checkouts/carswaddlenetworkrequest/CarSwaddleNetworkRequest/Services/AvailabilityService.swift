@@ -36,8 +36,14 @@ final public class AvailabilityService: Service {
     }
     
     @discardableResult
-    public func getAvailability(completion: @escaping JSONArrayCompletion) -> URLSessionDataTask? {
-        guard var urlRequest = serviceRequest.get(with: .availability) else { return nil }
+    public func getAvailability(ofMechanicWithID mechanicID: String? = nil,  completion: @escaping JSONArrayCompletion) -> URLSessionDataTask? {
+        
+        var queryItems: [URLQueryItem] = []
+        if let mechanicID = mechanicID {
+            queryItems.append(URLQueryItem(name: "mechanicID", value: mechanicID))
+        }
+        
+        guard var urlRequest = serviceRequest.get(with: .availability, queryItems: queryItems) else { return nil }
         do {
             try urlRequest.authenticate()
         } catch { print("couldn't authenticate") }

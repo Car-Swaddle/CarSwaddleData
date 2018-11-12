@@ -29,8 +29,8 @@ public class TemplateTimeSpanNetwork: Network {
     private lazy var availabilityService = AvailabilityService(serviceRequest: serviceRequest)
     
     @discardableResult
-    public func getTimeSpans(in context: NSManagedObjectContext, completion: @escaping (_ timeSpans: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
-        return availabilityService.getAvailability { jsonArray, error in
+    public func getTimeSpans(ofMechanicWithID mechanicID: String? = nil, in context: NSManagedObjectContext, completion: @escaping (_ timeSpans: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return availabilityService.getAvailability(ofMechanicWithID: mechanicID) { jsonArray, error in
             context.perform {
                 var timeSpans: [NSManagedObjectID] = []
                 defer {

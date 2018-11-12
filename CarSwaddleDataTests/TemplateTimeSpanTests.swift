@@ -32,10 +32,27 @@ class TemplateTimeSpanTests: LoginTestCase {
         context.persist()
     }
     
-    func testSavingTemplateTimeSpans() {
+    func testGettingTemplateTimeSpans() {
         let exp = expectation(description: "\(#function)\(#line)")
         let context = store.mainContext
         network.getTimeSpans(in: context) { ids, error in
+            
+            let object = context.object(with: ids[0]) as! TemplateTimeSpan
+            
+            XCTAssert(object.duration != 0, "Should have ids")
+            XCTAssert(object.identifier != "", "Should have ids")
+            XCTAssert(object.startTime != 0, "Should have ids")
+            XCTAssert(object.weekday.rawValue != 0, "Should have ids")
+            XCTAssert(ids.count > 0, "Should have ids")
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    func testGettingTemplateTimeSpansWithID() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        let context = store.mainContext
+        network.getTimeSpans(ofMechanicWithID: "3f255e10-da81-11e8-bdce-ddcdc692c2d8", in: context) { ids, error in
             
             let object = context.object(with: ids[0]) as! TemplateTimeSpan
             
