@@ -21,15 +21,15 @@ class MechanicTests: LoginTestCase {
         let exp = expectation(description: "\(#function)\(#line)")
         
         store.privateContext { [weak self] context in
-            self?.mechanicNetwork.getNearestMechanics(limit: 10, latitude: testMechanicLatitude, longitude: testMechanicLongitude, maxDistance: 10, in: context) { mechanicIDs, error in
+            self?.mechanicNetwork.getNearestMechanics(limit: 10, latitude: testMechanicLatitude, longitude: testMechanicLongitude, maxDistance: 1000, in: context) { mechanicIDs, error in
                 
-                XCTAssert(mechanicIDs.count > 1, "Should have 1 mechanic, got: \(mechanicIDs.count)")
+                XCTAssert(mechanicIDs.count > 0, "Should have 1 mechanic, got: \(mechanicIDs.count)")
                 
                 for mechanicID in mechanicIDs {
                     let mechanic = context.object(with: mechanicID) as? Mechanic
                     XCTAssert(mechanic != nil, "Mechanic is nil, should have gotten a mechanic")
                     XCTAssert(mechanic?.user != nil, "User is nil, should have gotten a user")
-                    XCTAssert(mechanic?.serviceRegion != nil, "serviceRegion is nil, should have gotten a servieRegion")
+                    XCTAssert(mechanic?.serviceRegion != nil, "serviceRegion is nil, should have gotten a serviceRegion")
                 }
                 
                 exp.fulfill()

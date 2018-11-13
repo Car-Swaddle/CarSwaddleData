@@ -10,19 +10,6 @@ import Store
 import CarSwaddleNetworkRequest
 import CoreData
 
-//extension TemplateTimeSpan {
-//
-//    static func templateTimeSpan(with json: JSONObject, in context: NSManagedObjectContext) -> TemplateTimeSpan? {
-//        if let identifier = json.identifier {
-//            return TemplateTimeSpan.fetch(with: identifier, in: context) ?? TemplateTimeSpan(json: json, context: context)
-//        } else {
-//            return TemplateTimeSpan(json: json, context: context)
-//        }
-//    }
-//
-//}
-
-
 
 public class TemplateTimeSpanNetwork: Network {
     
