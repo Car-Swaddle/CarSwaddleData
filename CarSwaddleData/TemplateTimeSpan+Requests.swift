@@ -32,17 +32,19 @@ public class TemplateTimeSpanNetwork: Network {
                 } else {
                     mechanic = Mechanic.currentLoggedInMechanic(in: context)
                 }
-                mechanic?.deleteAllCurrentScheduleTimeSpans()
-                
-                var t: [TemplateTimeSpan] = []
+                var previousTimeSpans = mechanic?.scheduleTimeSpans
                 
                 for json in jsonArray ?? [] {
                     guard let span = TemplateTimeSpan.fetchOrCreate(json: json, context: context) else { continue }
                     if span.objectID.isTemporaryID {
                         (try? context.obtainPermanentIDs(for: [span]))
                     }
-                    t.append(span)
+                    previousTimeSpans?.remove(span)
                     timeSpanObjectIDs.append(span.objectID)
+                }
+                
+                for timeSpan in previousTimeSpans ?? [] {
+                    context.delete(timeSpan)
                 }
                 
                 context.persist()
@@ -68,13 +70,21 @@ public class TemplateTimeSpanNetwork: Network {
                 }
                 
                 let mechanic = Mechanic.currentLoggedInMechanic(in: context)
-                mechanic?.deleteAllCurrentScheduleTimeSpans()
+                var previousTimeSpans = mechanic?.scheduleTimeSpans
                 
                 for json in jsonArray ?? [] {
                     guard let span = TemplateTimeSpan.fetchOrCreate(json: json, context: context) else { continue }
-                    (try? context.obtainPermanentIDs(for: [span]))
+                    if span.objectID.isTemporaryID {
+                        (try? context.obtainPermanentIDs(for: [span]))
+                    }
+                    previousTimeSpans?.remove(span)
                     timeSpanObjectIDs.append(span.objectID)
                 }
+                
+                for timeSpan in previousTimeSpans ?? [] {
+                    context.delete(timeSpan)
+                }
+                
                 context.persist()
             }
         }
