@@ -35,16 +35,24 @@ class TemplateTimeSpanTests: LoginTestCase {
     func testGettingTemplateTimeSpans() {
         let exp = expectation(description: "\(#function)\(#line)")
         let context = store.mainContext
-        network.getTimeSpans(in: context) { ids, error in
-            
-            let object = context.object(with: ids[0]) as! TemplateTimeSpan
-            
-            XCTAssert(object.duration != 0, "Should have ids")
-            XCTAssert(object.identifier != "", "Should have ids")
-            XCTAssert(object.startTime != 0, "Should have ids")
-//            XCTAssert(object.weekday.rawValue != 0, "Should have ids")
-            XCTAssert(ids.count > 0, "Should have ids")
-            exp.fulfill()
+        
+        let mechanic = Mechanic.fetch(with: mechanicID, in: context)
+        
+        store.privateContext { [weak self] pCtx in
+            self?.network.getTimeSpans(in: pCtx) { ids, error in
+                context.perform {
+                    let object = context.object(with: ids[0]) as! TemplateTimeSpan
+                    
+                    XCTAssert(object.duration != 0, "Should have ids")
+                    XCTAssert(object.identifier != "", "Should have ids")
+                    XCTAssert(object.startTime != 0, "Should have ids")
+                    //            XCTAssert(object.weekday.rawValue != 0, "Should have ids")
+                    XCTAssert(object.mechanic.identifier == mechanic?.identifier, "Should have same mechanic object IDS")
+                    XCTAssert(object.mechanic == mechanic, "Should have same mechanic")
+                    XCTAssert(ids.count > 0, "Should have ids")
+                    exp.fulfill()
+                }
+            }
         }
         
         waitForExpectations(timeout: 40, handler: nil)
