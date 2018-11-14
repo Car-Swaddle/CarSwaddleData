@@ -19,21 +19,32 @@ public class TemplateTimeSpanNetwork: Network {
     public func getTimeSpans(ofMechanicWithID mechanicID: String? = nil, in context: NSManagedObjectContext, completion: @escaping (_ timeSpans: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return availabilityService.getAvailability(ofMechanicWithID: mechanicID) { jsonArray, error in
             context.perform {
-                var timeSpans: [NSManagedObjectID] = []
+                var timeSpanObjectIDs: [NSManagedObjectID] = []
                 defer {
                     DispatchQueue.global().async {
-                        completion(timeSpans, error)
+                        completion(timeSpanObjectIDs, error)
                     }
                 }
                 
-                let mechanic = Mechanic.currentLoggedInMechanic(in: context)
+                let mechanic: Mechanic?
+                if let mechanicID = mechanicID {
+                    mechanic = Mechanic.fetch(with: mechanicID, in: context)
+                } else {
+                    mechanic = Mechanic.currentLoggedInMechanic(in: context)
+                }
                 mechanic?.deleteAllCurrentScheduleTimeSpans()
+                
+                var t: [TemplateTimeSpan] = []
                 
                 for json in jsonArray ?? [] {
                     guard let span = TemplateTimeSpan.fetchOrCreate(json: json, context: context) else { continue }
-                    (try? context.obtainPermanentIDs(for: [span]))
-                    timeSpans.append(span.objectID)
+                    if span.objectID.isTemporaryID {
+                        (try? context.obtainPermanentIDs(for: [span]))
+                    }
+                    t.append(span)
+                    timeSpanObjectIDs.append(span.objectID)
                 }
+                
                 context.persist()
             }
         }
@@ -49,10 +60,10 @@ public class TemplateTimeSpanNetwork: Network {
         
         return availabilityService.postAvailability(jsonArray: jsonArray) { jsonArray, error in
             context.perform {
-                var timeSpans: [NSManagedObjectID] = []
+                var timeSpanObjectIDs: [NSManagedObjectID] = []
                 defer {
                     DispatchQueue.global().async {
-                        completion(timeSpans, error)
+                        completion(timeSpanObjectIDs, error)
                     }
                 }
                 
@@ -62,7 +73,7 @@ public class TemplateTimeSpanNetwork: Network {
                 for json in jsonArray ?? [] {
                     guard let span = TemplateTimeSpan.fetchOrCreate(json: json, context: context) else { continue }
                     (try? context.obtainPermanentIDs(for: [span]))
-                    timeSpans.append(span.objectID)
+                    timeSpanObjectIDs.append(span.objectID)
                 }
                 context.persist()
             }
