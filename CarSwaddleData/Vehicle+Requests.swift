@@ -13,9 +13,9 @@ import CoreLocation
 import CoreData
 
 
-typealias VehicleCompletion = (_ vehicleObjectID: NSManagedObjectID?, _ error: Error?) -> Void
+public typealias VehicleCompletion = (_ vehicleObjectID: NSManagedObjectID?, _ error: Error?) -> Void
 
-class VehicleNetwork: Network {
+public class VehicleNetwork: Network {
     
     private lazy var vehicleService = VehicleService(serviceRequest: self.serviceRequest)
     
