@@ -41,10 +41,46 @@ class TemplateTimeSpanTests: XCTestCase {
         
         if let timeSpan = timeSpan {
             XCTAssert(mechanic?.scheduleTimeSpans.contains(timeSpan) == true, "Mechanic should have time span")
+            XCTAssert(timeSpan.mechanic == mechanic, "Mechanic should have time span")
         } else {
             XCTAssert(false, "should have a time span")
         }
+    }
+    
+    func testCreateAndPersistDifferentContext() {
         
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        let context = store.mainContext
+        let mechanic = Mechanic.fetch(with: mechanicID, in: context)
+        
+        let tJSON = createValidJSON(weekday: .sunday, duration: 3600, startTime: 3600)
+        
+        store.privateContext { pCtx in
+            let timeSpan = TemplateTimeSpan(json: tJSON, context: context)
+            
+            pCtx.persist()
+            
+            let tObjectID = timeSpan?.objectID
+            DispatchQueue.main.async {
+                store.mainContext { mCtx in
+                    
+                    let mainTS = mCtx.object(with: tObjectID!) as! TemplateTimeSpan
+                    
+                    XCTAssert(mainTS.mechanic != nil, "Mechanic should exist")
+                    
+                    if let timeSpan = timeSpan {
+                        XCTAssert(mechanic?.scheduleTimeSpans.contains(timeSpan) == true, "Mechanic should have time span")
+                        XCTAssert(timeSpan.mechanic == mechanic, "Mechanic should have time span")
+                    } else {
+                        XCTAssert(false, "should have a time span")
+                    }
+                    exp.fulfill()
+                }
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
     }
     
 }

@@ -18,6 +18,12 @@ class TemplateTimeSpanTests: LoginTestCase {
     override func setUp() {
         super.setUp()
         let context = store.mainContext
+        let allMech = Mechanic.fetchAllObjects(with: [NSSortDescriptor(key: "identifier", ascending: true)], in: context)
+        
+        for m in allMech {
+            context.delete(m)
+        }
+        
         let user = User.fetch(with: userID, in: context) ?? User(json: userJSON, context: context)
         let mechanic = Mechanic.fetch(with: mechanicID, in: context) ?? Mechanic(context: context)
         mechanic.identifier = mechanicID
