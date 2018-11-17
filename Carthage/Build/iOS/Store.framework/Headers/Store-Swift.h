@@ -187,6 +187,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS_NAMED("AutoService")
 @interface AutoService : NSManagedObject
+- (void)awakeFromInsert;
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -217,6 +218,7 @@ SWIFT_CLASS_NAMED("AutoService")
 
 SWIFT_CLASS_NAMED("Location")
 @interface Location : NSManagedObject
+- (void)awakeFromInsert;
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -271,6 +273,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 
 SWIFT_CLASS_NAMED("OilChange")
 @interface OilChange : NSManagedObject
+- (void)awakeFromInsert;
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -334,6 +337,7 @@ SWIFT_CLASS_NAMED("Region")
 
 SWIFT_CLASS_NAMED("ServiceEntity")
 @interface ServiceEntity : NSManagedObject
+- (void)awakeFromInsert;
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 

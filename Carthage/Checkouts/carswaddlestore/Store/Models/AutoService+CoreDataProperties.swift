@@ -20,17 +20,17 @@ extension AutoService {
     
     public static func createWithDefaults(context: NSManagedObjectContext) -> AutoService {
         let autoService = AutoService(context: context)
-        autoService.creationDate = Date()
-        autoService.identifier = tempID
-        autoService.status = .created
         
-        let oilChange = OilChange.createWithDefaults(context: context)
-        
-        let entity = ServiceEntity(autoService: autoService, oilChange: oilChange, context: context)
+        let oilChange = OilChange(context: context)
+        _ = ServiceEntity(autoService: autoService, oilChange: oilChange, context: context)
+        autoService.vehicle = Vehicle.defaultVehicle(in: context)
+        if let user = User.currentUser(context: context) {
+            autoService.creator = user
+        }
         
         return autoService
     }
-
+    
     @NSManaged public var identifier: String
     @NSManaged public var notes: String?
     @NSManaged public var scheduledDate: Date?

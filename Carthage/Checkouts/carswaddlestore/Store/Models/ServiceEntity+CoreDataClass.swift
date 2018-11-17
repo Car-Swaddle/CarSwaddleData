@@ -13,9 +13,18 @@ import CoreData
 @objc(ServiceEntity)
 final public class ServiceEntity: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
     
+    public static let tempID = "tempID"
+    
     public enum EntityType: String, CaseIterable {
         case oilChange = "OILCHANGE"
     }
+    
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+        primitiveIdentifier = ServiceEntity.tempID
+    }
+    
+    @NSManaged private var primitiveIdentifier: String
     
     /// Must set actual eneity relationship on your own. It is not set here and does not require it.
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {

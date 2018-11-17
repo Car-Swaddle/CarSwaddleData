@@ -32,6 +32,16 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
         return nil
     }
     
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+        
+        primitiveCreationDate = Date()
+        primitiveIdentifier = AutoService.tempID
+        primitiveStatus = Status.created.rawValue
+    }
+    
+    @NSManaged private var primitiveIdentifier: String
+    @NSManaged private var primitiveCreationDate: Date
     @NSManaged private var primitiveStatus: String
     
     public var status: Status {

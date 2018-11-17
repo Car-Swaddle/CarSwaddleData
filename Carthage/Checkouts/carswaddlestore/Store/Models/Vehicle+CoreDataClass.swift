@@ -61,6 +61,12 @@ extension Vehicle {
 //        return ((try? context.fetch(fetchRequest)) ?? []).first
 //    }
     
+    public static func defaultVehicle(in context: NSManagedObjectContext) -> Vehicle? {
+        guard let userID = User.currentUserID else { return nil }
+        let recentlyUsedAutoService = AutoService.fetchMostRecentlyUsed(forUserID: userID, in: context)?.vehicle
+        return  recentlyUsedAutoService ?? Vehicle.fetchFirstVehicle(forUserID: userID, in: context)
+    }
+    
     public static func fetchVehicles(forUserID userID: String, in context: NSManagedObjectContext) -> [Vehicle] {
         let fetchRequest: NSFetchRequest<Vehicle> = Vehicle.fetchRequestRecentlyCreated(forUserID: userID)
         return (try? context.fetch(fetchRequest)) ?? []

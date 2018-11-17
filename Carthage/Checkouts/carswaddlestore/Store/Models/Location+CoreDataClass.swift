@@ -13,9 +13,18 @@ import CoreLocation
 @objc(Location)
 public final class Location: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
     
+    public static let tempID: String = "tempID"
+    
     public var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
+    
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+        primitiveIdentifier = Location.tempID
+    }
+    
+    @NSManaged private var primitiveIdentifier: String
     
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let id = json.identifier,

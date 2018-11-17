@@ -34,6 +34,7 @@ public final class OilChange: NSManagedObject, NSManagedObjectFetchable, JSONIni
     }
     
     @NSManaged private var primitiveOilType: String
+    @NSManaged private var primitiveIdentifier: String
     
     private static let oilTypeKey = "oilType"
     
@@ -52,6 +53,12 @@ public final class OilChange: NSManagedObject, NSManagedObjectFetchable, JSONIni
             primitiveOilType = newValue.rawValue
             didChangeValue(forKey: OilChange.oilTypeKey)
         }
+    }
+    
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+        primitiveOilType = OilChange.defaultOilType.rawValue
+        primitiveIdentifier = OilChange.tempID
     }
     
 }
