@@ -16,7 +16,7 @@ final public class ServiceEntity: NSManagedObject, NSManagedObjectFetchable, JSO
     public static let tempID = "tempID"
     
     public enum EntityType: String, CaseIterable {
-        case oilChange = "OILCHANGE"
+        case oilChange = "OIL_CHANGE"
     }
     
     public override func awakeFromInsert() {
@@ -29,12 +29,25 @@ final public class ServiceEntity: NSManagedObject, NSManagedObjectFetchable, JSO
     /// Must set actual eneity relationship on your own. It is not set here and does not require it.
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let id = json.identifier,
-            let autoServiceID = json["autoServiceID"] as? String,
-            let autoService = AutoService.fetch(with: autoServiceID, in: context) else { return nil }
+            let entityTypeString = json["entityType"] as? String,
+            let entityType = EntityType(rawValue: entityTypeString) else { return nil }
         
         self.init(context: context)
         self.identifier = id
-        self.autoService = autoService
+        self.entityType = entityType
+        
+        if let autoServiceID = json["autoServiceID"] as? String,
+            let autoService = AutoService.fetch(with: autoServiceID, in: context) {
+            self.autoService = autoService
+        }
+        
+        switch entityType {
+        case .oilChange:
+            if let oilChangeJSON = json["oilChange"] as? JSONObject,
+                let oilChange = OilChange(json: oilChangeJSON, context: context) {
+                self.oilChange = oilChange
+            }
+        }
     }
     
     

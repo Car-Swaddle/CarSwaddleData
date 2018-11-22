@@ -11,11 +11,28 @@ import Foundation
 extension NetworkRequest.Request.Endpoint {
     fileprivate static let services = Request.Endpoint(rawValue: "/hello")
     fileprivate static let user = Request.Endpoint(rawValue: "/user")
-    fileprivate static let autoService = Request.Endpoint(rawValue: "/auto-service")
+    fileprivate static let autoService = Request.Endpoint(rawValue: "/api/auto-service")
 }
 
 /// The service used to make requests to the server
 public final class AutoServiceService: Service {
+    
+    @discardableResult
+    public func createAutoService(autoServiceJSON: JSONObject, completion: @escaping JSONCompletion) -> URLSessionDataTask? {
+        guard let body = (try? JSONSerialization.data(withJSONObject: autoServiceJSON, options: [])),
+            var urlRequest = serviceRequest.post(with: .autoService, body: body, contentType: .applicationJSON) else { return nil }
+        do {
+            try urlRequest.authenticate()
+        } catch { print("couldn't authenticate") }
+        return serviceRequest.send(urlRequest: urlRequest) { data, error in
+            guard let data = data,
+                let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? JSONObject else {
+                    completion(nil, error)
+                    return
+            }
+            completion(json, nil)
+        }
+    }
     
 //    @discardableResult
 //    public func getServer(with completion: @escaping (_ data: Data?, _ error: Error?)->()) -> URLSessionDataTask? {
