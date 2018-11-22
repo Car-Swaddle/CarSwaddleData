@@ -61,4 +61,13 @@ public final class OilChange: NSManagedObject, NSManagedObjectFetchable, JSONIni
         primitiveIdentifier = OilChange.tempID
     }
     
+    public func toJSON(includeIdentifier: Bool = false) -> JSONObject {
+        var json: JSONObject = [:]
+        json["oilType"] = oilType.rawValue
+        if includeIdentifier {
+            json["identifier"] = identifier
+        }
+        return json
+    }
+    
 }

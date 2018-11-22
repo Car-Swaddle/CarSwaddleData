@@ -75,4 +75,33 @@ final public class ServiceEntity: NSManagedObject, NSManagedObjectFetchable, JSO
         }
     }
     
+    public func toJSON(includeIdentifier: Bool = false, includeEntityIdentifier: Bool = false) -> JSONObject {
+        var entityJSON: JSONObject = [:]
+        entityJSON["entityType"] = entityType.rawValue
+        switch entityType {
+        case .oilChange:
+            if let oilChange = oilChange {
+                entityJSON["specificService"] = oilChange.toJSON(includeIdentifier: includeEntityIdentifier)
+            }
+        }
+        
+        if includeIdentifier {
+            entityJSON["identifier"] = identifier
+        }
+        
+        return entityJSON
+    }
+    
+}
+
+public extension Sequence where Iterator.Element == ServiceEntity {
+    
+    public func toJSONArray(includeIdentifiers: Bool = false, includeEntityIdentifiers: Bool = false) -> [JSONObject] {
+        var jsonArray: [JSONObject] = []
+        for entity in self {
+            jsonArray.append(entity.toJSON(includeIdentifier: includeIdentifiers, includeEntityIdentifier: includeEntityIdentifiers))
+        }
+        return jsonArray
+    }
+    
 }

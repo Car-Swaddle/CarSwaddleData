@@ -52,5 +52,19 @@ public final class Location: NSManagedObject, NSManagedObjectFetchable, JSONInit
         self.longitude = coordinate.longitude
         self.autoService = autoService
     }
+    
+    public func toJSON(includeIdentifier: Bool = false) -> JSONObject {
+        var json: JSONObject = [:]
+        
+        json["latitude"] = latitude
+        json["longitude"] = longitude
+        json["streetAddress"] = streetAddress
+        
+        if includeIdentifier {
+            json["identifier"] = identifier
+        }
+        
+        return json
+    }
 
 }

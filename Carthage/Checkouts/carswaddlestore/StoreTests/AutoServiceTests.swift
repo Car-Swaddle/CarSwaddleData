@@ -12,6 +12,17 @@ import CoreData
 
 class AutoServiceTests: XCTestCase {
     
+    override func setUp() {
+        super.setUp()
+        let allAutoServices = AutoService.fetchAllObjects(with: [NSSortDescriptor(key: "identifier", ascending: true)], in: store.mainContext)
+        
+        for a in allAutoServices {
+            store.mainContext.delete(a)
+        }
+        
+        store.mainContext.persist()
+    }
+    
     func testCreateFromJSON() {
         let context = store.mainContext
         
@@ -72,7 +83,7 @@ private let newJSON: JSONObject = [
             ],
             "type": "Point"
         ],
-        "streetAddress": "<null>",
+        "streetAddress": NSNull(),
         "updatedAt": "2018-11-21T08:47:36.376Z",
     ], "id": "18396110-ed6a-11e8-8e07-7b80a5dfaf20",
        "scheduledDate": "2018-11-21T08:47:30.015Z",
@@ -85,7 +96,7 @@ private let newJSON: JSONObject = [
         "name": "Edge",
         "updatedAt": "2018-11-21T08:47:36.371Z",
         "userID": "109fd510-ea9f-11e8-a56c-2953c4831dcb",
-        "vin": "<null>",
+        "vin": NSNull(),
     ]
 ]
 
@@ -93,7 +104,7 @@ private let json: JSONObject = [
     "id": "37bc7a00-eb75-11e8-a860-bd110592a5e0",
     "scheduledDate": "2018-11-18T17:00:00.000Z",
     "status": "scheduled",
-    "notes": "<null>",
+    "notes": NSNull(),
     "createdAt": "2018-11-18T21:02:11.361Z",
     "updatedAt": "2018-11-18T21:02:11.373Z",
     "userID": "109fd510-ea9f-11e8-a56c-2953c4831dcb",
@@ -107,7 +118,7 @@ private let json: JSONObject = [
             40.38097000000002
             ]
         ],
-        "streetAddress": "<null>",
+        "streetAddress": NSNull(),
         "createdAt": "2018-11-18T19:24:40.395Z",
         "updatedAt": "2018-11-18T21:02:11.395Z",
         "autoServiceID": "37bc7a00-eb75-11e8-a860-bd110592a5e0"
@@ -132,7 +143,7 @@ private let json: JSONObject = [
         "id": "bbb8c060-eaa9-11e8-a56c-2953c4831dcb",
         "licensePlate": "153 UGC",
         "name": "Edge",
-        "vin": "<null>",
+        "vin": NSNull(),
         "createdAt": "2018-11-17T20:45:35.462Z",
         "updatedAt": "2018-11-18T21:02:11.389Z",
         "userID": "109fd510-ea9f-11e8-a56c-2953c4831dcb",

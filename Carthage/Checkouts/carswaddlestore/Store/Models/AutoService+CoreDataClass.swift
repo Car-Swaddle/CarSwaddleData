@@ -24,7 +24,7 @@ public extension AutoService {
 private let statusKey = "status"
 private let typeKey = "type"
 
-private let dateFormatter: DateFormatter = {
+private let serverDateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     return dateFormatter
@@ -68,7 +68,7 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let id = json.identifier,
             let scheduledDateString = json["scheduledDate"] as? String,
-            let scheduledDate = dateFormatter.date(from: scheduledDateString),
+            let scheduledDate = serverDateFormatter.date(from: scheduledDateString),
             let statusString = json["status"] as? String,
             let status = AutoService.Status(rawValue: statusString),
             let userID = json["userID"] as? String,
@@ -128,6 +128,12 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
     
 }
 
+struct StoreError: Error {
+    let rawValue: String
+    
+    static let invalidJSON = StoreError(rawValue: "invalidJSON")
+}
+
 extension AutoService {
     
     public static func fetchMostRecentlyUsed(forUserID userID: String, in context: NSManagedObjectContext) -> AutoService? {
@@ -149,6 +155,54 @@ extension AutoService {
     
     public static var recentlyUsedSort: NSSortDescriptor {
         return NSSortDescriptor(key: #keyPath(AutoService.creationDate), ascending: true)
+    }
+    
+    public func toJSON(includeIdentifiers: Bool = false) throws -> JSONObject {
+        var json: JSONObject = [:]
+        
+        if let locationID = location?.identifier {
+            json["locationID"] = locationID
+        } else if let location = location {
+            json["location"] = location.toJSON
+        } else {
+            throw StoreError.invalidJSON
+        }
+        
+        if let mechanic = mechanic {
+            json["mechanicID"] = mechanic.identifier
+        } else {
+            throw StoreError.invalidJSON
+        }
+        
+        if let scheduledDate = scheduledDate {
+            json["scheduledDate"] = serverDateFormatter.string(from: scheduledDate)
+        } else {
+            throw StoreError.invalidJSON
+        }
+        
+        let jsonArray = serviceEntities.toJSONArray(includeIdentifiers: includeIdentifiers, includeEntityIdentifiers: false)
+        if jsonArray.count > 0 {
+            json["serviceEntities"] = jsonArray
+        } else {
+            throw StoreError.invalidJSON
+        }
+        
+        if let vehicleID = vehicle?.identifier {
+            json["vehicleID"] = vehicleID
+        } else {
+            throw StoreError.invalidJSON
+        }
+        
+        json["status"] = status.rawValue
+        json["notes"] = notes
+        
+        return json
+    }
+    
+    public var firstOilChange: OilChange? {
+        return serviceEntities.first(where: { entity -> Bool in
+            return entity.entityType == .oilChange
+        })?.oilChange
     }
     
 }
