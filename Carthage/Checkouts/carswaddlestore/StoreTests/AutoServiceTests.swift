@@ -62,8 +62,34 @@ class AutoServiceTests: XCTestCase {
         XCTAssert(autoService != nil, "It's nil")
     }
     
+    func testCreateAutoServiceFromMultipleJSON() {
+        let context = store.mainContext
+        
+        let userJSON: JSONObject = ["id": "109fd510-ea9f-11e8-a56c-2953c4831dcb"]
+        let user = User(json: userJSON, context: context)
+        XCTAssert(user != nil, "Should have user")
+        
+        let mechanicJSON: JSONObject = ["id": "10aaf8a0-ea9f-11e8-a56c-2953c4831dcb"]
+        let mechanic = Mechanic(json: mechanicJSON, context: context)
+        XCTAssert(mechanic != nil, "Should have mechanic")
+        
+        let autoService = AutoService(json: multipleAutoServicesJSON, context: context)
+        XCTAssert(autoService != nil, "It's nil")
+    }
+    
 }
 
+
+private let multipleAutoServicesJSON: JSONObject = [
+    "id": "d9533210-ed68-11e8-8e07-7b80a5dfaf20",
+    "scheduledDate": "2018-11-21T08:38:26.451Z",
+    "status": "inProgress",
+    "notes": NSNull(),
+    "createdAt": "2018-11-21T08:38:41.330Z",
+    "updatedAt": "2018-11-21T08:38:41.387Z",
+    "userID": "109fd510-ea9f-11e8-a56c-2953c4831dcb",
+    "mechanicID": "10aaf8a0-ea9f-11e8-a56c-2953c4831dcb"
+]
 
 private let newJSON: JSONObject = [
     "updatedAt": "2018-11-21T08:47:36.359Z",

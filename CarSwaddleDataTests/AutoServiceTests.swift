@@ -11,9 +11,26 @@ import XCTest
 import CoreData
 import Store
 
+private let defaultMechanicID = "10aaf8a0-ea9f-11e8-a56c-2953c4831dcb"
+
 class AutoServiceTests: LoginTestCase {
     
     private let autoServiceNetwork = AutoServiceNetwork(serviceRequest: serviceRequest)
+    
+    private var startDate: Date {
+        let dateComponents = DateComponents(calendar: Calendar.current, timeZone: nil, year: 2018, month: 11, day: 22, hour: 0)
+        return dateComponents.date ?? Date()
+    }
+    
+    private var scheduledDate: Date {
+        let dateComponents = DateComponents(calendar: Calendar.current, timeZone: nil, year: 2018, month: 11, day: 22, hour: 10)
+        return dateComponents.date ?? Date()
+    }
+    
+    private var endDate: Date {
+        let dateComponents = DateComponents(calendar: Calendar.current, timeZone: nil, year: 2018, month: 11, day: 22, hour: 20)
+        return dateComponents.date ?? Date()
+    }
     
     func testCreateAutoService() {
         
@@ -29,8 +46,27 @@ class AutoServiceTests: LoginTestCase {
         
         waitForExpectations(timeout: 40, handler: nil)
     }
+    
+    func testGetAutoServices() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        let context = store.mainContext
+        let autoService = createAutoService(scheduledDate: scheduledDate, in: context)
+        
+        autoServiceNetwork.createAutoService(autoService: autoService, in: context) { newAutoService, error in
+            self.autoServiceNetwork.getAutoServices(mechanicID: defaultMechanicID, startDate: self.startDate, endDate: self.endDate, status: [.inProgress, .scheduled, .completed], in: context) { autoServiceIDs, error in
+                context.perform {
+                    let autoServices = AutoService.fetchObjects(with: autoServiceIDs, in: context)
+                    
+                    XCTAssert(autoServices.count > 0, "Should have auto services")
+                    exp.fulfill()
+                }
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
 
-    func testPerformanceExample() {
+    func testCreateAutoServicePerformance() {
         // This is an example of a performance test case.
         self.measure {
             let exp = expectation(description: "\(#function)\(#line)")
@@ -42,7 +78,6 @@ class AutoServiceTests: LoginTestCase {
                 exp.fulfill()
             }
             
-            
             waitForExpectations(timeout: 40, handler: nil)
         }
     }
@@ -50,7 +85,7 @@ class AutoServiceTests: LoginTestCase {
 }
 
 
-private func createAutoService(in context: NSManagedObjectContext) -> AutoService {
+private func createAutoService(scheduledDate: Date = Date(), in context: NSManagedObjectContext) -> AutoService {
     let autoService = AutoService(context: context)
     
     let location = Location(context: context)
@@ -67,7 +102,7 @@ private func createAutoService(in context: NSManagedObjectContext) -> AutoServic
     autoService.creator = user
     
     let mechanic = Mechanic(context: context)
-    mechanic.identifier = "Some id"
+    mechanic.identifier = defaultMechanicID
     
     autoService.mechanic = mechanic
     
@@ -85,7 +120,7 @@ private func createAutoService(in context: NSManagedObjectContext) -> AutoServic
     
     autoService.vehicle = vehicle
     autoService.status = .inProgress
-    autoService.scheduledDate = Date()
+    autoService.scheduledDate = scheduledDate
     
     return autoService
 }

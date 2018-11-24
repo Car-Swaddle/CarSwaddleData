@@ -36,4 +36,39 @@ public final class AutoServiceNetwork: Network {
         }
     }
     
+    @discardableResult
+    public func getAutoServices(mechanicID: String, startDate: Date, endDate: Date, status: [AutoService.Status], in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return autoServiceService.getAutoServices(mechanicID: mechanicID, startDate: startDate, endDate: endDate, status: status.rawValues) { jsonArray, error in
+            context.perform {
+                var autoServices: [NSManagedObjectID] = []
+                defer {
+                    DispatchQueue.global().async {
+                        completion(autoServices, error)
+                    }
+                }
+                
+                for json in jsonArray ?? [] {
+                    guard let autoService = AutoService(json: json, context: context) else { continue }
+                    if autoService.objectID.isTemporaryID {
+                        try? context.obtainPermanentIDs(for: [autoService])
+                    }
+                    autoServices.append(autoService.objectID)
+                }
+                context.persist()
+            }
+        }
+    }
+    
+}
+
+fileprivate extension Array where Iterator.Element == AutoService.Status {
+    
+    fileprivate var rawValues: [String] {
+        var values: [String] = []
+        for value in self {
+            values.append(value.rawValue)
+        }
+        return values
+    }
+    
 }

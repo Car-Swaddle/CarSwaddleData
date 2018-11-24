@@ -33,38 +33,6 @@ private let serverDateFormatter: DateFormatter = {
 @objc(AutoService)
 public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
     
-    
-    /*
-     ["updatedAt": 2018-11-21T08:47:36.359Z, "notes": <null>, "createdAt": 2018-11-21T08:47:36.353Z, "status": inProgress, "serviceEntities": <__NSArray0 0x6000039380c0>(
-     
-     )
-     , "mechanicID": 10aaf8a0-ea9f-11e8-a56c-2953c4831dcb, "location": {
-     autoServiceID = "18396110-ed6a-11e8-8e07-7b80a5dfaf20";
-     createdAt = "2018-11-18T19:24:40.395Z";
-     id = "9849c390-eb67-11e8-8d83-876032d55422";
-     point =     {
-     coordinates =         (
-     "-111.830118",
-     "40.38097000000002"
-     );
-     type = Point;
-     };
-     streetAddress = "<null>";
-     updatedAt = "2018-11-21T08:47:36.376Z";
-     }, "id": 18396110-ed6a-11e8-8e07-7b80a5dfaf20, "scheduledDate": 2018-11-21T08:47:30.015Z, "userID": 109fd510-ea9f-11e8-a56c-2953c4831dcb, "vehicle": {
-     autoServiceID = "18396110-ed6a-11e8-8e07-7b80a5dfaf20";
-     createdAt = "2018-11-17T20:45:35.462Z";
-     id = "bbb8c060-eaa9-11e8-a56c-2953c4831dcb";
-     licensePlate = "153 UGC";
-     name = Edge;
-     updatedAt = "2018-11-21T08:47:36.371Z";
-     userID = "109fd510-ea9f-11e8-a56c-2953c4831dcb";
-     vin = "<null>";
-     }]
-     */
-    
-    
-    
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let id = json.identifier,
             let scheduledDateString = json["scheduledDate"] as? String,

@@ -207,7 +207,7 @@ SWIFT_CLASS_NAMED("AutoService")
 @property (nonatomic, copy) NSString * _Nullable notes;
 @property (nonatomic, copy) NSDate * _Nullable scheduledDate;
 @property (nonatomic, copy) NSDate * _Nonnull creationDate;
-@property (nonatomic, strong) User * _Nonnull creator;
+@property (nonatomic, strong) User * _Nullable creator;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @property (nonatomic, strong) Location * _Nullable location;
 @property (nonatomic, strong) Price * _Nullable price;

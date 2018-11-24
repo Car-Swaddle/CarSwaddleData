@@ -35,7 +35,7 @@ extension AutoService {
     @NSManaged public var notes: String?
     @NSManaged public var scheduledDate: Date?
     @NSManaged public var creationDate: Date
-    @NSManaged public var creator: User
+    @NSManaged public var creator: User?
     @NSManaged public var mechanic: Mechanic?
     @NSManaged public var location: Location?
     @NSManaged public var price: Price?
