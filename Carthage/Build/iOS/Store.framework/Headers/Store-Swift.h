@@ -218,13 +218,12 @@ SWIFT_CLASS_NAMED("AutoService")
 
 SWIFT_CLASS_NAMED("Location")
 @interface Location : NSManagedObject
-- (void)awakeFromInsert;
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 @interface Location (SWIFT_EXTENSION(Store))
-@property (nonatomic, copy) NSString * _Nonnull identifier;
+@property (nonatomic, copy) NSString * _Nullable identifier;
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
 @property (nonatomic, copy) NSString * _Nullable streetAddress;

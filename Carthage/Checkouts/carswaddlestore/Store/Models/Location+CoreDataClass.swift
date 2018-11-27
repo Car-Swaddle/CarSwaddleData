@@ -11,17 +11,36 @@ import CoreData
 import CoreLocation
 
 @objc(Location)
-public final class Location: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
-    
-    public static let tempID: String = "tempID"
+public final class Location: NSManagedObject {
     
     public var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
-    public override func awakeFromInsert() {
-        super.awakeFromInsert()
-        primitiveIdentifier = Location.tempID
+    public static func fetchOrCreate(json: JSONObject, context: NSManagedObjectContext) -> Location? {
+        if let identifier = json["id"] as? String {
+            return fetch(with: identifier, in: context) ?? Location(json: json, context: context)
+        } else {
+            return Location(json: json, context: context)
+        }
+    }
+    
+    public static func fetch(with identifier: String, in context: NSManagedObjectContext) -> Location? {
+        let fetchRequest: NSFetchRequest<Location> = NSFetchRequest(entityName: Location.entityName)
+        
+        fetchRequest.predicate = NSPredicate(format: "identifier == %@", identifier)
+        fetchRequest.fetchLimit = 2
+        return Location.performFetch(with: fetchRequest, in: context)
+    }
+    
+    fileprivate static func performFetch(with fetchRequest: NSFetchRequest<Location>, in context: NSManagedObjectContext) -> Location? {
+        do {
+            let objects = try context.fetch(fetchRequest)
+            assert(objects.count < 2, "Location should be unique to identifier.")
+            return objects.first
+        } catch {
+            return nil
+        }
     }
     
     @NSManaged private var primitiveIdentifier: String
