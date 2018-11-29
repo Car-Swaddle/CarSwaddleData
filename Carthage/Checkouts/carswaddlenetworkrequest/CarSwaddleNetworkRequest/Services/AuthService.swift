@@ -54,6 +54,7 @@ public class AuthService: Service {
     @discardableResult
     public func logout(completion: (_ error: Error?) -> Void) -> URLSessionDataTask? {
         // TODO: Logout on server
+        completion(nil)
         return nil
     }
     
