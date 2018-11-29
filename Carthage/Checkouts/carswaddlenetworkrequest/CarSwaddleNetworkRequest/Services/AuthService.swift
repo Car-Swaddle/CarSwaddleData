@@ -60,7 +60,7 @@ public class AuthService: Service {
     
     private func complete(data: Data?, error: Error?, completion: @escaping (_ json: JSONObject?, _ token: String?, _ error: Error?) -> Void) {
         var json: JSONObject?
-        var error: Error?
+        var error: Error? = error
         var token: String?
         defer {
             completion(json, token, error)

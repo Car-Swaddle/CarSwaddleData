@@ -34,7 +34,7 @@ public final class AutoServiceService: Service {
                     completion(nil, error)
                     return
             }
-            completion(json, nil)
+            completion(json, error)
         }
     }
     
@@ -61,7 +61,7 @@ public final class AutoServiceService: Service {
                     completion(nil, error)
                     return
             }
-            completion(jsonArray, nil)
+            completion(jsonArray, error)
         }
     }
     
