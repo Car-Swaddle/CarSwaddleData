@@ -14,11 +14,8 @@ class AutoServiceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let allAutoServices = AutoService.fetchAllObjects(with: [NSSortDescriptor(key: "identifier", ascending: true)], in: store.mainContext)
         
-        for a in allAutoServices {
-            store.mainContext.delete(a)
-        }
+        try? store.destroyAllData()
         
         store.mainContext.persist()
     }

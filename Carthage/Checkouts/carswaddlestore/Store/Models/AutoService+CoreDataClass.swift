@@ -131,7 +131,7 @@ extension AutoService {
         if let locationID = location?.identifier {
             json["locationID"] = locationID
         } else if let location = location {
-            json["location"] = location.toJSON
+            json["location"] = location.toJSON()
         } else {
             throw StoreError.invalidJSON
         }
