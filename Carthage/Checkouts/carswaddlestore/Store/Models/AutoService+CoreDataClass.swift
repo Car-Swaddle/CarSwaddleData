@@ -62,8 +62,17 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
             serviceEntities.insert(serviceEntity)
         }
         
-        mechanic = Mechanic.fetch(with: mechanicID, in: context)
-        if let user = User.fetch(with: userID, in: context) {
+        if let mechanicJSON = json["mechanic"] as? JSONObject,
+            let mechanic = Mechanic.fetchOrCreate(json: mechanicJSON, context: context) {
+            self.mechanic = mechanic
+        } else if let mechanic = Mechanic.fetch(with: mechanicID, in: context) {
+            self.mechanic = mechanic
+        }
+        
+        if let userJSON = json["user"] as? JSONObject,
+            let user = User.fetchOrCreate(json: userJSON, context: context) {
+            self.creator = user
+        } else if let user = User.fetch(with: userID, in: context) {
             creator = user
         }
     }
