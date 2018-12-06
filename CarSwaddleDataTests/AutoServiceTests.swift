@@ -68,18 +68,21 @@ class AutoServiceTests: LoginTestCase {
     
     func testGetAutoServicesSorted() {
         let exp = expectation(description: "\(#function)\(#line)")
-        let context = store.mainContext
-        let autoService = createAutoService(scheduledDate: scheduledDate, in: context)
+//        let context = store.mainContext
         
-        autoServiceNetwork.createAutoService(autoService: autoService, in: context) { newAutoService, error in
-            self.autoServiceNetwork.getAutoServices(limit: 10, offset: 0, sortStatus: [.completed, .inProgress], in: context) { autoServiceIDs, error in
-                context.perform {
-                    let autoServices = AutoService.fetchObjects(with: autoServiceIDs, in: context)
+        store.privateContext { pCtx in
+//            let autoService = createAutoService(scheduledDate: self.scheduledDate, in: pCtx)
+            
+//        autoServiceNetwork.createAutoService(autoService: autoService, in: context) { newAutoService, error in
+            self.autoServiceNetwork.getAutoServices(limit: 10, offset: 0, sortStatus: [.completed, .inProgress], in: pCtx) { autoServiceIDs, error in
+                store.mainContext { mCtx in
+                    let autoServices = AutoService.fetchObjects(with: autoServiceIDs, in: mCtx)
                     
                     XCTAssert(autoServices.count > 0, "Should have auto services")
                     exp.fulfill()
                 }
             }
+//        }
         }
         
         waitForExpectations(timeout: 40, handler: nil)
@@ -133,7 +136,7 @@ private func createAutoService(scheduledDate: Date = Date(), in context: NSManag
     
     let vehicle = Vehicle(context: context)
     vehicle.creationDate = Date()
-    vehicle.identifier = "bbb8c060-eaa9-11e8-a56c-2953c4831dcb"
+    vehicle.identifier = "9d8c53a0-f91c-11e8-b2ab-8533c1c85021"
     vehicle.licensePlate = "123 HYG"
     vehicle.name = "That name"
     

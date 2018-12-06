@@ -61,7 +61,7 @@ public final class AutoServiceNetwork: Network {
             }
             
             for json in jsonArray ?? [] {
-                guard let autoService = AutoService(json: json, context: context) else { continue }
+                guard let autoService = AutoService.fetchOrCreate(json: json, context: context) else { continue }
                 if autoService.objectID.isTemporaryID {
                     try? context.obtainPermanentIDs(for: [autoService])
                 }
