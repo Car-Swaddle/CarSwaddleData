@@ -14,7 +14,12 @@ import CoreLocation
 
 public final class MechanicNetwork: Network {
     
-    private lazy var mechanicService = MechanicService(serviceRequest: self.serviceRequest)
+    private var mechanicService: MechanicService
+    
+    override public init(serviceRequest: Request) {
+        self.mechanicService = MechanicService(serviceRequest: serviceRequest)
+        super.init(serviceRequest: serviceRequest)
+    }
     
     @discardableResult
     public func getNearestMechanics(limit: Int, coordinate: CLLocationCoordinate2D, maxDistance: Double, in context: NSManagedObjectContext, completion: @escaping (_ mechanicIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {

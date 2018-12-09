@@ -9,6 +9,13 @@
 import XCTest
 @testable import CarSwaddleNetworkRequest
 
+#if targetEnvironment(simulator)
+private let domain = "127.0.0.1"
+#else
+private let domain = "Kyles-MacBook-Pro.local"
+#endif
+
+
 class UserTests: CarSwaddleLoginTestCase {
     
     let userService = UserService(serviceRequest: serviceRequest)
@@ -86,6 +93,24 @@ class UserTests: CarSwaddleLoginTestCase {
     func testUpdateCurrentUserJSONPhoneNumber() {
         let exp = expectation(description: "\(#function)\(#line)")
         userService.updateCurrentUser(json: updateUserJSONPhoneNumber) { json, error in
+            XCTAssert(json != nil && error == nil, "Should have gotten json")
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    func testUpdateService() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        let request = Request(domain: domain)
+        request.port = 3000
+        request.timeout = 15
+        request.defaultScheme = .http
+        
+        NotificationCenter.default.post(name: .serviceRequestDidChange, object: nil, userInfo: [Service.newServiceRequestKey: request])
+        
+        userService.getCurrentUser { json, error in
             XCTAssert(json != nil && error == nil, "Should have gotten json")
             exp.fulfill()
         }

@@ -13,7 +13,13 @@ import Store
 
 public final class UserNetwork: Network {
     
-    private lazy var userService = UserService(serviceRequest: self.serviceRequest)
+//    private lazy var userService = UserService(serviceRequest: self.serviceRequest)
+    private var userService: UserService
+    
+    override public init(serviceRequest: Request) {
+        self.userService = UserService(serviceRequest: serviceRequest)
+        super.init(serviceRequest: serviceRequest)
+    }
     
     
     @discardableResult

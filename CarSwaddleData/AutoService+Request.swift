@@ -12,7 +12,12 @@ import CoreData
 
 public final class AutoServiceNetwork: Network {
     
-    private lazy var autoServiceService = AutoServiceService(serviceRequest: serviceRequest)
+    private var autoServiceService: AutoServiceService
+    
+    override public init(serviceRequest: Request) {
+        self.autoServiceService = AutoServiceService(serviceRequest: serviceRequest)
+        super.init(serviceRequest: serviceRequest)
+    }
     
     @discardableResult
     public func createAutoService(autoService: AutoService, in context: NSManagedObjectContext, completion: @escaping (_ autoService: AutoService?, _ error: Error?) -> Void) -> URLSessionDataTask? {
