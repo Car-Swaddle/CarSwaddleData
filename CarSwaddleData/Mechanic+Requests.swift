@@ -41,6 +41,25 @@ public final class MechanicNetwork: Network {
     }
     
     @discardableResult
+    public func getCurrentMechanic(in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return mechanicService.getCurrentMechanic { json, error in
+            context.perform {
+                var mechanicObjectID: NSManagedObjectID?
+                defer {
+                    DispatchQueue.global().async {
+                        completion(mechanicObjectID, error)
+                    }
+                }
+                
+                guard let json = json else { return }
+                let mechanic = Mechanic.fetchOrCreate(json: json, context: context)
+                context.persist()
+                mechanicObjectID = mechanic?.objectID
+            }
+        }
+    }
+    
+    @discardableResult
     public func getNearestMechanics(limit: Int, latitude: Double, longitude: Double, maxDistance: Double, in context: NSManagedObjectContext, completion: @escaping (_ mechanicIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return mechanicService.getNearestMechanics(limit: limit, latitude: latitude, longitude: longitude, maxDistance: maxDistance) { [weak self] jsonArray, error in
             context.perform {

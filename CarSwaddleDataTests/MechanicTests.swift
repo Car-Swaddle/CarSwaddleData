@@ -62,6 +62,27 @@ class MechanicTests: LoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testGetCurrentMechanic() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        store.privateContext { [weak self] context in
+            self?.mechanicNetwork.getCurrentMechanic(in: context) { mechanicID, error in
+                guard let mechanicID = mechanicID else {
+                    XCTAssert(false, "Should have mechanicID")
+                    return
+                }
+                
+                let mechanic = context.object(with: mechanicID) as? Mechanic
+                XCTAssert(mechanic != nil, "Mechanic is nil, should have gotten a mechanic")
+                XCTAssert(mechanic?.isActive != nil, "Should have isActive.)")
+                
+                exp.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
     func testGetNearestMechanicsAtlantic() {
         let exp = expectation(description: "\(#function)\(#line)")
         
