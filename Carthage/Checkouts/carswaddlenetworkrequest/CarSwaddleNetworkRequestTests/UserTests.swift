@@ -103,6 +103,8 @@ class UserTests: CarSwaddleLoginTestCase {
     func testUpdateService() {
         let exp = expectation(description: "\(#function)\(#line)")
         
+        let service = self.userService
+        
         let request = Request(domain: domain)
         request.port = 3000
         request.timeout = 15
@@ -110,7 +112,7 @@ class UserTests: CarSwaddleLoginTestCase {
         
         NotificationCenter.default.post(name: .serviceRequestDidChange, object: nil, userInfo: [Service.newServiceRequestKey: request])
         
-        userService.getCurrentUser { json, error in
+        service.getCurrentUser { json, error in
             XCTAssert(json != nil && error == nil, "Should have gotten json")
             exp.fulfill()
         }
