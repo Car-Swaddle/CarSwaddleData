@@ -61,7 +61,7 @@ final public class ServiceEntity: NSManagedObject, NSManagedObjectFetchable, JSO
         switch entityType {
         case .oilChange:
             if let oilChangeJSON = json["oilChange"] as? JSONObject,
-                let oilChange = OilChange(json: oilChangeJSON, context: context) {
+                let oilChange = OilChange.fetchOrCreate(json: oilChangeJSON, context: context) {
                 self.oilChange = oilChange
             }
         }
