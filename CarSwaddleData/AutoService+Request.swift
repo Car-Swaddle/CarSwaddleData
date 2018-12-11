@@ -42,8 +42,8 @@ public final class AutoServiceNetwork: Network {
     }
     
     @discardableResult
-    public func getAutoServices(mechanicID: String, startDate: Date, endDate: Date, status: [AutoService.Status], in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
-        return autoServiceService.getAutoServices(mechanicID: mechanicID, startDate: startDate, endDate: endDate, status: status.rawValues) { [weak self] jsonArray, error in
+    public func getAutoServices(mechanicID: String, startDate: Date, endDate: Date, filterStatus: [AutoService.Status], in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return autoServiceService.getAutoServices(mechanicID: mechanicID, startDate: startDate, endDate: endDate, filterStatus: filterStatus.rawValues) { [weak self] jsonArray, error in
             self?.complete(error: error, jsonArray: jsonArray, in: context, completion: completion)
         }
     }
@@ -54,7 +54,6 @@ public final class AutoServiceNetwork: Network {
             self?.complete(error: error, jsonArray: jsonArray, in: context, completion: completion)
         }
     }
-    
     
     private func complete(error: Error?, jsonArray: [JSONObject]?, in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) {
         context.perform {
