@@ -57,10 +57,10 @@ public final class AutoServiceNetwork: Network {
     
     private func complete(error: Error?, jsonArray: [JSONObject]?, in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) {
         context.perform {
-            var autoServices: [NSManagedObjectID] = []
+            var autoServiceIDs: [NSManagedObjectID] = []
             defer {
                 DispatchQueue.global().async {
-                    completion(autoServices, error)
+                    completion(autoServiceIDs, error)
                 }
             }
             
@@ -69,7 +69,7 @@ public final class AutoServiceNetwork: Network {
                 if autoService.objectID.isTemporaryID {
                     try? context.obtainPermanentIDs(for: [autoService])
                 }
-                autoServices.append(autoService.objectID)
+                autoServiceIDs.append(autoService.objectID)
             }
             context.persist()
         }

@@ -11,8 +11,6 @@ import CoreData
 
 private let currentUserIDKey = "currentUserIDKey"
 
-//typealias UserValues = (identifier: String)
-
 @objc(User)
 public final class User: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
     
