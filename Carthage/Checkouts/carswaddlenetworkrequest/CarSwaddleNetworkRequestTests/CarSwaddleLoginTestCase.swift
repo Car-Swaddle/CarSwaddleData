@@ -10,6 +10,12 @@ import XCTest
 @testable import CarSwaddleNetworkRequest
 import Authentication
 
+public var currentMechanicID: String {
+    return _currentMechanicID
+}
+
+private var _currentMechanicID: String = ""
+
 class CarSwaddleLoginTestCase: XCTestCase {
     
     private let authService = AuthService(serviceRequest: serviceRequest)
@@ -30,10 +36,12 @@ class CarSwaddleLoginTestCase: XCTestCase {
         let exp = expectation(description: "\(#function)\(#line)")
         authService.mechanicLogin(email: "k@k.com", password: "password") { [weak self] json, token, error in
             if let token = token {
+                _currentMechanicID = (json?["mechanic"] as? JSONObject)?["id"] as? String ?? ""
                 authentication.setToken(token)
                 exp.fulfill()
             } else {
                 self?.authService.mechanicSignUp(email: "k@k.com", password: "password") { json, token, error in
+                    _currentMechanicID = (json?["mechanic"] as? JSONObject)?["id"] as? String ?? ""
                     if let token = token {
                         authentication.setToken(token)
                     }

@@ -22,15 +22,9 @@ final public class VehicleService: Service {
     
     @discardableResult
     public func getVehicles(limit: Int = 100, offset: Int = 0, completion: @escaping JSONArrayCompletion) -> URLSessionDataTask? {
-        guard var urlRequest = serviceRequest.get(with: .vehicles) else { return nil }
-        do { try urlRequest.authenticate() } catch { print("couldn't authenticate") }
-        return serviceRequest.send(urlRequest: urlRequest) { data, error in
-            guard let data = data,
-                let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [JSONObject] else {
-                    completion(nil, error)
-                    return
-            }
-            completion(json, error)
+        guard let urlRequest = serviceRequest.get(with: .vehicles) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSONArray(data: data, error: error, completion: completion)
         }
     }
     

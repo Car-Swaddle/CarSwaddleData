@@ -29,6 +29,7 @@
 		991B403B216ADC5D00D7644D /* TemplateTimeSpan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B4027216ADC5D00D7644D /* TemplateTimeSpan+CoreDataClass.swift */; };
 		991B403C216ADC5D00D7644D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B4028216ADC5D00D7644D /* User+CoreDataProperties.swift */; };
 		9942545621576DFA0075EDCA /* NSManagedObjectFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9942545521576DFA0075EDCA /* NSManagedObjectFetchable.swift */; };
+		997714BF21CC8F6700E54F5B /* PriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714BE21CC8F6700E54F5B /* PriceTests.swift */; };
 		997DBC78219BE5D00080F42C /* TemplateTimeSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC77219BE5D00080F42C /* TemplateTimeSpanTests.swift */; };
 		997DBC83219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC81219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift */; };
 		997DBC84219FF4FC0080F42C /* ServiceEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC82219FF4FC0080F42C /* ServiceEntity+CoreDataProperties.swift */; };
@@ -82,6 +83,7 @@
 		991B4027216ADC5D00D7644D /* TemplateTimeSpan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TemplateTimeSpan+CoreDataClass.swift"; sourceTree = "<group>"; };
 		991B4028216ADC5D00D7644D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9942545521576DFA0075EDCA /* NSManagedObjectFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectFetchable.swift; sourceTree = "<group>"; };
+		997714BE21CC8F6700E54F5B /* PriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTests.swift; sourceTree = "<group>"; };
 		997DBC77219BE5D00080F42C /* TemplateTimeSpanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTimeSpanTests.swift; sourceTree = "<group>"; };
 		997DBC81219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		997DBC82219FF4FC0080F42C /* ServiceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				99DED729214B80D40061CFE0 /* StoreTests.swift */,
 				997DBC9521A23BC30080F42C /* AutoServiceTests.swift */,
+				997714BE21CC8F6700E54F5B /* PriceTests.swift */,
 				997DBC77219BE5D00080F42C /* TemplateTimeSpanTests.swift */,
 				997DBCA321B8FD180080F42C /* UserTests.swift */,
 				997DBCA521B8FD710080F42C /* MechanicTests.swift */,
@@ -386,6 +389,7 @@
 				99DED72A214B80D40061CFE0 /* StoreTests.swift in Sources */,
 				99F027882185820F005FEFC7 /* DateExtensionTests.swift in Sources */,
 				99F0279021859E29005FEFC7 /* RegionTests.swift in Sources */,
+				997714BF21CC8F6700E54F5B /* PriceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

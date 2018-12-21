@@ -297,11 +297,13 @@ SWIFT_CLASS_NAMED("Price")
 - (void)removeParts:(NSSet * _Nonnull)values;
 @end
 
+@class NSDecimalNumber;
 
 @interface Price (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
+@property (nonatomic, strong) NSDecimalNumber * _Nonnull totalPrice;
 @property (nonatomic, copy) NSSet<PricePart *> * _Nonnull parts;
-@property (nonatomic, strong) AutoService * _Nonnull autoService;
+@property (nonatomic, strong) AutoService * _Nullable autoService;
 @end
 
 
@@ -310,7 +312,6 @@ SWIFT_CLASS_NAMED("PricePart")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSDecimalNumber;
 
 @interface PricePart (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull key;

@@ -22,33 +22,17 @@ final public class MechanicService: Service {
                                           URLQueryItem(name: "longitude", value: "\(longitude)"),
                                           URLQueryItem(name: "maxDistance", value: "\(maxDistance)"),
                                           URLQueryItem(name: "limit", value: "\(limit)")]
-        guard var urlRequest = serviceRequest.get(with: .nearestMechanic, queryItems: queryItems) else { return nil }
-        do {
-            try urlRequest.authenticate()
-        } catch { print("couldn't authenticate") }
-        return serviceRequest.send(urlRequest: urlRequest) { data, error in
-            guard let data = data,
-                let jsonArray = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [JSONObject] else {
-                    completion(nil, error)
-                    return
-            }
-            completion(jsonArray, error)
+        guard let urlRequest = serviceRequest.get(with: .nearestMechanic, queryItems: queryItems) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSONArray(data: data, error: error, completion: completion)
         }
     }
     
     @discardableResult
     public func getCurrentMechanic(completion: @escaping JSONCompletion) -> URLSessionDataTask? {
-        guard var urlRequest = serviceRequest.get(with: .currentMechanic) else { return nil }
-        do {
-            try urlRequest.authenticate()
-        } catch { print("couldn't authenticate") }
-        return serviceRequest.send(urlRequest: urlRequest) { data, error in
-            guard let data = data,
-                let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? JSONObject else {
-                    completion(nil, error)
-                    return
-            }
-            completion(json, error)
+        guard let urlRequest = serviceRequest.get(with: .currentMechanic) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSON(data: data, error: error, completion: completion)
         }
     }
     
@@ -67,17 +51,9 @@ final public class MechanicService: Service {
     @discardableResult
     public func updateCurrentMechanic(json: JSONObject, completion: @escaping (_ json: JSONObject?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         guard let body = (try? JSONSerialization.data(withJSONObject: json, options: [])) else { return nil }
-        guard var urlRequest = serviceRequest.patch(with: .updateMechanic, body: body, contentType: .applicationJSON) else { return nil }
-        
-        try? urlRequest.authenticate()
-        
-        return serviceRequest.send(urlRequest: urlRequest) { data, error in
-            guard let data = data,
-                let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? JSONObject else {
-                    completion(nil, error)
-                    return
-            }
-            completion(json, error)
+        guard let urlRequest = serviceRequest.patch(with: .updateMechanic, body: body, contentType: .applicationJSON) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSON(data: data, error: error, completion: completion)
         }
     }
     
