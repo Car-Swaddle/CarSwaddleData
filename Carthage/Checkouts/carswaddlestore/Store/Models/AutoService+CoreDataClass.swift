@@ -24,7 +24,7 @@ public extension AutoService {
 private let statusKey = "status"
 private let typeKey = "type"
 
-private let serverDateFormatter: DateFormatter = {
+let serverDateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     return dateFormatter
@@ -198,6 +198,10 @@ extension AutoService {
         return serviceEntities.first(where: { entity -> Bool in
             return entity.entityType == .oilChange
         })?.oilChange
+    }
+    
+    public var canConvertToJSON: Bool {
+        return (try? toJSON()) != nil
     }
     
 }

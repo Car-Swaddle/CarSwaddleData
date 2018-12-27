@@ -185,6 +185,23 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class NSEntityDescription;
 @class NSManagedObjectContext;
 
+SWIFT_CLASS_NAMED("Address")
+@interface Address : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class Mechanic;
+
+@interface Address (SWIFT_EXTENSION(Store))
+@property (nonatomic, copy) NSString * _Nonnull identifier;
+@property (nonatomic, copy) NSString * _Nullable line1;
+@property (nonatomic, copy) NSString * _Nullable postalCode;
+@property (nonatomic, copy) NSString * _Nullable city;
+@property (nonatomic, copy) NSString * _Nullable state;
+@property (nonatomic, strong) Mechanic * _Nullable mechanic;
+@end
+
+
 SWIFT_CLASS_NAMED("AutoService")
 @interface AutoService : NSManagedObject
 - (void)awakeFromInsert;
@@ -196,7 +213,6 @@ SWIFT_CLASS_NAMED("AutoService")
 
 
 @class User;
-@class Mechanic;
 @class Location;
 @class Price;
 @class Vehicle;
@@ -263,6 +279,8 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, copy) NSSet<TemplateTimeSpan *> * _Nonnull scheduleTimeSpans;
 @property (nonatomic, copy) NSSet<AutoService *> * _Nonnull services;
 @property (nonatomic, strong) Region * _Nullable serviceRegion;
+@property (nonatomic, copy) NSDate * _Nullable dateOfBirth;
+@property (nonatomic, strong) Address * _Nullable address;
 @end
 
 

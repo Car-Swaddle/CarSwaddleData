@@ -22,6 +22,8 @@
 		995B9F2F2154C9050030A7CA /* NetworkRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B9F2E2154C9050030A7CA /* NetworkRequestError.swift */; };
 		997714B921CA1D5C00E54F5B /* PriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714B821CA1D5C00E54F5B /* PriceService.swift */; };
 		997714BB21CB7A5900E54F5B /* PriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714BA21CB7A5900E54F5B /* PriceTests.swift */; };
+		997714C921CE36A400E54F5B /* StripeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714C821CE36A400E54F5B /* StripeService.swift */; };
+		997714CB21CE39B300E54F5B /* StripeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714CA21CE39B300E54F5B /* StripeServiceTests.swift */; };
 		997DBC45219408260080F42C /* MechanicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC44219408260080F42C /* MechanicService.swift */; };
 		997DBC4721940AA50080F42C /* MechanicServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC4621940AA50080F42C /* MechanicServiceTests.swift */; };
 		997DBC58219773E90080F42C /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC57219773E90080F42C /* UserTests.swift */; };
@@ -93,6 +95,8 @@
 		995B9F2E2154C9050030A7CA /* NetworkRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestError.swift; sourceTree = "<group>"; };
 		997714B821CA1D5C00E54F5B /* PriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceService.swift; sourceTree = "<group>"; };
 		997714BA21CB7A5900E54F5B /* PriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTests.swift; sourceTree = "<group>"; };
+		997714C821CE36A400E54F5B /* StripeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeService.swift; sourceTree = "<group>"; };
+		997714CA21CE39B300E54F5B /* StripeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeServiceTests.swift; sourceTree = "<group>"; };
 		997DBC44219408260080F42C /* MechanicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicService.swift; sourceTree = "<group>"; };
 		997DBC4621940AA50080F42C /* MechanicServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicServiceTests.swift; sourceTree = "<group>"; };
 		997DBC57219773E90080F42C /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				997DBC9721A3F3DB0080F42C /* AutoServiceTests.swift */,
 				992C53CB2150C59B0076949C /* CarSwaddleLoginTestCase.swift */,
 				997714BA21CB7A5900E54F5B /* PriceTests.swift */,
+				997714CA21CE39B300E54F5B /* StripeServiceTests.swift */,
 				99F026A0217BD01B005FEFC7 /* AvailabilityTests.swift */,
 				99F0278121852BE4005FEFC7 /* RegionServiceTests.swift */,
 				997DBC7B219D77750080F42C /* VehicleTests.swift */,
@@ -223,6 +228,7 @@
 				997DBC44219408260080F42C /* MechanicService.swift */,
 				997DBC79219D70540080F42C /* VehicleService.swift */,
 				997714B821CA1D5C00E54F5B /* PriceService.swift */,
+				997714C821CE36A400E54F5B /* StripeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				99F0278021852A42005FEFC7 /* RegionService.swift in Sources */,
 				99F0269D217BAA18005FEFC7 /* BoolExtension.swift in Sources */,
 				99F02699217BA048005FEFC7 /* Service.swift in Sources */,
+				997714C921CE36A400E54F5B /* StripeService.swift in Sources */,
 				995B9F2B2154B4DB0030A7CA /* GlobalImports.swift in Sources */,
 				997DBC45219408260080F42C /* MechanicService.swift in Sources */,
 				99F0269B217BA1F5005FEFC7 /* TypeAliases.swift in Sources */,
@@ -438,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997714CB21CE39B300E54F5B /* StripeServiceTests.swift in Sources */,
 				997DBC58219773E90080F42C /* UserTests.swift in Sources */,
 				997DBC4721940AA50080F42C /* MechanicServiceTests.swift in Sources */,
 				992C53CC2150C59B0076949C /* CarSwaddleLoginTestCase.swift in Sources */,

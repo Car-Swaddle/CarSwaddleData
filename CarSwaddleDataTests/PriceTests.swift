@@ -14,14 +14,14 @@ import MapKit
 
 class PriceTests: LoginTestCase {
     
-    private let priceRequest: PriceRequest = PriceRequest(serviceRequest: serviceRequest)
+    private let priceNetwork: PriceNetwork = PriceNetwork(serviceRequest: serviceRequest)
     
     func testRequestPrice() {
         
         let exp = expectation(description: "\(#function)\(#line)")
         store.privateContext { pCtx in
             let location = CLLocationCoordinate2D(latitude: 40.36878163199601, longitude: -111.85300827026369)
-            self.priceRequest.requestPrice(mechanicID: currentMechanicID, oilType: .conventional, location: location, in: pCtx) { objectID, error in
+            self.priceNetwork.requestPrice(mechanicID: currentMechanicID, oilType: .conventional, location: location, in: pCtx) { objectID, error in
                 store.mainContext { mCtx in
                     guard let objectID = objectID else {
                         XCTAssert(false, "No objectID")

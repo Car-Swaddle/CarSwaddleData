@@ -12,7 +12,7 @@ import CarSwaddleNetworkRequest
 import CoreLocation
 import CoreData
 
-final public class PriceRequest: Network {
+final public class PriceNetwork: Network {
     
     private var priceService: PriceService
     

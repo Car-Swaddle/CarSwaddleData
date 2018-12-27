@@ -15,6 +15,11 @@ let atlanticLongitude: Double = -47.420196
 
 class MechanicTests: LoginTestCase {
     
+    private var dob: Date {
+        let dateComponents = DateComponents(calendar: Calendar.current, timeZone: nil, year: 1990, month: 11, day: 20, hour: 0)
+        return dateComponents.date ?? Date()
+    }
+    
     let mechanicNetwork = MechanicNetwork(serviceRequest: serviceRequest)
     
     func testGetNearestMechanicsClose() {
@@ -44,7 +49,7 @@ class MechanicTests: LoginTestCase {
         
         let isActive = true
         store.privateContext { [weak self] context in
-            self?.mechanicNetwork.update(isActive: isActive, token: "SomeKey", in: context) { mechanicID, error in
+            self?.mechanicNetwork.update(isActive: isActive, token: "SomeKey", dateOfBirth: nil, address: nil, in: context) { mechanicID, error in
                 guard let mechanicID = mechanicID else {
                     XCTAssert(false, "Should have mechanicID")
                     return
@@ -54,6 +59,38 @@ class MechanicTests: LoginTestCase {
                 XCTAssert(mechanic != nil, "Mechanic is nil, should have gotten a mechanic")
                 XCTAssert(mechanic?.isActive == isActive, "Should be isActive. is \(mechanic!.isActive) should be \(isActive)")
 //                XCTAssert(mechanic?.user != nil, "User is nil, should have gotten a user")
+                
+                exp.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    func testUpdateCurrentMechanicDOBAndAddress() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        let isActive = true
+        store.privateContext { [weak self] context in
+            let address = Address(context: context)
+            address.identifier = "local"
+            address.line1 = "1541 N 1300 W St"
+            address.postalCode = "84062"
+            address.city = "American Fork"
+            address.state = "Ut"
+            
+            context.persist()
+            
+            self?.mechanicNetwork.update(isActive: nil, token: nil, dateOfBirth: self?.dob, address: address, in: context) { mechanicID, error in
+                guard let mechanicID = mechanicID else {
+                    XCTAssert(false, "Should have mechanicID")
+                    return
+                }
+                
+                let mechanic = context.object(with: mechanicID) as? Mechanic
+                XCTAssert(mechanic != nil, "Mechanic is nil, should have gotten a mechanic")
+                XCTAssert(mechanic?.address != nil, "Address is nil")
+                XCTAssert(mechanic?.dateOfBirth != nil, "Should be isActive. is \(mechanic!.isActive) should be \(isActive)")
                 
                 exp.fulfill()
             }

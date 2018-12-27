@@ -37,7 +37,7 @@ final public class MechanicService: Service {
     }
     
     @discardableResult
-    public func updateCurrentMechanic(isActive: Bool?, token: String?, completion: @escaping (_ json: JSONObject?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func updateCurrentMechanic(isActive: Bool?, token: String?, dateOfBirth: Date?, addressJSON: JSONObject?, completion: @escaping (_ json: JSONObject?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         var json: JSONObject = [:]
         if let isActive = isActive {
             json["isActive"] = isActive
@@ -45,7 +45,17 @@ final public class MechanicService: Service {
         if let token = token {
             json["token"] = token
         }
+        if let dateOfBirth = dateOfBirth {
+            json["dateOfBirth"] = serverDateFormatter.string(from: dateOfBirth)
+        }
+        if let addressJSON = addressJSON {
+            json["address"] = addressJSON
+        }
         return updateCurrentMechanic(json: json, completion: completion)
+    }
+    
+    public static func addressJSON(line1: String, postalCode: String, city: String, state: String) -> JSONObject {
+        return ["line1": line1, "postalCode": postalCode, "city": city, "state": state]
     }
     
     @discardableResult

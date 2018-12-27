@@ -27,8 +27,9 @@ public final class MechanicNetwork: Network {
     }
     
     @discardableResult
-    public func update(isActive: Bool?, token: String?, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
-        return mechanicService.updateCurrentMechanic(isActive: isActive, token: token) { json, error in
+    public func update(isActive: Bool?, token: String?, dateOfBirth: Date?, address: Address?, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        var addressJSON: JSONObject? = address?.toJSON
+        return mechanicService.updateCurrentMechanic(isActive: isActive, token: token, dateOfBirth: dateOfBirth, addressJSON: addressJSON) { json, error in
             context.perform {
                 var mechanicObjectID: NSManagedObjectID?
                 defer {
@@ -108,3 +109,26 @@ public final class MechanicNetwork: Network {
     }
     
 }
+
+
+extension Address {
+    
+    var toJSON: JSONObject {
+        var json: JSONObject = [:]
+        if let line1 = line1 {
+            json["line1"] = line1
+        }
+        if let postalCode = postalCode {
+            json["postalCode"] = postalCode
+        }
+        if let city = city {
+            json["city"] = city
+        }
+        if let state = state {
+            json["state"] = state
+        }
+        return json
+    }
+    
+}
+

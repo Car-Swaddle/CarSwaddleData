@@ -18,10 +18,18 @@ class PriceTests: CarSwaddleLoginTestCase {
     
     func testGetPrice() {
         let exp = expectation(description: "\(#function)\(#line)")
-        let location = CLLocationCoordinate2D(latitude: -111.8657987654, longitude: 40.36)
-        priceService.getPrice(mechanicID: currentMechanicID, oilType: "conventional", location: location) { json, error in
+        let location = CLLocationCoordinate2D(latitude: 40.36, longitude: -111.8657987654)
+        priceService.getPrice(mechanicID: currentMechanicID, oilType: "CONVENTIONAL", location: location) { json, error in
             XCTAssert(json != nil, "Should have at least one json object")
             XCTAssert(error == nil, "Should have not have error")
+            
+            if let json = json,
+                let totalPrice = json["totalPrice"],
+                let totalPriceString = totalPrice as? String {
+                let decimal = NSDecimalNumber(string: totalPriceString)
+                print("type: \(type(of: totalPrice)), decimal: \(decimal)")
+            }
+            
             exp.fulfill()
         }
         waitForExpectations(timeout: 40, handler: nil)

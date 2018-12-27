@@ -28,12 +28,12 @@ final public class PriceService: Service {
     }
     
     @discardableResult
-    public func getPrice(mechanicID: String, oilType: String, locationID: String, completion: @escaping JSONArrayCompletion) -> URLSessionDataTask? {
+    public func getPrice(mechanicID: String, oilType: String, locationID: String, completion: @escaping JSONCompletion) -> URLSessionDataTask? {
         let json: JSONObject = ["mechanicID": mechanicID, "oilType": oilType, "locationID": locationID]
         guard let body = (try? JSONSerialization.data(withJSONObject: json, options: [])),
             let urlRequest = serviceRequest.post(with: .price, body: body, contentType: .applicationJSON) else { return nil }
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
-            self?.completeWithJSONArray(data: data, error: error, completion: completion)
+            self?.completeWithJSON(data: data, error: error, completion: completion)
         }
     }
     
