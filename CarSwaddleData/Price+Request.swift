@@ -6,7 +6,6 @@
 //  Copyright © 2018 CarSwaddle. All rights reserved.
 //
 
-import UIKit
 import Store
 import CarSwaddleNetworkRequest
 import CoreLocation

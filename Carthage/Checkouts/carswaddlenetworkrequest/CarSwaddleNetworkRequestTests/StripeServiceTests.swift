@@ -28,4 +28,17 @@ class StripeServiceTests: CarSwaddleLoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testStripeVerification() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        stripeService.getVerification { json, error in
+            XCTAssert(json != nil, "Json is nil")
+            XCTAssert((json?["fields_needed"] as? [String]) != nil, "Does not have fields needed")
+            XCTAssert(error == nil, "Got error: \(error?.localizedDescription ?? "")")
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
 }
