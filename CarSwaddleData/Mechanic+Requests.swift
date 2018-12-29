@@ -27,9 +27,9 @@ public final class MechanicNetwork: Network {
     }
     
     @discardableResult
-    public func update(isActive: Bool?, token: String?, dateOfBirth: Date?, address: Address?, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func update(isActive: Bool? = nil, token: String? = nil, dateOfBirth: Date? = nil, address: Address? = nil, externalAccount: String? = nil, socialSecurityNumberLast4: String? = nil, personalIDNumber: String? = nil, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         var addressJSON: JSONObject? = address?.toJSON
-        return mechanicService.updateCurrentMechanic(isActive: isActive, token: token, dateOfBirth: dateOfBirth, addressJSON: addressJSON) { json, error in
+        return mechanicService.updateCurrentMechanic(isActive: isActive, token: token, dateOfBirth: dateOfBirth, addressJSON: addressJSON, externalAccount: externalAccount, socialSecurityNumberLast4: socialSecurityNumberLast4, personalIDNumber: personalIDNumber) { json, error in
             context.perform {
                 var mechanicObjectID: NSManagedObjectID?
                 defer {

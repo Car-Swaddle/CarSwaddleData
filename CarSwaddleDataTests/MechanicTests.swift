@@ -12,6 +12,7 @@ import Store
 
 let atlanticLatitude: Double = 28.237381
 let atlanticLongitude: Double = -47.420196
+private let externalAccountID: String = "btok_1DmcPxIh8ecz19vMMmHJ2462"
 
 class MechanicTests: LoginTestCase {
     
@@ -21,6 +22,8 @@ class MechanicTests: LoginTestCase {
     }
     
     let mechanicNetwork = MechanicNetwork(serviceRequest: serviceRequest)
+    let stripeNetwork = StripeNetwork(serviceRequest: serviceRequest)
+    
     
     func testGetNearestMechanicsClose() {
         let exp = expectation(description: "\(#function)\(#line)")
@@ -49,7 +52,7 @@ class MechanicTests: LoginTestCase {
         
         let isActive = true
         store.privateContext { [weak self] context in
-            self?.mechanicNetwork.update(isActive: isActive, token: "SomeKey", dateOfBirth: nil, address: nil, in: context) { mechanicID, error in
+            self?.mechanicNetwork.update(isActive: isActive, token: "SomeKey", in: context) { mechanicID, error in
                 guard let mechanicID = mechanicID else {
                     XCTAssert(false, "Should have mechanicID")
                     return
@@ -70,7 +73,6 @@ class MechanicTests: LoginTestCase {
     func testUpdateCurrentMechanicDOBAndAddress() {
         let exp = expectation(description: "\(#function)\(#line)")
         
-        let isActive = true
         store.privateContext { [weak self] context in
             let address = Address(context: context)
             address.identifier = "local"
@@ -81,7 +83,7 @@ class MechanicTests: LoginTestCase {
             
             context.persist()
             
-            self?.mechanicNetwork.update(isActive: nil, token: nil, dateOfBirth: self?.dob, address: address, in: context) { mechanicID, error in
+            self?.mechanicNetwork.update(dateOfBirth: self?.dob, address: address, in: context) { mechanicID, error in
                 guard let mechanicID = mechanicID else {
                     XCTAssert(false, "Should have mechanicID")
                     return
@@ -90,9 +92,68 @@ class MechanicTests: LoginTestCase {
                 let mechanic = context.object(with: mechanicID) as? Mechanic
                 XCTAssert(mechanic != nil, "Mechanic is nil, should have gotten a mechanic")
                 XCTAssert(mechanic?.address != nil, "Address is nil")
-                XCTAssert(mechanic?.dateOfBirth != nil, "Should be isActive. is \(mechanic!.isActive) should be \(isActive)")
+                XCTAssert(mechanic?.dateOfBirth != nil, "Should be not nil")
                 
-                exp.fulfill()
+                self?.stripeNetwork.requestVerification { verification, error in
+                    guard let verification = verification else { return }
+                    XCTAssert(verification.fieldsNeeded.contains(.addressLine1) == false, "Should not still need field")
+                    XCTAssert(verification.fieldsNeeded.contains(.addressPostalCode) == false, "Should not still need field")
+                    XCTAssert(verification.fieldsNeeded.contains(.addressCity) == false, "Should not still need field")
+                    XCTAssert(verification.fieldsNeeded.contains(.addressState) == false, "Should not still need field")
+                    
+                    XCTAssert(verification.fieldsNeeded.contains(.birthdayDay) == false, "Should not still need field")
+                    XCTAssert(verification.fieldsNeeded.contains(.birthdayMonth) == false, "Should not still need field")
+                    XCTAssert(verification.fieldsNeeded.contains(.birthdayYear) == false, "Should not still need field")
+                    exp.fulfill()
+                }
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    func testUpdateCurrentMechanicExternalAccount() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        store.privateContext { [weak self] context in
+            self?.mechanicNetwork.update(externalAccount: externalAccountID, in: context) { mechanicID, error in
+                self?.stripeNetwork.requestVerification { verification, error in
+                    guard let verification = verification else { return }
+                    XCTAssert(verification.fieldsNeeded.contains(.socialSecurityNumberLast4Digits) == false, "Should not still need field")
+                    exp.fulfill()
+                }
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    func testUpdateCurrentMechanicSSNLast4() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        store.privateContext { [weak self] context in
+            self?.mechanicNetwork.update(socialSecurityNumberLast4: "0000", in: context) { mechanicID, error in
+                self?.stripeNetwork.requestVerification { verification, error in
+                    guard let verification = verification else { return }
+                    XCTAssert(verification.fieldsNeeded.contains(.socialSecurityNumberLast4Digits) == false, "Should not still need field")
+                    exp.fulfill()
+                }
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    func testUpdateCurrentMechanicPersonalID() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        store.privateContext { [weak self] context in
+            self?.mechanicNetwork.update(personalIDNumber: "000000000", in: context) { mechanicID, error in
+                self?.stripeNetwork.requestVerification { verification, error in
+                    guard let verification = verification else { return }
+                    XCTAssert(verification.fieldsNeeded.contains(.personalIDNumber) == false, "Should not still need field")
+                    exp.fulfill()
+                }
             }
         }
         

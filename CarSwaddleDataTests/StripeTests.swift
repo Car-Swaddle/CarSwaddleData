@@ -13,7 +13,7 @@ class StripeTests: LoginTestCase {
     
     private let stripeNetwork: StripeNetwork = StripeNetwork(serviceRequest: serviceRequest)
     
-    func testRequestPrice() {
+    func testRequestVerification() {
         let exp = expectation(description: "\(#function)\(#line)")
         self.stripeNetwork.requestVerification { verification, error in
             XCTAssert(verification != nil, "Should have fields needed")

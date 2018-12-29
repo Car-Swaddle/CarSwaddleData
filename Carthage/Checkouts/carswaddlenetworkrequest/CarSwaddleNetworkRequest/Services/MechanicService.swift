@@ -37,7 +37,7 @@ final public class MechanicService: Service {
     }
     
     @discardableResult
-    public func updateCurrentMechanic(isActive: Bool?, token: String?, dateOfBirth: Date?, addressJSON: JSONObject?, completion: @escaping (_ json: JSONObject?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func updateCurrentMechanic(isActive: Bool?, token: String?, dateOfBirth: Date?, addressJSON: JSONObject?, externalAccount: String?, socialSecurityNumberLast4: String?, personalIDNumber: String?, completion: @escaping (_ json: JSONObject?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         var json: JSONObject = [:]
         if let isActive = isActive {
             json["isActive"] = isActive
@@ -51,6 +51,16 @@ final public class MechanicService: Service {
         if let addressJSON = addressJSON {
             json["address"] = addressJSON
         }
+        if let externalAccount = externalAccount {
+            json["externalAccount"] = externalAccount
+        }
+        if let socialSecurityNumberLast4 = socialSecurityNumberLast4 {
+            json["ssnLast4"] = socialSecurityNumberLast4
+        }
+        if let personalIDNumber = personalIDNumber {
+            json["personalID"] = personalIDNumber
+        }
+        
         return updateCurrentMechanic(json: json, completion: completion)
     }
     

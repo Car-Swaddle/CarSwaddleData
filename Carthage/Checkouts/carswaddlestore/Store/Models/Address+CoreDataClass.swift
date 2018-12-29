@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 
-typealias AddressValues = (identifier: String, line1: String, postalCode: String, city: String, state: String)
+typealias AddressValues = (identifier: String, line1: String?, postalCode: String?, city: String?, state: String?)
 
 @objc(Address)
 final public class Address: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
@@ -34,11 +34,11 @@ final public class Address: NSManagedObject, NSManagedObjectFetchable, JSONInita
     }
     
     static private func values(from json: JSONObject) -> AddressValues? {
-        guard let identifier = json["id"] as? String,
-            let line1 = json["line1"] as? String,
-            let postalCode = json["postalCode"] as? String,
-            let city = json["city"] as? String,
-            let state = json["state"] as? String else { return nil }
+        guard let identifier = json["id"] as? String else { return nil }
+            let line1 = json["line1"] as? String
+            let postalCode = json["postalCode"] as? String
+            let city = json["city"] as? String
+            let state = json["state"] as? String
         
         return (identifier, line1, postalCode, city, state)
     }
