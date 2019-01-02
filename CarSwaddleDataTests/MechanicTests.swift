@@ -194,6 +194,33 @@ class MechanicTests: LoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testGetStats() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        let mechanicID = "ce8b0070-0e41-11e9-834e-458588e04d18"
+        
+        let mechanic = Mechanic(context: store.mainContext)
+        mechanic.identifier = mechanicID
+        mechanic.isActive = true
+        
+        store.mainContext.persist()
+        
+        store.privateContext { [weak self] context in
+            self?.mechanicNetwork.getStats(mechanicID: mechanicID, in: context) { mechanicObjectID, error in
+                XCTAssert(mechanicObjectID != nil, "Got no mechanic")
+                if let id = mechanicObjectID,
+                    let mechanic = context.object(with: id) as? Mechanic {
+                    XCTAssert(mechanic.stats != nil, "Should have stats")
+                } else {
+                    XCTAssert(false, "Should have id")
+                }
+                exp.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
     func testPerformanceGetNearestMechanicsAtlantic() {
         measure {
             let exp = expectation(description: "\(#function)\(#line)")

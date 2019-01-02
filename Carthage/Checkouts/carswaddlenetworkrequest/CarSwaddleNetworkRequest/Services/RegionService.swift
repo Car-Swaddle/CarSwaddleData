@@ -33,20 +33,4 @@ final public class RegionService: Service {
         }
     }
     
-//    @discardableResult
-//    public func getAvailability(completion: @escaping JSONArrayCompletion) -> URLSessionDataTask? {
-//        var urlRequest = serverRequest.get(with: .region)
-//        do {
-//            try urlRequest?.authenticate()
-//        } catch { print("couldn't authenticate") }
-//        return urlRequest?.send { data, error in
-//            guard let data = data,
-//                let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [JSONObject] else {
-//                    completion(nil, error)
-//                    return
-//            }
-//            completion(json, nil)
-//        }
-//    }
-    
 }

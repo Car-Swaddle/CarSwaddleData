@@ -12,6 +12,7 @@ extension NetworkRequest.Request.Endpoint {
     fileprivate static let nearestMechanic = Request.Endpoint(rawValue: "/api/nearest-mechanics")
     fileprivate static let updateMechanic = Request.Endpoint(rawValue: "/api/update-mechanic")
     fileprivate static let currentMechanic = Request.Endpoint(rawValue: "/api/current-mechanic")
+    fileprivate static let stats = Request.Endpoint(rawValue: "/api/stats")
 }
 
 final public class MechanicService: Service {
@@ -72,6 +73,15 @@ final public class MechanicService: Service {
     public func updateCurrentMechanic(json: JSONObject, completion: @escaping (_ json: JSONObject?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         guard let body = (try? JSONSerialization.data(withJSONObject: json, options: [])) else { return nil }
         guard let urlRequest = serviceRequest.patch(with: .updateMechanic, body: body, contentType: .applicationJSON) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSON(data: data, error: error, completion: completion)
+        }
+    }
+    
+    @discardableResult
+    public func getStats(forMechanicWithID mechanicID: String, completion: @escaping (_ json: JSONObject?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        let queryItems = [URLQueryItem(name: "mechanic", value: mechanicID)]
+        guard let urlRequest = serviceRequest.get(with: .stats, queryItems: queryItems) else { return nil }
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
             self?.completeWithJSON(data: data, error: error, completion: completion)
         }

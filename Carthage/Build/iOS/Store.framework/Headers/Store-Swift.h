@@ -164,6 +164,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import CoreData;
+@import CoreGraphics;
 @import Foundation;
 #endif
 
@@ -198,6 +199,7 @@ SWIFT_CLASS_NAMED("Address")
 @property (nonatomic, copy) NSString * _Nullable postalCode;
 @property (nonatomic, copy) NSString * _Nullable city;
 @property (nonatomic, copy) NSString * _Nullable state;
+@property (nonatomic, copy) NSString * _Nullable country;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @end
 
@@ -216,6 +218,7 @@ SWIFT_CLASS_NAMED("AutoService")
 @class Location;
 @class Price;
 @class Vehicle;
+@class Review;
 @class ServiceEntity;
 
 @interface AutoService (SWIFT_EXTENSION(Store))
@@ -228,6 +231,8 @@ SWIFT_CLASS_NAMED("AutoService")
 @property (nonatomic, strong) Location * _Nullable location;
 @property (nonatomic, strong) Price * _Nullable price;
 @property (nonatomic, strong) Vehicle * _Nullable vehicle;
+@property (nonatomic, strong) Review * _Nullable reviewFromUser;
+@property (nonatomic, strong) Review * _Nullable reviewFromMechanic;
 @property (nonatomic, copy) NSSet<ServiceEntity *> * _Nonnull serviceEntities;
 @end
 
@@ -252,16 +257,8 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSSet;
-
-@interface Mechanic (SWIFT_EXTENSION(Store))
-- (void)addServicesObject:(AutoService * _Nonnull)value;
-- (void)removeServicesObject:(AutoService * _Nonnull)value;
-- (void)addServices:(NSSet * _Nonnull)values;
-- (void)removeServices:(NSSet * _Nonnull)values;
-@end
-
 @class TemplateTimeSpan;
+@class NSSet;
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
 - (void)addScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
@@ -270,7 +267,16 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (void)removeScheduleTimeSpans:(NSSet * _Nonnull)values;
 @end
 
+
+@interface Mechanic (SWIFT_EXTENSION(Store))
+- (void)addServicesObject:(AutoService * _Nonnull)value;
+- (void)removeServicesObject:(AutoService * _Nonnull)value;
+- (void)addServices:(NSSet * _Nonnull)values;
+- (void)removeServices:(NSSet * _Nonnull)values;
+@end
+
 @class Region;
+@class Stats;
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
@@ -278,9 +284,11 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, strong) User * _Nullable user;
 @property (nonatomic, copy) NSSet<TemplateTimeSpan *> * _Nonnull scheduleTimeSpans;
 @property (nonatomic, copy) NSSet<AutoService *> * _Nonnull services;
+@property (nonatomic, copy) NSSet<Review *> * _Nonnull reviews;
 @property (nonatomic, strong) Region * _Nullable serviceRegion;
 @property (nonatomic, copy) NSDate * _Nullable dateOfBirth;
 @property (nonatomic, strong) Address * _Nullable address;
+@property (nonatomic, strong) Stats * _Nullable stats;
 @end
 
 
@@ -353,6 +361,25 @@ SWIFT_CLASS_NAMED("Region")
 @end
 
 
+SWIFT_CLASS_NAMED("Review")
+@interface Review : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Review (SWIFT_EXTENSION(Store))
+@property (nonatomic, copy) NSString * _Nonnull identifier;
+@property (nonatomic) CGFloat rating;
+@property (nonatomic, copy) NSString * _Nullable text;
+@property (nonatomic, copy) NSString * _Nonnull reviewerID;
+@property (nonatomic, copy) NSString * _Nonnull revieweeID;
+@property (nonatomic, strong) User * _Nullable user;
+@property (nonatomic, strong) Mechanic * _Nullable mechanic;
+@property (nonatomic, strong) AutoService * _Nullable autoServiceFromMechanic;
+@property (nonatomic, strong) AutoService * _Nullable autoServiceFromUser;
+@end
+
+
 SWIFT_CLASS_NAMED("ServiceEntity")
 @interface ServiceEntity : NSManagedObject
 - (void)awakeFromInsert;
@@ -366,6 +393,20 @@ SWIFT_CLASS_NAMED("ServiceEntity")
 /// Optional relationships to only one service type.
 /// Only one of these should exist. It should be whatever the entityType is.
 @property (nonatomic, strong) OilChange * _Nullable oilChange;
+@end
+
+
+SWIFT_CLASS_NAMED("Stats")
+@interface Stats : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Stats (SWIFT_EXTENSION(Store))
+@property (nonatomic) double averageRating;
+@property (nonatomic) NSInteger numberOfRatings;
+@property (nonatomic) NSInteger autoServicesProvided;
+@property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @end
 
 
@@ -412,8 +453,10 @@ SWIFT_CLASS_NAMED("User")
 @property (nonatomic, copy) NSString * _Nullable firstName;
 @property (nonatomic, copy) NSString * _Nullable lastName;
 @property (nonatomic, copy) NSString * _Nullable phoneNumber;
+@property (nonatomic) CGFloat averageRating;
 @property (nonatomic, copy) NSSet<AutoService *> * _Nonnull services;
 @property (nonatomic, copy) NSSet<Vehicle *> * _Nonnull vehicles;
+@property (nonatomic, copy) NSSet<Review *> * _Nonnull reviews;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @end
 

@@ -140,7 +140,7 @@ class MechanicServiceTests: CarSwaddleLoginTestCase {
     func testUpdateMechanicSocialSecurityLast4() {
         let exp = expectation(description: "\(#function)\(#line)")
         
-        service.updateCurrentMechanic(isActive: nil, token: nil, dateOfBirth: nil, addressJSON: nil, externalAccount: nil, socialSecurityNumberLast4: "1234", personalIDNumber: nil) { json, error in
+        service.updateCurrentMechanic(isActive: nil, token: nil, dateOfBirth: nil, addressJSON: nil, externalAccount: nil, socialSecurityNumberLast4: "0000", personalIDNumber: nil) { json, error in
             self.stripeService.getVerification { json, error in
                 guard let json = json,
                     let fieldsNeeded = json["fields_needed"] as? [String] else {
@@ -159,7 +159,7 @@ class MechanicServiceTests: CarSwaddleLoginTestCase {
     func testUpdateMechanicSocialSecurityNumber() {
         let exp = expectation(description: "\(#function)\(#line)")
         
-        service.updateCurrentMechanic(isActive: nil, token: nil, dateOfBirth: nil, addressJSON: nil, externalAccount: nil, socialSecurityNumberLast4: nil, personalIDNumber: "123-45-6789") { json, error in
+        service.updateCurrentMechanic(isActive: nil, token: nil, dateOfBirth: nil, addressJSON: nil, externalAccount: nil, socialSecurityNumberLast4: nil, personalIDNumber: "000-00-0000") { json, error in
             self.stripeService.getVerification { json, error in
                 guard let json = json,
                     let fieldsNeeded = json["fields_needed"] as? [String] else {
@@ -183,6 +183,24 @@ class MechanicServiceTests: CarSwaddleLoginTestCase {
                 XCTAssert(json["id"] as? String != nil, "Should have gotten at least one mechanic")
             } else {
                 XCTAssert(false, "Should have gotten jsonArray")
+            }
+            
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    func testGetStats() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        let mechanicID = "ce8b0070-0e41-11e9-834e-458588e04d18"
+        service.getStats(forMechanicWithID: mechanicID) { json, error in
+            if let json = json?[mechanicID] as? JSONObject {
+                XCTAssert(json["autoServicesProvided"] as? Int != nil, "Should have existed")
+                XCTAssert(json["numberOfRatings"] as? Int != nil, "Should have existed")
+                XCTAssert(json["averageRating"] as? CGFloat != nil, "Should have existed")
+            } else {
+                XCTAssert(false, "Should have gotten json")
             }
             
             exp.fulfill()

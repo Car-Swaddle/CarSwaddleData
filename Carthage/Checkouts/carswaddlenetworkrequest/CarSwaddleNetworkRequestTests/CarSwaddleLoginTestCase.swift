@@ -16,6 +16,9 @@ public var currentMechanicID: String {
 
 private var _currentMechanicID: String = ""
 
+private let userEmail = "kyle@carswaddle.com"
+private let password = "password"
+
 class CarSwaddleLoginTestCase: XCTestCase {
     
     private let authService = AuthService(serviceRequest: serviceRequest)
@@ -34,13 +37,13 @@ class CarSwaddleLoginTestCase: XCTestCase {
         guard authentication.token == nil else { return }
         
         let exp = expectation(description: "\(#function)\(#line)")
-        authService.mechanicLogin(email: "k@k.com", password: "password") { [weak self] json, token, error in
+        authService.mechanicLogin(email: userEmail, password: password) { [weak self] json, token, error in
             if let token = token {
                 _currentMechanicID = (json?["mechanic"] as? JSONObject)?["id"] as? String ?? ""
                 authentication.setToken(token)
                 exp.fulfill()
             } else {
-                self?.authService.mechanicSignUp(email: "k@k.com", password: "password") { json, token, error in
+                self?.authService.mechanicSignUp(email: userEmail, password: password) { json, token, error in
                     _currentMechanicID = (json?["mechanic"] as? JSONObject)?["id"] as? String ?? ""
                     if let token = token {
                         authentication.setToken(token)
