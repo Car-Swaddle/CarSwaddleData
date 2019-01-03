@@ -92,6 +92,14 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
         } else if let user = User.fetch(with: values.userID, in: context) {
             creator = user
         }
+        
+        if let reviewFromUserJSON = json["reviewFromUser"] as? JSONObject {
+            self.reviewFromUser = Review(json: reviewFromUserJSON, context: context)
+        }
+        
+        if let reviewFromMechanic = json["reviewFromMechanic"] as? JSONObject {
+            self.reviewFromMechanic = Review(json: reviewFromMechanic, context: context)
+        }
     }
     
     

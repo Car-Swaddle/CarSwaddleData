@@ -36,8 +36,8 @@ final public class Review: NSManagedObject, NSManagedObjectFetchable, JSONInitab
         
         let text = json["text"] as? String
         
-        let mechanicID = json["mechanicID"] as? String
-        let userID = json["userID"] as? String
+        let mechanicID = json["mechanicID"] as? String ?? (json["mechanic"] as? JSONObject)?["id"] as? String
+        let userID = json["userID"] as? String ?? (json["user"] as? JSONObject)?["id"] as? String
         let autoServiceIDFromMechanic = json["autoServiceIDFromMechanic"] as? String
         let autoServiceIDFromUser = json["autoServiceIDFromUser"] as? String
         
