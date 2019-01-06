@@ -12,17 +12,20 @@ import Store
 
 public class FileStore {
     
-    init(directory: String = "") {
-        self.directory = directory
+    init(folderName: String = "") {
+        self.folderName = folderName
     }
     
-    public let directory: String
+    public func destroy() throws {
+        let directory = try self.directory()
+        try fileManager.removeItem(at: directory)
+    }
+    
+    public let folderName: String
     
     public func getFile(name: String) throws -> Data? {
-        var documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
-        documentDirectory = documentDirectory.appendingPathComponent(directory, isDirectory: true)
-        documentDirectory = documentDirectory.appendingPathExtension("png")
-        let data = try Data(contentsOf: documentDirectory)
+        let fileURL = try directory().appendingPathComponent(name).appendingPathExtension("png")
+        let data = try Data(contentsOf: fileURL)
         return data
     }
     
@@ -36,19 +39,19 @@ public class FileStore {
     
     @discardableResult
     public func storeFile(data: Data, fileName: String) throws -> URL {
-        var documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
-        documentDirectory = documentDirectory.appendingPathComponent(directory, isDirectory: true)
-        if fileManager.fileExists(atPath: documentDirectory.path) == false {
-            try fileManager.createDirectory(at: documentDirectory, withIntermediateDirectories: true, attributes: nil)
-        }
-        var newFileURL = documentDirectory.appendingPathComponent(fileName)
-        
-//        if let mimeType = data.mimeType?.pathExtension {
-        newFileURL = documentDirectory.appendingPathExtension("png")
-//        }
+        let newFileURL = try directory().appendingPathComponent(fileName).appendingPathExtension("png")
         fileManager.createFile(atPath: newFileURL.path, contents: data, attributes: nil)
         try data.write(to: newFileURL)
         return newFileURL
+    }
+    
+    private func directory() throws -> URL {
+        var documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+        documentDirectory = documentDirectory.appendingPathComponent(folderName, isDirectory: true)
+        if fileManager.fileExists(atPath: documentDirectory.path) == false {
+            try fileManager.createDirectory(at: documentDirectory, withIntermediateDirectories: true, attributes: nil)
+        }
+        return documentDirectory
     }
     
 }
@@ -75,9 +78,23 @@ public class ProfileImageStore: FileStore {
         return getImage(withName: userID)
     }
     
+    @discardableResult
+    public func storeFile(url: URL, userID: String) throws -> URL {
+        return try storeFile(url: url, fileName: userID)
+    }
+    
 }
 
-public let profileImageStore = ProfileImageStore(directory: "profile-images")
+extension User {
+    
+    public func setProfileImag(withFileURL url: URL) throws {
+        try profileImageStore.storeFile(url: url, userID: identifier)
+    }
+    
+}
+
+
+public let profileImageStore = ProfileImageStore(folderName: "profile-images")
 
 
 public extension Data {
