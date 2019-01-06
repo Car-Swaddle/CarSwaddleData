@@ -16,6 +16,12 @@ public var currentMechanicID: String {
 
 private var _currentMechanicID: String = ""
 
+public var currentUserID: String {
+    return _currentUserID
+}
+
+private var _currentUserID: String = ""
+
 private let userEmail = "kyle@carswaddle.com"
 private let password = "password"
 
@@ -40,11 +46,13 @@ class CarSwaddleLoginTestCase: XCTestCase {
         authService.mechanicLogin(email: userEmail, password: password) { [weak self] json, token, error in
             if let token = token {
                 _currentMechanicID = (json?["mechanic"] as? JSONObject)?["id"] as? String ?? ""
+                _currentUserID = (json?["user"] as? JSONObject)?["id"] as? String ?? ""
                 authentication.setToken(token)
                 exp.fulfill()
             } else {
                 self?.authService.mechanicSignUp(email: userEmail, password: password) { json, token, error in
                     _currentMechanicID = (json?["mechanic"] as? JSONObject)?["id"] as? String ?? ""
+                    _currentUserID = (json?["user"] as? JSONObject)?["id"] as? String ?? ""
                     if let token = token {
                         authentication.setToken(token)
                     }

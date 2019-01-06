@@ -25,6 +25,7 @@ extension User {
     @NSManaged public var vehicles: Set<Vehicle>
     @NSManaged public var reviews: Set<Review>
     @NSManaged public var mechanic: Mechanic?
+    @NSManaged public var profileImageID: String?
 
 }
 

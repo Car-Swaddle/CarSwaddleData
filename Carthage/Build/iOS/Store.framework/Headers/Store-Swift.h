@@ -458,6 +458,7 @@ SWIFT_CLASS_NAMED("User")
 @property (nonatomic, copy) NSSet<Vehicle *> * _Nonnull vehicles;
 @property (nonatomic, copy) NSSet<Review *> * _Nonnull reviews;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
+@property (nonatomic, copy) NSString * _Nullable profileImageID;
 @end
 
 

@@ -6,7 +6,7 @@
 //  Copyright © 2018 CarSwaddle. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension NetworkRequest.Request.Endpoint {
     fileprivate static let ephemeralKeys = Request.Endpoint(rawValue: "/api/stripe/ephemeral-keys")

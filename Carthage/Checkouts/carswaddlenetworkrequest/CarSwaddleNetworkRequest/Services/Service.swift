@@ -29,6 +29,13 @@ public class Service {
         self.serviceRequest = newServiceRequest
     }
     
+    func sendWithAuthentication(urlRequest: NSMutableURLRequest, completion: @escaping (_ data: Data?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        do {
+            try urlRequest.authenticate()
+        } catch { print("couldn't authenticate") }
+        return serviceRequest.send(urlRequest: urlRequest as URLRequest, completion: completion)
+    }
+    
     func sendWithAuthentication(urlRequest: URLRequest, completion: @escaping (_ data: Data?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         var urlRequest = urlRequest
         do {

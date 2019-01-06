@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  CarSwaddleNetworkRequestTestHostApp
+//  HostTestApp
 //
-//  Created by Kyle Kendall on 10/21/18.
-//  Copyright © 2018 CarSwaddle. All rights reserved.
+//  Created by Kyle Kendall on 1/5/19.
+//  Copyright © 2019 CarSwaddle. All rights reserved.
 //
 
 import UIKit

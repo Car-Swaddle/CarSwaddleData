@@ -101,6 +101,7 @@
         <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImageID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="mechanic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mechanic" inverseName="user" inverseEntity="Mechanic" syncable="YES"/>
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="user" inverseEntity="Review" syncable="YES"/>
         <relationship name="services" toMany="YES" deletionRule="Nullify" destinationEntity="AutoService" inverseName="creator" inverseEntity="AutoService" syncable="YES"/>
@@ -135,10 +136,10 @@
         <element name="Region" positionX="-27" positionY="99" width="128" height="120"/>
         <element name="Review" positionX="-27" positionY="108" width="128" height="180"/>
         <element name="ServiceEntity" positionX="-27" positionY="99" width="128" height="105"/>
+        <element name="Stats" positionX="-18" positionY="126" width="128" height="105"/>
         <element name="TemplateTimeSpan" positionX="0" positionY="126" width="128" height="120"/>
-        <element name="User" positionX="-27" positionY="72" width="128" height="180"/>
+        <element name="User" positionX="-27" positionY="72" width="128" height="195"/>
         <element name="Vehicle" positionX="-54" positionY="-9" width="128" height="165"/>
         <element name="VehicleDescription" positionX="-27" positionY="90" width="128" height="135"/>
-        <element name="Stats" positionX="-18" positionY="126" width="128" height="105"/>
     </elements>
 </model>
