@@ -24,7 +24,7 @@ public class FileStore {
     public let folderName: String
     
     public func getFile(name: String) throws -> Data? {
-        let fileURL = try directory().appendingPathComponent(name).appendingPathExtension("png")
+        let fileURL = try directory().appendingPathComponent(name).appendingPathExtension("jpeg")
         let data = try Data(contentsOf: fileURL)
         return data
     }
@@ -39,7 +39,7 @@ public class FileStore {
     
     @discardableResult
     public func storeFile(data: Data, fileName: String) throws -> URL {
-        let newFileURL = try directory().appendingPathComponent(fileName).appendingPathExtension("png")
+        let newFileURL = try directory().appendingPathComponent(fileName).appendingPathExtension("jpeg")
         fileManager.createFile(atPath: newFileURL.path, contents: data, attributes: nil)
         try data.write(to: newFileURL)
         return newFileURL
