@@ -289,6 +289,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, copy) NSDate * _Nullable dateOfBirth;
 @property (nonatomic, strong) Address * _Nullable address;
 @property (nonatomic, strong) Stats * _Nullable stats;
+@property (nonatomic, copy) NSString * _Nullable profileImageID;
 @end
 
 
@@ -459,6 +460,8 @@ SWIFT_CLASS_NAMED("User")
 @property (nonatomic, copy) NSSet<Review *> * _Nonnull reviews;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @property (nonatomic, copy) NSString * _Nullable profileImageID;
+@property (nonatomic) BOOL isPhoneNumberVerified;
+@property (nonatomic) BOOL isEmailVerified;
 @end
 
 

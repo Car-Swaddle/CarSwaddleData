@@ -26,6 +26,7 @@ extension Mechanic {
     @NSManaged public var dateOfBirth: Date?
     @NSManaged public var address: Address?
     @NSManaged public var stats: Stats?
+    @NSManaged public var profileImageID: String?
 
 }
 

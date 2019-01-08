@@ -26,7 +26,9 @@ extension User {
     @NSManaged public var reviews: Set<Review>
     @NSManaged public var mechanic: Mechanic?
     @NSManaged public var profileImageID: String?
-
+    @NSManaged public var isPhoneNumberVerified: Bool
+    @NSManaged public var isEmailVerified: Bool
+    
 }
 
 // MARK: Generated accessors for requestServices
