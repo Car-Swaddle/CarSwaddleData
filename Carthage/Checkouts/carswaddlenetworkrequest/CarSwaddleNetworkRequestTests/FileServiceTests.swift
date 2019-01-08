@@ -16,8 +16,8 @@ class FileServiceTests: CarSwaddleLoginTestCase {
     
     func testUploadFile() {
         let exp = expectation(description: "\(#function)\(#line)")
-        guard let fileURL = Bundle(for: type(of: self)).url(forResource: "image", withExtension: "png") else {
-            XCTAssert(false, "Should have file: image.png in test bundle")
+        guard let fileURL = Bundle(for: type(of: self)).url(forResource: "image", withExtension: "jpeg") else {
+            XCTAssert(false, "Should have file: image.jpeg in test bundle")
             return
         }
         
