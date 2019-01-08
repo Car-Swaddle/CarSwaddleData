@@ -196,6 +196,12 @@ extension AutoService {
             throw StoreError.invalidJSON
         }
         
+        if let priceID = price?.identifier {
+            json["priceID"] = priceID
+        } else {
+            throw StoreError.invalidJSON
+        }
+        
         json["status"] = status.rawValue
         json["notes"] = notes
         
