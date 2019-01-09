@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Address" representedClassName="Address" syncable="YES">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="line1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postalCode" optional="YES" attributeType="String" syncable="YES"/>
@@ -129,7 +130,7 @@
         <relationship name="vehicle" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="vehicleDescription" inverseEntity="Vehicle" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Address" positionX="-27" positionY="99" width="128" height="135"/>
+        <element name="Address" positionX="-27" positionY="99" width="128" height="150"/>
         <element name="AutoService" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="Location" positionX="-36" positionY="27" width="128" height="120"/>
         <element name="Mechanic" positionX="-27" positionY="99" width="128" height="210"/>
