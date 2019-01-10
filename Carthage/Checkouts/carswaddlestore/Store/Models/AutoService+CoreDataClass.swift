@@ -135,6 +135,7 @@ struct StoreError: Error {
     let rawValue: String
     
     static let invalidJSON = StoreError(rawValue: "invalidJSON")
+    static let noPathToPersistentStore = StoreError(rawValue: "noPathToPersistentStore")
 }
 
 extension AutoService {
