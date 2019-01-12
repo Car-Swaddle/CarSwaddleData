@@ -262,7 +262,7 @@ SWIFT_CLASS_NAMED("Balance")
 @interface Balance (SWIFT_EXTENSION(Store))
 @property (nonatomic, strong) Amount * _Nonnull available;
 @property (nonatomic, strong) Amount * _Nonnull pending;
-@property (nonatomic, strong) Amount * _Nonnull reserved;
+@property (nonatomic, strong) Amount * _Nullable reserved;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @end
 

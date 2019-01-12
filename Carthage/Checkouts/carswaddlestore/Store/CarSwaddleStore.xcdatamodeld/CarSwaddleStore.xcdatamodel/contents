@@ -35,7 +35,7 @@
         <relationship name="available" maxCount="1" deletionRule="Cascade" destinationEntity="Amount" inverseName="balanceForAvailable" inverseEntity="Amount" syncable="YES"/>
         <relationship name="mechanic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mechanic" inverseName="balance" inverseEntity="Mechanic" syncable="YES"/>
         <relationship name="pending" maxCount="1" deletionRule="Cascade" destinationEntity="Amount" inverseName="balanceForPending" inverseEntity="Amount" syncable="YES"/>
-        <relationship name="reserved" maxCount="1" deletionRule="Cascade" destinationEntity="Amount" inverseName="balanceForReserved" inverseEntity="Amount" syncable="YES"/>
+        <relationship name="reserved" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Amount" inverseName="balanceForReserved" inverseEntity="Amount" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>

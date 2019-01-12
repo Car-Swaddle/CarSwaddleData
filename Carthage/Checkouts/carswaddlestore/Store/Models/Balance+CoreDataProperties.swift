@@ -19,7 +19,7 @@ public extension Balance {
 
     @NSManaged public var available: Amount
     @NSManaged public var pending: Amount
-    @NSManaged public var reserved: Amount
+    @NSManaged public var reserved: Amount?
     @NSManaged public var mechanic: Mechanic?
 
 }

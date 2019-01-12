@@ -15,19 +15,22 @@ public class Balance: NSManagedObject {
     
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let availableArray = json["available"] as? [JSONObject],
-            let pendingArray = json["pending"] as? [JSONObject],
-            let reservedArray = json["connect_reserved"] as? [JSONObject] else { return nil }
+            let pendingArray = json["pending"] as? [JSONObject] else { return nil }
         
         self.init(context: context)
         
         guard let availableJSON = availableArray.first, let available = Amount(json: availableJSON, context: context),
-            let pendingJSON = pendingArray.first, let pending = Amount(json: pendingJSON, context: context),
-            let reservedJSON = reservedArray.first, let reserved = Amount(json: reservedJSON, context: context) else {
-            return
+            let pendingJSON = pendingArray.first, let pending = Amount(json: pendingJSON, context: context) else {
+                return
         }
         self.available = available
         self.pending = pending
-        self.reserved = reserved
+        
+        if let reservedArray = json["connect_reserved"] as? [JSONObject],
+            let reservedJSON = reservedArray.first,
+            let reserved = Amount(json: reservedJSON, context: context) {
+            self.reserved = reserved
+        }
     }
     
 }

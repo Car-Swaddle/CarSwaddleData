@@ -24,6 +24,15 @@ class StripeTests: XCTestCase {
         XCTAssert(balance != nil, "Must have region from: \(balanceJSON)")
     }
     
+    func testCreateBalanceoReserved() {
+        let context = store.mainContext
+        var json = balanceJSON
+        json["connect_reserved"] = nil
+        let balance = Balance(json: json, context: context)
+        context.persist()
+        XCTAssert(balance != nil, "Must have region from: \(json)")
+    }
+    
 }
 
 
