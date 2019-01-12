@@ -17,7 +17,7 @@ public extension Amount {
         return NSFetchRequest<Amount>(entityName: Amount.entityName)
     }
 
-    @NSManaged public var value: Int64
+    @NSManaged public var value: Int
     @NSManaged public var currency: String
     @NSManaged public var balanceForAvailable: Balance?
     @NSManaged public var balanceForPending: Balance?

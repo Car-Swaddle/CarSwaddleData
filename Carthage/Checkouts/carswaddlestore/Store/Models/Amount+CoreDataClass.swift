@@ -19,7 +19,7 @@ public class Amount: NSManagedObject {
         
         self.init(context: context)
         
-        self.value = Int64(value)
+        self.value = value
         self.currency = currency
     }
     

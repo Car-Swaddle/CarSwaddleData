@@ -212,7 +212,7 @@ SWIFT_CLASS_NAMED("Amount")
 @class Balance;
 
 @interface Amount (SWIFT_EXTENSION(Store))
-@property (nonatomic) int64_t value;
+@property (nonatomic) NSInteger value;
 @property (nonatomic, copy) NSString * _Nonnull currency;
 @property (nonatomic, strong) Balance * _Nullable balanceForAvailable;
 @property (nonatomic, strong) Balance * _Nullable balanceForPending;
@@ -356,11 +356,10 @@ SWIFT_CLASS_NAMED("Price")
 - (void)removeParts:(NSSet * _Nonnull)values;
 @end
 
-@class NSDecimalNumber;
 
 @interface Price (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
-@property (nonatomic, strong) NSDecimalNumber * _Nonnull totalPrice;
+@property (nonatomic) NSInteger totalPrice;
 @property (nonatomic, copy) NSSet<PricePart *> * _Nonnull parts;
 @property (nonatomic, strong) AutoService * _Nullable autoService;
 @end
@@ -374,7 +373,7 @@ SWIFT_CLASS_NAMED("PricePart")
 
 @interface PricePart (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull key;
-@property (nonatomic, strong) NSDecimalNumber * _Nonnull value;
+@property (nonatomic) NSInteger value;
 @property (nonatomic, strong) Price * _Nonnull price;
 @end
 
