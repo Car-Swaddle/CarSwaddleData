@@ -29,6 +29,11 @@
 		991B403B216ADC5D00D7644D /* TemplateTimeSpan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B4027216ADC5D00D7644D /* TemplateTimeSpan+CoreDataClass.swift */; };
 		991B403C216ADC5D00D7644D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B4028216ADC5D00D7644D /* User+CoreDataProperties.swift */; };
 		9942545621576DFA0075EDCA /* NSManagedObjectFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9942545521576DFA0075EDCA /* NSManagedObjectFetchable.swift */; };
+		99675CA721E9DC2F003C9D70 /* Amount+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CA321E9DC2F003C9D70 /* Amount+CoreDataClass.swift */; };
+		99675CA821E9DC2F003C9D70 /* Amount+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CA421E9DC2F003C9D70 /* Amount+CoreDataProperties.swift */; };
+		99675CA921E9DC2F003C9D70 /* Balance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CA521E9DC2F003C9D70 /* Balance+CoreDataClass.swift */; };
+		99675CAA21E9DC2F003C9D70 /* Balance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CA621E9DC2F003C9D70 /* Balance+CoreDataProperties.swift */; };
+		99675CAC21E9E137003C9D70 /* StripeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CAB21E9E137003C9D70 /* StripeTests.swift */; };
 		997714BF21CC8F6700E54F5B /* PriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714BE21CC8F6700E54F5B /* PriceTests.swift */; };
 		997DBC78219BE5D00080F42C /* TemplateTimeSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC77219BE5D00080F42C /* TemplateTimeSpanTests.swift */; };
 		997DBC83219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC81219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift */; };
@@ -90,6 +95,11 @@
 		991B4027216ADC5D00D7644D /* TemplateTimeSpan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TemplateTimeSpan+CoreDataClass.swift"; sourceTree = "<group>"; };
 		991B4028216ADC5D00D7644D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9942545521576DFA0075EDCA /* NSManagedObjectFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectFetchable.swift; sourceTree = "<group>"; };
+		99675CA321E9DC2F003C9D70 /* Amount+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Amount+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99675CA421E9DC2F003C9D70 /* Amount+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Amount+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		99675CA521E9DC2F003C9D70 /* Balance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Balance+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99675CA621E9DC2F003C9D70 /* Balance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Balance+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		99675CAB21E9E137003C9D70 /* StripeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeTests.swift; sourceTree = "<group>"; };
 		997714BE21CC8F6700E54F5B /* PriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTests.swift; sourceTree = "<group>"; };
 		997DBC77219BE5D00080F42C /* TemplateTimeSpanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTimeSpanTests.swift; sourceTree = "<group>"; };
 		997DBC81219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -153,6 +163,10 @@
 		9991FE1C214B873F00F58F42 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				99675CA321E9DC2F003C9D70 /* Amount+CoreDataClass.swift */,
+				99675CA421E9DC2F003C9D70 /* Amount+CoreDataProperties.swift */,
+				99675CA521E9DC2F003C9D70 /* Balance+CoreDataClass.swift */,
+				99675CA621E9DC2F003C9D70 /* Balance+CoreDataProperties.swift */,
 				998D3ADC21DD4565003DD717 /* Stats+CoreDataClass.swift */,
 				998D3ADD21DD4565003DD717 /* Stats+CoreDataProperties.swift */,
 				99F0278921858611005FEFC7 /* Region+CoreDataClass.swift */,
@@ -241,6 +255,7 @@
 				99F027872185820F005FEFC7 /* DateExtensionTests.swift */,
 				99F0278F21859E29005FEFC7 /* RegionTests.swift */,
 				998D3AD221DC8483003DD717 /* ReviewTests.swift */,
+				99675CAB21E9E137003C9D70 /* StripeTests.swift */,
 				99DED72B214B80D40061CFE0 /* Info.plist */,
 				999C8D3D218C247300058FE7 /* NSManagedObjectFetchableTests.swift */,
 			);
@@ -376,10 +391,14 @@
 				9913759A217080D900F15BEC /* CarSwaddleStore.xcdatamodeld in Sources */,
 				991B4036216ADC5D00D7644D /* VehicleDescription+CoreDataProperties.swift in Sources */,
 				991B4029216ADC5D00D7644D /* VehicleDescription+CoreDataClass.swift in Sources */,
+				99675CA721E9DC2F003C9D70 /* Amount+CoreDataClass.swift in Sources */,
 				991B4032216ADC5D00D7644D /* User+CoreDataClass.swift in Sources */,
+				99675CA821E9DC2F003C9D70 /* Amount+CoreDataProperties.swift in Sources */,
 				99F0278B21858611005FEFC7 /* Region+CoreDataClass.swift in Sources */,
 				991B4034216ADC5D00D7644D /* OilChange+CoreDataClass.swift in Sources */,
+				99675CAA21E9DC2F003C9D70 /* Balance+CoreDataProperties.swift in Sources */,
 				991B402D216ADC5D00D7644D /* OilChange+CoreDataProperties.swift in Sources */,
+				99675CA921E9DC2F003C9D70 /* Balance+CoreDataClass.swift in Sources */,
 				998D3ADF21DD4565003DD717 /* Stats+CoreDataProperties.swift in Sources */,
 				991B402B216ADC5D00D7644D /* PricePart+CoreDataClass.swift in Sources */,
 				991B4037216ADC5D00D7644D /* PricePart+CoreDataProperties.swift in Sources */,
@@ -417,6 +436,7 @@
 				99F027882185820F005FEFC7 /* DateExtensionTests.swift in Sources */,
 				99F0279021859E29005FEFC7 /* RegionTests.swift in Sources */,
 				997714BF21CC8F6700E54F5B /* PriceTests.swift in Sources */,
+				99675CAC21E9E137003C9D70 /* StripeTests.swift in Sources */,
 				998D3AD321DC8483003DD717 /* ReviewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

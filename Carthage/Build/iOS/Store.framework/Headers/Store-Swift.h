@@ -204,6 +204,22 @@ SWIFT_CLASS_NAMED("Address")
 @end
 
 
+SWIFT_CLASS_NAMED("Amount")
+@interface Amount : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class Balance;
+
+@interface Amount (SWIFT_EXTENSION(Store))
+@property (nonatomic) int64_t value;
+@property (nonatomic, copy) NSString * _Nonnull currency;
+@property (nonatomic, strong) Balance * _Nullable balanceForAvailable;
+@property (nonatomic, strong) Balance * _Nullable balanceForPending;
+@property (nonatomic, strong) Balance * _Nullable balanceForReserved;
+@end
+
+
 SWIFT_CLASS_NAMED("AutoService")
 @interface AutoService : NSManagedObject
 - (void)awakeFromInsert;
@@ -237,6 +253,20 @@ SWIFT_CLASS_NAMED("AutoService")
 @end
 
 
+SWIFT_CLASS_NAMED("Balance")
+@interface Balance : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Balance (SWIFT_EXTENSION(Store))
+@property (nonatomic, strong) Amount * _Nonnull available;
+@property (nonatomic, strong) Amount * _Nonnull pending;
+@property (nonatomic, strong) Amount * _Nonnull reserved;
+@property (nonatomic, strong) Mechanic * _Nullable mechanic;
+@end
+
+
 SWIFT_CLASS_NAMED("Location")
 @interface Location : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
@@ -257,22 +287,22 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class TemplateTimeSpan;
 @class NSSet;
-
-@interface Mechanic (SWIFT_EXTENSION(Store))
-- (void)addScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
-- (void)removeScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
-- (void)addScheduleTimeSpans:(NSSet * _Nonnull)values;
-- (void)removeScheduleTimeSpans:(NSSet * _Nonnull)values;
-@end
-
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
 - (void)addServicesObject:(AutoService * _Nonnull)value;
 - (void)removeServicesObject:(AutoService * _Nonnull)value;
 - (void)addServices:(NSSet * _Nonnull)values;
 - (void)removeServices:(NSSet * _Nonnull)values;
+@end
+
+@class TemplateTimeSpan;
+
+@interface Mechanic (SWIFT_EXTENSION(Store))
+- (void)addScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
+- (void)removeScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
+- (void)addScheduleTimeSpans:(NSSet * _Nonnull)values;
+- (void)removeScheduleTimeSpans:(NSSet * _Nonnull)values;
 @end
 
 @class Region;
@@ -290,6 +320,8 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, strong) Address * _Nullable address;
 @property (nonatomic, strong) Stats * _Nullable stats;
 @property (nonatomic, copy) NSString * _Nullable profileImageID;
+@property (nonatomic, copy) NSString * _Nullable pushDeviceToken;
+@property (nonatomic, strong) Balance * _Nullable balance;
 @end
 
 
@@ -462,6 +494,7 @@ SWIFT_CLASS_NAMED("User")
 @property (nonatomic, copy) NSString * _Nullable profileImageID;
 @property (nonatomic) BOOL isPhoneNumberVerified;
 @property (nonatomic) BOOL isEmailVerified;
+@property (nonatomic, copy) NSString * _Nullable pushDeviceToken;
 @end
 
 

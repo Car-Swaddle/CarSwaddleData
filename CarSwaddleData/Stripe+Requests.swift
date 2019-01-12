@@ -32,6 +32,23 @@ final public class StripeNetwork: Network {
         }
     }
     
+    @discardableResult
+    public func requestBalance(in context: NSManagedObjectContext, completion: @escaping (_ balanceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return stripeService.getBalance { json, error in
+            context.perform {
+                var objectID: NSManagedObjectID?
+                defer {
+                    completion(objectID, error)
+                }
+                guard let json = json else { return }
+                guard let balance = Balance(json: json, context: context) else { return }
+                Mechanic.currentLoggedInMechanic(in: context)?.balance = balance
+                context.persist()
+                objectID = balance.objectID
+            }
+        }
+    }
+    
 }
 
 

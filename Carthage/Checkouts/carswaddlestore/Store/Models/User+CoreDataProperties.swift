@@ -28,6 +28,7 @@ extension User {
     @NSManaged public var profileImageID: String?
     @NSManaged public var isPhoneNumberVerified: Bool
     @NSManaged public var isEmailVerified: Bool
+    @NSManaged public var pushDeviceToken: String?
     
 }
 

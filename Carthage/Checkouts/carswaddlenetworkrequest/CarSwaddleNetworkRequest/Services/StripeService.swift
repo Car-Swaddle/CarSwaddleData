@@ -11,6 +11,7 @@ import Foundation
 extension NetworkRequest.Request.Endpoint {
     fileprivate static let ephemeralKeys = Request.Endpoint(rawValue: "/api/stripe/ephemeral-keys")
     fileprivate static let verification = Request.Endpoint(rawValue: "/api/stripe/verification")
+    fileprivate static let balance = Request.Endpoint(rawValue: "/api/stripe/balance")
 }
 
 
@@ -28,6 +29,14 @@ final public class StripeService: Service {
     @discardableResult
     public func getVerification(completion: @escaping JSONCompletion) -> URLSessionDataTask? {
         guard let urlRequest = serviceRequest.get(with: .verification) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSON(data: data, error: error, completion: completion)
+        }
+    }
+    
+    @discardableResult
+    public func getBalance(completion: @escaping JSONCompletion) -> URLSessionDataTask? {
+        guard let urlRequest = serviceRequest.get(with: .balance) else { return nil }
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
             self?.completeWithJSON(data: data, error: error, completion: completion)
         }

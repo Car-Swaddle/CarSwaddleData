@@ -41,4 +41,67 @@ class StripeServiceTests: CarSwaddleLoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testStripeBalance() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        stripeService.getBalance { json, error in
+            XCTAssert(json != nil, "Json is nil")
+            
+            if let available = json?["available"] as? [JSONObject], let first = available.first {
+                XCTAssert((first["amount"] as? Int) != nil, "Should have available")
+                XCTAssert((first["currency"] as? String) != nil, "Should have available")
+            } else {
+                XCTAssert(false, "Should have availabel")
+            }
+            if let reserved = json?["connect_reserved"] as? [JSONObject], let first = reserved.first {
+                XCTAssert((first["amount"] as? Int) != nil, "Should have available")
+                XCTAssert((first["currency"] as? String) != nil, "Should have available")
+            } else {
+                XCTAssert(false, "Should have connect_reserved")
+            }
+            if let pending = json?["pending"] as? [JSONObject], let first = pending.first {
+                XCTAssert((first["amount"] as? Int) != nil, "Should have available")
+                XCTAssert((first["currency"] as? String) != nil, "Should have available")
+            } else {
+                XCTAssert(false, "Should have pending")
+            }
+            XCTAssert(error == nil, "Got error: \(error?.localizedDescription ?? "")")
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
+    
+    /*
+     {
+     "object": "balance",
+     "available": [
+     {
+     "amount": 0,
+     "currency": "usd",
+     "source_types": {
+     "card": 0
+     }
+     }
+     ],
+     "connect_reserved": [
+     {
+     "amount": 0,
+     "currency": "usd"
+     }
+     ],
+     "livemode": false,
+     "pending": [
+     {
+     "amount": 3466,
+     "currency": "usd",
+     "source_types": {
+     "card": 3466
+     }
+     }
+     ]
+     }
+     */
+    
 }
