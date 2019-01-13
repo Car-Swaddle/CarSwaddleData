@@ -80,6 +80,7 @@ final public class StripeNetwork: Network {
                     objectIDs.append(transaction.objectID)
                     lastID = transaction.identifier
                 }
+                context.persist()
             }
         }
     }
