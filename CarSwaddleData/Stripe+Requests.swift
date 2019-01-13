@@ -72,7 +72,7 @@ final public class StripeNetwork: Network {
                 
                 let mechanic = Mechanic.currentLoggedInMechanic(in: context)
                 for transactionJSON in json["data"] as? [JSONObject] ?? [] {
-                    guard let transaction = Transaction.fetchOrCreate(json: json, context: context) else { continue }
+                    guard let transaction = Transaction.fetchOrCreate(json: transactionJSON, context: context) else { continue }
                     transaction.mechanic = mechanic
                     if transaction.objectID.isTemporaryID == true {
                         try? context.obtainPermanentIDs(for: [transaction])
