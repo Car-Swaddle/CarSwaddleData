@@ -41,4 +41,26 @@ class StripeTests: LoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testRequestTransactions() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        store.privateContext { pCtx in
+//            self.stripeNetwork.requestBalance(in: pCtx) { objectID, error in
+            self.stripeNetwork.requestTransaction(in: pCtx) { objectIDs, lastID, hasMore, error in
+                store.mainContext{ mCtx in
+                    XCTAssert(lastID != nil, "Should have lastID")
+                    XCTAssert(objectIDs.count > 0, "Should have objects")
+                    var objects: [Transaction] = []
+                    for objectID in objectIDs {
+                        guard let t = mCtx.object(with: objectID) as? Transaction else { continue }
+                        objects.append(t)
+                    }
+                    XCTAssert(objectIDs.count == objects.count, "Should have objects")
+                    
+                    exp.fulfill()
+                }
+            }
+        }
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
 }

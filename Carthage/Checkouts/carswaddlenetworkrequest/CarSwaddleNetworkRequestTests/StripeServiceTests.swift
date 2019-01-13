@@ -72,36 +72,53 @@ class StripeServiceTests: CarSwaddleLoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testGetTransactions() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        stripeService.getTransactions { json, error in
+            XCTAssert(json != nil, "Json is nil")
+            
+            if let data = json?["data"] as? [JSONObject], let first = data.first {
+                XCTAssert((first["id"] as? String) != nil, "Should have available")
+                XCTAssert((first["amount"] as? Int) != nil, "Should have available")
+                XCTAssert((first["available_on"] as? Int) != nil, "Should have available")
+                XCTAssert((first["currency"] as? String) != nil, "Should have available")
+//                XCTAssert((first["description"] as? String) != nil, "Should have available")
+//                XCTAssert((first["exchange_rate"] as? String) != nil, "Should have available")
+                XCTAssert((first["fee"] as? Int) != nil, "Should have available")
+                XCTAssert((first["fee_details"] as? [Any]) != nil, "Should have available")
+                XCTAssert((first["net"] as? Int) != nil, "Should have available")
+                XCTAssert((first["source"] as? String) != nil, "Should have available")
+                XCTAssert((first["status"] as? String) != nil, "Should have available")
+                XCTAssert((first["type"] as? String) != nil, "Should have available")
+            } else {
+                XCTAssert(false, "Should have `data`.first")
+            }
+            
+            XCTAssert((json?["has_more"] as? Bool) != nil, "Should have `hasMore`")
+            XCTAssert(error == nil, "Got error: \(error?.localizedDescription ?? "")")
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
     
     /*
      {
-     "object": "balance",
-     "available": [
-     {
-     "amount": 0,
+     "id": "txn_1DrkLNEuZcoNxiqA9hcSyMmJ",
+     "object": "balance_transaction",
+     "amount": 4983,
+     "available_on": 1547856000,
+     "created": 1547291281,
      "currency": "usd",
-     "source_types": {
-     "card": 0
-     }
-     }
-     ],
-     "connect_reserved": [
-     {
-     "amount": 0,
-     "currency": "usd"
-     }
-     ],
-     "livemode": false,
-     "pending": [
-     {
-     "amount": 3466,
-     "currency": "usd",
-     "source_types": {
-     "card": 3466
-     }
-     }
-     ]
-     }
+     "description": null,
+     "exchange_rate": null,
+     "fee": 0,
+     "fee_details": [],
+     "net": 4983,
+     "source": "py_1DrkLNEuZcoNxiqAGScYdQpJ",
+     "status": "pending",
+     "type": "payment"
      */
     
 }

@@ -41,10 +41,45 @@ final public class StripeNetwork: Network {
                     completion(objectID, error)
                 }
                 guard let json = json else { return }
+                
+                let mechanic = Mechanic.currentLoggedInMechanic(in: context)
+                
+                if let previous = mechanic?.balance {
+                    context.delete(previous)
+                }
+                
                 guard let balance = Balance(json: json, context: context) else { return }
-                Mechanic.currentLoggedInMechanic(in: context)?.balance = balance
+                mechanic?.balance = balance
                 context.persist()
                 objectID = balance.objectID
+            }
+        }
+    }
+    
+    @discardableResult
+    public func requestTransaction(startingAfterID: String? = nil, payoutID: String? = nil, limit: Int? = nil, in context: NSManagedObjectContext, completion: @escaping (_ transactionIDs: [NSManagedObjectID], _ lastID: String?, _ hasMore: Bool, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return stripeService.getTransactions(startingAfterID: startingAfterID, payoutID: payoutID, limit: limit) { json, error in
+            context.perform {
+                var objectIDs: [NSManagedObjectID] = []
+                var lastID: String?
+                var hasMore: Bool = false
+                defer {
+                    completion(objectIDs, lastID, hasMore, error)
+                }
+                guard let json = json else { return }
+                
+                hasMore = (json["has_more"] as? Bool) ?? false
+                
+                let mechanic = Mechanic.currentLoggedInMechanic(in: context)
+                for transactionJSON in json["data"] as? [JSONObject] ?? [] {
+                    guard let transaction = Transaction(json: transactionJSON, context: context) else { continue }
+                    transaction.mechanic = mechanic
+                    if transaction.objectID.isTemporaryID == true {
+                        try? context.obtainPermanentIDs(for: [transaction])
+                    }
+                    objectIDs.append(transaction.objectID)
+                    lastID = transaction.identifier
+                }
             }
         }
     }

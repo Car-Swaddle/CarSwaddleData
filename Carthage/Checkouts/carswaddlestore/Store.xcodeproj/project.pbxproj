@@ -34,6 +34,8 @@
 		99675CA921E9DC2F003C9D70 /* Balance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CA521E9DC2F003C9D70 /* Balance+CoreDataClass.swift */; };
 		99675CAA21E9DC2F003C9D70 /* Balance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CA621E9DC2F003C9D70 /* Balance+CoreDataProperties.swift */; };
 		99675CAC21E9E137003C9D70 /* StripeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CAB21E9E137003C9D70 /* StripeTests.swift */; };
+		99675CB721EB0059003C9D70 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CB521EB0059003C9D70 /* Transaction+CoreDataClass.swift */; };
+		99675CB821EB0059003C9D70 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99675CB621EB0059003C9D70 /* Transaction+CoreDataProperties.swift */; };
 		997714BF21CC8F6700E54F5B /* PriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714BE21CC8F6700E54F5B /* PriceTests.swift */; };
 		997DBC78219BE5D00080F42C /* TemplateTimeSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC77219BE5D00080F42C /* TemplateTimeSpanTests.swift */; };
 		997DBC83219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC81219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift */; };
@@ -100,6 +102,8 @@
 		99675CA521E9DC2F003C9D70 /* Balance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Balance+CoreDataClass.swift"; sourceTree = "<group>"; };
 		99675CA621E9DC2F003C9D70 /* Balance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Balance+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		99675CAB21E9E137003C9D70 /* StripeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeTests.swift; sourceTree = "<group>"; };
+		99675CB521EB0059003C9D70 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99675CB621EB0059003C9D70 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		997714BE21CC8F6700E54F5B /* PriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTests.swift; sourceTree = "<group>"; };
 		997DBC77219BE5D00080F42C /* TemplateTimeSpanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTimeSpanTests.swift; sourceTree = "<group>"; };
 		997DBC81219FF4FC0080F42C /* ServiceEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				99675CA421E9DC2F003C9D70 /* Amount+CoreDataProperties.swift */,
 				99675CA521E9DC2F003C9D70 /* Balance+CoreDataClass.swift */,
 				99675CA621E9DC2F003C9D70 /* Balance+CoreDataProperties.swift */,
+				99675CB521EB0059003C9D70 /* Transaction+CoreDataClass.swift */,
+				99675CB621EB0059003C9D70 /* Transaction+CoreDataProperties.swift */,
 				998D3ADC21DD4565003DD717 /* Stats+CoreDataClass.swift */,
 				998D3ADD21DD4565003DD717 /* Stats+CoreDataProperties.swift */,
 				99F0278921858611005FEFC7 /* Region+CoreDataClass.swift */,
@@ -388,8 +394,10 @@
 				99F0278C21858611005FEFC7 /* Region+CoreDataProperties.swift in Sources */,
 				99A3A87921D22871009A1AD9 /* Address+CoreDataClass.swift in Sources */,
 				997DBC84219FF4FC0080F42C /* ServiceEntity+CoreDataProperties.swift in Sources */,
+				99675CB821EB0059003C9D70 /* Transaction+CoreDataProperties.swift in Sources */,
 				9913759A217080D900F15BEC /* CarSwaddleStore.xcdatamodeld in Sources */,
 				991B4036216ADC5D00D7644D /* VehicleDescription+CoreDataProperties.swift in Sources */,
+				99675CB721EB0059003C9D70 /* Transaction+CoreDataClass.swift in Sources */,
 				991B4029216ADC5D00D7644D /* VehicleDescription+CoreDataClass.swift in Sources */,
 				99675CA721E9DC2F003C9D70 /* Amount+CoreDataClass.swift in Sources */,
 				991B4032216ADC5D00D7644D /* User+CoreDataClass.swift in Sources */,

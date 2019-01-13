@@ -287,7 +287,16 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class Transaction;
 @class NSSet;
+
+@interface Mechanic (SWIFT_EXTENSION(Store))
+- (void)addTransactionsObject:(Transaction * _Nonnull)value;
+- (void)removeTransactionsObject:(Transaction * _Nonnull)value;
+- (void)addTransactions:(NSSet * _Nonnull)values;
+- (void)removeTransactions:(NSSet * _Nonnull)values;
+@end
+
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
 - (void)addServicesObject:(AutoService * _Nonnull)value;
@@ -322,6 +331,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, copy) NSString * _Nullable profileImageID;
 @property (nonatomic, copy) NSString * _Nullable pushDeviceToken;
 @property (nonatomic, strong) Balance * _Nullable balance;
+@property (nonatomic, copy) NSSet<Transaction *> * _Nonnull transactions;
 @end
 
 
@@ -455,6 +465,30 @@ SWIFT_CLASS_NAMED("TemplateTimeSpan")
 /// The number of seconds
 @property (nonatomic) NSTimeInterval duration;
 @property (nonatomic, strong) Mechanic * _Nonnull mechanic;
+@end
+
+
+SWIFT_CLASS_NAMED("Transaction")
+@interface Transaction : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSNumber;
+
+@interface Transaction (SWIFT_EXTENSION(Store))
+@property (nonatomic, copy) NSString * _Nonnull identifier;
+@property (nonatomic) NSInteger amount;
+@property (nonatomic, copy) NSDate * _Nonnull availableOn;
+@property (nonatomic, copy) NSDate * _Nonnull created;
+@property (nonatomic, copy) NSString * _Nonnull currency;
+@property (nonatomic, copy) NSString * _Nullable transactionDescription;
+@property (nonatomic, strong) NSNumber * _Nullable exchangeRate;
+@property (nonatomic) NSInteger fee;
+@property (nonatomic) NSInteger net;
+@property (nonatomic, copy) NSString * _Nonnull source;
+@property (nonatomic, copy) NSString * _Nonnull status;
+@property (nonatomic, copy) NSString * _Nonnull type;
+@property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @end
 
 

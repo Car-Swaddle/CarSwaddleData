@@ -24,13 +24,21 @@ class StripeTests: XCTestCase {
         XCTAssert(balance != nil, "Must have region from: \(balanceJSON)")
     }
     
-    func testCreateBalanceoReserved() {
+    func testCreateBalanceReserved() {
         let context = store.mainContext
         var json = balanceJSON
         json["connect_reserved"] = nil
         let balance = Balance(json: json, context: context)
         context.persist()
         XCTAssert(balance != nil, "Must have region from: \(json)")
+    }
+    
+    func testTransaction() {
+        let context = store.mainContext
+        let json = singleTransaction
+        let transaction = Transaction(json: json, context: context)
+        context.persist()
+        XCTAssert(transaction != nil, "Must have transaction from: \(json)")
     }
     
 }
@@ -63,4 +71,30 @@ private let balanceJSON: [String: Any] = [
             ]
         ]
     ]
+]
+
+private let singleTransaction: [String: Any] = [
+    "id": "txn_1DrkLNEuZcoNxiqA9hcSyMmJ",
+    "object": "balance_transaction",
+    "amount": 4983,
+    "available_on": 1547856000,
+    "created": 1547291281,
+    "currency": "usd",
+    "description": NSNull(),
+    "exchange_rate": NSNull(),
+    "fee": 0,
+    "fee_details": [],
+    "net": 4983,
+    "source": "py_1DrkLNEuZcoNxiqAGScYdQpJ",
+    "status": "pending",
+    "type": "payment"
+]
+
+private let transactionJSON: [String: Any] = [
+    "object": "list",
+    "data": [
+        singleTransaction,
+    ],
+    "has_more": false,
+    "url": "/v1/balance/history"
 ]

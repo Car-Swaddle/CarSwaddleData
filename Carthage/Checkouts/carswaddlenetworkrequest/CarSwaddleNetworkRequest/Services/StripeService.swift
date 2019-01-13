@@ -12,6 +12,7 @@ extension NetworkRequest.Request.Endpoint {
     fileprivate static let ephemeralKeys = Request.Endpoint(rawValue: "/api/stripe/ephemeral-keys")
     fileprivate static let verification = Request.Endpoint(rawValue: "/api/stripe/verification")
     fileprivate static let balance = Request.Endpoint(rawValue: "/api/stripe/balance")
+    fileprivate static let transactions = Request.Endpoint(rawValue: "/api/stripe/transactions")
 }
 
 
@@ -37,6 +38,26 @@ final public class StripeService: Service {
     @discardableResult
     public func getBalance(completion: @escaping JSONCompletion) -> URLSessionDataTask? {
         guard let urlRequest = serviceRequest.get(with: .balance) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSON(data: data, error: error, completion: completion)
+        }
+    }
+    
+    @discardableResult
+    public func getTransactions(startingAfterID: String? = nil, payoutID: String? = nil, limit: Int? = nil, completion: @escaping JSONCompletion) -> URLSessionDataTask? {
+        var queryItems: [URLQueryItem] = []
+        
+        if let startingAfterID = startingAfterID {
+            queryItems.append(URLQueryItem(name: "startingAfter", value: startingAfterID))
+        }
+        if let payoutID = payoutID {
+            queryItems.append(URLQueryItem(name: "payoutID", value: payoutID))
+        }
+        if let limit = limit {
+            queryItems.append(URLQueryItem(name: "limit", value: String(limit)))
+        }
+        
+        guard let urlRequest = serviceRequest.get(with: .transactions, queryItems: queryItems) else { return nil }
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
             self?.completeWithJSON(data: data, error: error, completion: completion)
         }
