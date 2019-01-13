@@ -486,7 +486,6 @@ SWIFT_CLASS_NAMED("Transaction")
 @property (nonatomic) NSInteger fee;
 @property (nonatomic) NSInteger net;
 @property (nonatomic, copy) NSString * _Nonnull source;
-@property (nonatomic, copy) NSString * _Nonnull status;
 @property (nonatomic, copy) NSString * _Nonnull type;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @end

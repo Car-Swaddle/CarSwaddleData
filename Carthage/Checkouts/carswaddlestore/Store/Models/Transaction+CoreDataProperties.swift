@@ -27,7 +27,6 @@ extension Transaction {
     @NSManaged public var fee: Int
     @NSManaged public var net: Int
     @NSManaged public var source: String
-    @NSManaged public var status: String
     @NSManaged public var type: String
     @NSManaged public var mechanic: Mechanic?
 

@@ -15,6 +15,29 @@ typealias TransactionValues = (identifier: String, amount: Int, availableOn: Dat
 @objc(Transaction)
 final public class Transaction: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
     
+    @NSManaged private var primitiveStatus: String
+    
+    public enum Status: String {
+        case pending
+        case available
+    }
+    
+    
+    private let statusKey = "status"
+    public var status: Status {
+        get {
+            willAccessValue(forKey: statusKey)
+            guard let status = Status(rawValue: primitiveStatus) else { return .pending }
+            didAccessValue(forKey: statusKey)
+            return status
+        }
+        set {
+            willChangeValue(forKey: statusKey)
+            primitiveStatus = status.rawValue
+            didChangeValue(forKey: statusKey)
+        }
+    }
+    
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let values = Transaction.values(from: json) else { return nil }
         self.init(context: context)
@@ -61,11 +84,18 @@ final public class Transaction: NSManagedObject, NSManagedObjectFetchable, JSONI
         self.fee = values.fee
         self.net = values.net
         self.source = values.source
-        self.status = values.status
+        self.status = Status(rawValue: values.status) ?? .pending
         self.type = values.type
         self.transactionDescription = values.transactionDescription
         self.exchangeRate = values.exchangeRate
     }
     
+    public static var createdSortDescriptor: NSSortDescriptor {
+        return NSSortDescriptor(key: #keyPath(Transaction.created), ascending: true)
+    }
+    
+    public static var currentMechanicPredicate: NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(Transaction.mechanic.identifier), Mechanic.currentMechanicID ?? "")
+    }
     
 }
