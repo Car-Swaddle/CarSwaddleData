@@ -48,7 +48,7 @@ final public class StripeService: Service {
         var queryItems: [URLQueryItem] = []
         
         if let startingAfterID = startingAfterID {
-            queryItems.append(URLQueryItem(name: "startingAfter", value: startingAfterID))
+            queryItems.append(URLQueryItem(name: "startingAfterID", value: startingAfterID))
         }
         if let payoutID = payoutID {
             queryItems.append(URLQueryItem(name: "payoutID", value: payoutID))
