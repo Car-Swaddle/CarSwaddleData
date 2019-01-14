@@ -33,5 +33,6 @@ extension Payout {
     @NSManaged public var failureCode: String?
     @NSManaged public var failureBalanceTransaction: String?
     @NSManaged public var transactions: Set<Transaction>
+    @NSManaged public var mechanic: Mechanic?
 
 }

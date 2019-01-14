@@ -316,6 +316,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 
 @class Region;
 @class Stats;
+@class Payout;
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
@@ -332,6 +333,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, copy) NSString * _Nullable pushDeviceToken;
 @property (nonatomic, strong) Balance * _Nullable balance;
 @property (nonatomic, copy) NSSet<Transaction *> * _Nonnull transactions;
+@property (nonatomic, copy) NSSet<Payout *> * _Nonnull payouts;
 @end
 
 
@@ -375,6 +377,7 @@ SWIFT_CLASS_NAMED("Payout")
 @property (nonatomic, copy) NSString * _Nullable failureCode;
 @property (nonatomic, copy) NSString * _Nullable failureBalanceTransaction;
 @property (nonatomic, copy) NSSet<Transaction *> * _Nonnull transactions;
+@property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @end
 
 

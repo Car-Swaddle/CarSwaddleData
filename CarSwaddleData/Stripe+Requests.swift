@@ -107,14 +107,14 @@ final public class StripeNetwork: Network {
                 hasMore = (json["has_more"] as? Bool) ?? false
                 
                 let mechanic = Mechanic.currentLoggedInMechanic(in: context)
-                for transactionJSON in json["data"] as? [JSONObject] ?? [] {
-                    guard let transaction = Transaction.fetchOrCreate(json: transactionJSON, context: context) else { continue }
-                    transaction.mechanic = mechanic
-                    if transaction.objectID.isTemporaryID == true {
-                        try? context.obtainPermanentIDs(for: [transaction])
+                for payoutJSON in json["data"] as? [JSONObject] ?? [] {
+                    guard let payout = Payout.fetchOrCreate(json: payoutJSON, context: context) else { continue }
+                    payout.mechanic = mechanic
+                    if payout.objectID.isTemporaryID == true {
+                        try? context.obtainPermanentIDs(for: [payout])
                     }
-                    objectIDs.append(transaction.objectID)
-                    lastID = transaction.identifier
+                    objectIDs.append(payout.objectID)
+                    lastID = payout.identifier
                 }
                 context.persist()
             }

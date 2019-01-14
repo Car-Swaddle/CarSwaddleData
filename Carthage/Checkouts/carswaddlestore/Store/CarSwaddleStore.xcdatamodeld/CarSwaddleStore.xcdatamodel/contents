@@ -52,6 +52,7 @@
         <attribute name="pushDeviceToken" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="mechanic" inverseEntity="Address" syncable="YES"/>
         <relationship name="balance" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Balance" inverseName="mechanic" inverseEntity="Balance" syncable="YES"/>
+        <relationship name="payouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Payout" inverseName="mechanic" inverseEntity="Payout" syncable="YES"/>
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="mechanic" inverseEntity="Review" syncable="YES"/>
         <relationship name="scheduleTimeSpans" toMany="YES" deletionRule="Cascade" destinationEntity="TemplateTimeSpan" inverseName="mechanic" inverseEntity="TemplateTimeSpan" syncable="YES"/>
         <relationship name="serviceRegion" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Region" inverseName="mechanic" inverseEntity="Region" syncable="YES"/>
@@ -81,6 +82,7 @@
         <attribute name="statementDescriptor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="mechanic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mechanic" inverseName="payouts" inverseEntity="Mechanic" syncable="YES"/>
         <relationship name="transactions" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="payout" inverseEntity="Transaction" syncable="YES"/>
     </entity>
     <entity name="Price" representedClassName="Price" syncable="YES">
@@ -186,9 +188,9 @@
         <element name="AutoService" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="Balance" positionX="-27" positionY="135" width="128" height="105"/>
         <element name="Location" positionX="-36" positionY="27" width="128" height="120"/>
-        <element name="Mechanic" positionX="-27" positionY="99" width="128" height="255"/>
+        <element name="Mechanic" positionX="-27" positionY="99" width="128" height="270"/>
         <element name="OilChange" positionX="-18" positionY="54" width="128" height="90"/>
-        <element name="Payout" positionX="-27" positionY="135" width="128" height="285"/>
+        <element name="Payout" positionX="-27" positionY="135" width="128" height="300"/>
         <element name="Price" positionX="-9" positionY="90" width="128" height="105"/>
         <element name="PricePart" positionX="0" positionY="108" width="128" height="90"/>
         <element name="Region" positionX="-27" positionY="99" width="128" height="120"/>
