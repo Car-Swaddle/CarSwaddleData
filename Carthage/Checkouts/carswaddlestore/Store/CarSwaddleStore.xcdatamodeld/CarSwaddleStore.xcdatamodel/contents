@@ -58,7 +58,7 @@
         <relationship name="serviceRegion" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Region" inverseName="mechanic" inverseEntity="Region" syncable="YES"/>
         <relationship name="services" toMany="YES" deletionRule="Nullify" destinationEntity="AutoService" inverseName="mechanic" inverseEntity="AutoService" syncable="YES"/>
         <relationship name="stats" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Stats" inverseName="mechanic" inverseEntity="Stats" syncable="YES"/>
-        <relationship name="transactions" toMany="YES" deletionRule="Cascade" destinationEntity="Transaction" inverseName="mechanic" inverseEntity="Transaction" syncable="YES"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Transaction" inverseName="mechanic" inverseEntity="Transaction" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="mechanic" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="OilChange" representedClassName="OilChange" syncable="YES">
@@ -77,7 +77,7 @@
         <attribute name="failureMessage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="method" attributeType="String" syncable="YES"/>
-        <attribute name="payoutDescription" attributeType="String" syncable="YES"/>
+        <attribute name="payoutDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sourceType" attributeType="String" syncable="YES"/>
         <attribute name="statementDescriptor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" attributeType="String" syncable="YES"/>
