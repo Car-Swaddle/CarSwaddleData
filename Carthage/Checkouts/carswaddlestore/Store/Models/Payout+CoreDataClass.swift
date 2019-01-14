@@ -16,7 +16,7 @@ typealias PayoutValues = (
     arrivalDate: Date,
     created: Date,
     currency: String,
-    payoutDescription: String?,
+    payoutDescription: String,
     destination: String?,
     type: String,
     status: String,
@@ -53,9 +53,9 @@ final public class Payout: NSManagedObject, JSONInitable, NSManagedObjectFetchab
             let type = json["type"] as? String,
             let status = json["status"] as? String,
             let method = json["method"] as? String,
+            let payoutDescription = json["description"] as? String,
             let sourceType = json["source_type"] as? String else { return nil }
         
-        let payoutDescription = json["payout_description"] as? String
         let destination = json["destination"] as? String
         let statementDescriptor = json["statement_descriptor"] as? String
         let failureMessage = json["failure_message"] as? String
