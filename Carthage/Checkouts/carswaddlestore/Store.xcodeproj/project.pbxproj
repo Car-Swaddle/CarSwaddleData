@@ -62,6 +62,8 @@
 		99F0278C21858611005FEFC7 /* Region+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0278A21858611005FEFC7 /* Region+CoreDataProperties.swift */; };
 		99F0279021859E29005FEFC7 /* RegionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0278F21859E29005FEFC7 /* RegionTests.swift */; };
 		99F027A0218AE51B005FEFC7 /* PrimitiveExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F0279F218AE51B005FEFC7 /* PrimitiveExtensions.swift */; };
+		99F7D61D21EC042C00D6B524 /* Payout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7D61B21EC042C00D6B524 /* Payout+CoreDataClass.swift */; };
+		99F7D61E21EC042C00D6B524 /* Payout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7D61C21EC042C00D6B524 /* Payout+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,8 @@
 		99F0278F21859E29005FEFC7 /* RegionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTests.swift; sourceTree = "<group>"; };
 		99F0279F218AE51B005FEFC7 /* PrimitiveExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveExtensions.swift; sourceTree = "<group>"; };
 		99F78F2D214BA53600D1BD28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		99F7D61B21EC042C00D6B524 /* Payout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payout+CoreDataClass.swift"; sourceTree = "<group>"; };
+		99F7D61C21EC042C00D6B524 /* Payout+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payout+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,8 @@
 				99675CA621E9DC2F003C9D70 /* Balance+CoreDataProperties.swift */,
 				99675CB521EB0059003C9D70 /* Transaction+CoreDataClass.swift */,
 				99675CB621EB0059003C9D70 /* Transaction+CoreDataProperties.swift */,
+				99F7D61B21EC042C00D6B524 /* Payout+CoreDataClass.swift */,
+				99F7D61C21EC042C00D6B524 /* Payout+CoreDataProperties.swift */,
 				998D3ADC21DD4565003DD717 /* Stats+CoreDataClass.swift */,
 				998D3ADD21DD4565003DD717 /* Stats+CoreDataProperties.swift */,
 				99F0278921858611005FEFC7 /* Region+CoreDataClass.swift */,
@@ -405,6 +411,7 @@
 				99F0278B21858611005FEFC7 /* Region+CoreDataClass.swift in Sources */,
 				991B4034216ADC5D00D7644D /* OilChange+CoreDataClass.swift in Sources */,
 				99675CAA21E9DC2F003C9D70 /* Balance+CoreDataProperties.swift in Sources */,
+				99F7D61E21EC042C00D6B524 /* Payout+CoreDataProperties.swift in Sources */,
 				991B402D216ADC5D00D7644D /* OilChange+CoreDataProperties.swift in Sources */,
 				99675CA921E9DC2F003C9D70 /* Balance+CoreDataClass.swift in Sources */,
 				998D3ADF21DD4565003DD717 /* Stats+CoreDataProperties.swift in Sources */,
@@ -425,6 +432,7 @@
 				998D3ADE21DD4565003DD717 /* Stats+CoreDataClass.swift in Sources */,
 				991B403C216ADC5D00D7644D /* User+CoreDataProperties.swift in Sources */,
 				998D3AD021DC0DB0003DD717 /* Review+CoreDataClass.swift in Sources */,
+				99F7D61D21EC042C00D6B524 /* Payout+CoreDataClass.swift in Sources */,
 				991B402C216ADC5D00D7644D /* Mechanic+CoreDataClass.swift in Sources */,
 				991B402E216ADC5D00D7644D /* AutoService+CoreDataClass.swift in Sources */,
 				991B4039216ADC5D00D7644D /* Price+CoreDataProperties.swift in Sources */,

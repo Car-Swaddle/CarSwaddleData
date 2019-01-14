@@ -91,7 +91,7 @@ final public class Transaction: NSManagedObject, NSManagedObjectFetchable, JSONI
     }
     
     public static var createdSortDescriptor: NSSortDescriptor {
-        return NSSortDescriptor(key: #keyPath(Transaction.created), ascending: true)
+        return NSSortDescriptor(key: #keyPath(Transaction.created), ascending: false)
     }
     
     public static var currentMechanicPredicate: NSPredicate {

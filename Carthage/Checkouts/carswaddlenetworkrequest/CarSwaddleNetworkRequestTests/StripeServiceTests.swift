@@ -103,22 +103,38 @@ class StripeServiceTests: CarSwaddleLoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
-    /*
-     {
-     "id": "txn_1DrkLNEuZcoNxiqA9hcSyMmJ",
-     "object": "balance_transaction",
-     "amount": 4983,
-     "available_on": 1547856000,
-     "created": 1547291281,
-     "currency": "usd",
-     "description": null,
-     "exchange_rate": null,
-     "fee": 0,
-     "fee_details": [],
-     "net": 4983,
-     "source": "py_1DrkLNEuZcoNxiqAGScYdQpJ",
-     "status": "pending",
-     "type": "payment"
-     */
+    func testGetPayouts() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        stripeService.getPayouts { json, error in
+            XCTAssert(json != nil, "Json is nil")
+            
+            if let data = json?["data"] as? [JSONObject], let first = data.first {
+                XCTAssert((first["id"] as? String) != nil, "Should have available")
+                XCTAssert((first["amount"] as? Int) != nil, "Should have available")
+                XCTAssert((first["arrival_date"] as? Int) != nil, "Should have available")
+                XCTAssert((first["currency"] as? String) != nil, "Should have available")
+                XCTAssert((first["balance_transaction"] as? String) != nil, "Should have available")
+                XCTAssert((first["created"] as? Int) != nil, "Should have available")
+//                XCTAssert((first["description"] as? String) != nil, "Should have available")
+//                XCTAssert((first["destination"] as? String) != nil, "Should have available")
+//                XCTAssert((first["failure_code"] as? Int) != nil, "Should have available")
+//                XCTAssert((first["failure_message"] as? String) != nil, "Should have available")
+//                XCTAssert((first["statement_descriptor"] as? String) != nil, "Should have available")
+                XCTAssert((first["status"] as? String) != nil, "Should have available")
+                XCTAssert((first["type"] as? String) != nil, "Should have available")
+                XCTAssert((first["method"] as? String) != nil, "Should have available")
+                
+            } else {
+                XCTAssert(false, "Should have `data`.first")
+            }
+            
+            XCTAssert((json?["has_more"] as? Bool) != nil, "Should have `hasMore`")
+            XCTAssert(error == nil, "Got error: \(error?.localizedDescription ?? "")")
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
     
 }

@@ -71,6 +71,42 @@ final public class StripeNetwork: Network {
                 hasMore = (json["has_more"] as? Bool) ?? false
                 
                 let mechanic = Mechanic.currentLoggedInMechanic(in: context)
+                var payout: Payout?
+                if let payoutID = payoutID, let fetchedPayout = Payout.fetch(with: payoutID, in: context) {
+                    payout = fetchedPayout
+                }
+                for transactionJSON in json["data"] as? [JSONObject] ?? [] {
+                    guard let transaction = Transaction.fetchOrCreate(json: transactionJSON, context: context) else { continue }
+                    transaction.mechanic = mechanic
+                    if transaction.objectID.isTemporaryID == true {
+                        try? context.obtainPermanentIDs(for: [transaction])
+                    }
+                    
+                    transaction.payout = payout
+                    
+                    objectIDs.append(transaction.objectID)
+                    lastID = transaction.identifier
+                }
+                context.persist()
+            }
+        }
+    }
+    
+    @discardableResult
+    public func requestPayouts(startingAfterID: String? = nil, limit: Int? = nil, in context: NSManagedObjectContext, completion: @escaping (_ transactionIDs: [NSManagedObjectID], _ lastID: String?, _ hasMore: Bool, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return stripeService.getPayouts(startingAfterID: startingAfterID, limit: limit) { json, error in
+            context.perform {
+                var objectIDs: [NSManagedObjectID] = []
+                var lastID: String?
+                var hasMore: Bool = false
+                defer {
+                    completion(objectIDs, lastID, hasMore, error)
+                }
+                guard let json = json else { return }
+                
+                hasMore = (json["has_more"] as? Bool) ?? false
+                
+                let mechanic = Mechanic.currentLoggedInMechanic(in: context)
                 for transactionJSON in json["data"] as? [JSONObject] ?? [] {
                     guard let transaction = Transaction.fetchOrCreate(json: transactionJSON, context: context) else { continue }
                     transaction.mechanic = mechanic

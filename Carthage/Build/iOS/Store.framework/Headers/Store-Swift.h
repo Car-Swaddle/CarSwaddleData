@@ -297,14 +297,6 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (void)removeTransactions:(NSSet * _Nonnull)values;
 @end
 
-
-@interface Mechanic (SWIFT_EXTENSION(Store))
-- (void)addServicesObject:(AutoService * _Nonnull)value;
-- (void)removeServicesObject:(AutoService * _Nonnull)value;
-- (void)addServices:(NSSet * _Nonnull)values;
-- (void)removeServices:(NSSet * _Nonnull)values;
-@end
-
 @class TemplateTimeSpan;
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
@@ -312,6 +304,14 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (void)removeScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
 - (void)addScheduleTimeSpans:(NSSet * _Nonnull)values;
 - (void)removeScheduleTimeSpans:(NSSet * _Nonnull)values;
+@end
+
+
+@interface Mechanic (SWIFT_EXTENSION(Store))
+- (void)addServicesObject:(AutoService * _Nonnull)value;
+- (void)removeServicesObject:(AutoService * _Nonnull)value;
+- (void)addServices:(NSSet * _Nonnull)values;
+- (void)removeServices:(NSSet * _Nonnull)values;
 @end
 
 @class Region;
@@ -349,6 +349,32 @@ SWIFT_CLASS_NAMED("OilChange")
 @interface OilChange (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic, strong) ServiceEntity * _Nonnull serviceEntity;
+@end
+
+
+SWIFT_CLASS_NAMED("Payout")
+@interface Payout : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface Payout (SWIFT_EXTENSION(Store))
+@property (nonatomic, copy) NSString * _Nonnull identifier;
+@property (nonatomic) NSInteger amount;
+@property (nonatomic, copy) NSDate * _Nonnull arrivalDate;
+@property (nonatomic, copy) NSDate * _Nonnull created;
+@property (nonatomic, copy) NSString * _Nonnull currency;
+@property (nonatomic, copy) NSString * _Nullable payoutDescription;
+@property (nonatomic, copy) NSString * _Nullable destination;
+@property (nonatomic, copy) NSString * _Nonnull type;
+@property (nonatomic, copy) NSString * _Nonnull status;
+@property (nonatomic, copy) NSString * _Nonnull method;
+@property (nonatomic, copy) NSString * _Nonnull sourceType;
+@property (nonatomic, copy) NSString * _Nullable statementDescriptor;
+@property (nonatomic, copy) NSString * _Nullable failureMessage;
+@property (nonatomic, copy) NSString * _Nullable failureCode;
+@property (nonatomic, copy) NSString * _Nullable failureBalanceTransaction;
+@property (nonatomic, copy) NSSet<Transaction *> * _Nonnull transactions;
 @end
 
 
@@ -488,6 +514,7 @@ SWIFT_CLASS_NAMED("Transaction")
 @property (nonatomic, copy) NSString * _Nonnull source;
 @property (nonatomic, copy) NSString * _Nonnull type;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
+@property (nonatomic, strong) Payout * _Nullable payout;
 @end
 
 
@@ -498,18 +525,18 @@ SWIFT_CLASS_NAMED("User")
 
 
 @interface User (SWIFT_EXTENSION(Store))
-- (void)addVehiclesObject:(Vehicle * _Nonnull)value;
-- (void)removeVehiclesObject:(Vehicle * _Nonnull)value;
-- (void)addVehicles:(NSSet * _Nonnull)values;
-- (void)removeVehicles:(NSSet * _Nonnull)values;
-@end
-
-
-@interface User (SWIFT_EXTENSION(Store))
 - (void)addServicesObject:(AutoService * _Nonnull)value;
 - (void)removeServicesObject:(AutoService * _Nonnull)value;
 - (void)addServices:(NSSet * _Nonnull)values;
 - (void)removeServices:(NSSet * _Nonnull)values;
+@end
+
+
+@interface User (SWIFT_EXTENSION(Store))
+- (void)addVehiclesObject:(Vehicle * _Nonnull)value;
+- (void)removeVehiclesObject:(Vehicle * _Nonnull)value;
+- (void)addVehicles:(NSSet * _Nonnull)values;
+- (void)removeVehicles:(NSSet * _Nonnull)values;
 @end
 
 
