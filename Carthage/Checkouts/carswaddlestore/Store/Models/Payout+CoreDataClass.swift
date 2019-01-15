@@ -19,7 +19,7 @@ typealias PayoutValues = (
     payoutDescription: String,
     destination: String?,
     type: String,
-    status: String,
+    status: Payout.Status,
     method: String,
     sourceType: String,
     statementDescriptor: String?,
@@ -31,6 +31,50 @@ typealias PayoutValues = (
 
 @objc(Payout)
 final public class Payout: NSManagedObject, JSONInitable, NSManagedObjectFetchable {
+    
+    
+    @NSManaged private var primitiveStatus: String
+    
+    private let statusKey = "status"
+    public var status: Status {
+        get {
+            willAccessValue(forKey: statusKey)
+            guard let status = Status(rawValue: primitiveStatus) else { return .pending }
+            didAccessValue(forKey: statusKey)
+            return status
+        }
+        set {
+            willChangeValue(forKey: statusKey)
+            primitiveStatus = status.rawValue
+            didChangeValue(forKey: statusKey)
+        }
+    }
+    
+    public enum Status: String {
+        case inTransit = "in_transit"
+        case paid
+        case pending
+        case canceled
+        case failed
+        
+        public var localizedString: String {
+            switch self {
+            case .inTransit:
+                return NSLocalizedString("In transit", comment: "Localized string for payout status")
+            case .paid:
+                return NSLocalizedString("Paid", comment: "Localized string for payout status")
+            case .pending:
+                return NSLocalizedString("Pending", comment: "Localized string for payout status")
+            case .canceled:
+                return NSLocalizedString("Canceled", comment: "Localized string for payout status")
+            case .failed:
+                return NSLocalizedString("Failed", comment: "Localized string for payout status")
+            }
+        }
+        
+    }
+    
+    
     
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let values = Payout.values(from: json) else { return nil }
@@ -51,7 +95,7 @@ final public class Payout: NSManagedObject, JSONInitable, NSManagedObjectFetchab
             let createdInt = json["created"] as? Int,
             let currency = json["currency"] as? String,
             let type = json["type"] as? String,
-            let status = json["status"] as? String,
+            let status = Status(rawValue: json["status"] as? String ?? ""),
             let method = json["method"] as? String,
             let payoutDescription = json["description"] as? String,
             let sourceType = json["source_type"] as? String else { return nil }

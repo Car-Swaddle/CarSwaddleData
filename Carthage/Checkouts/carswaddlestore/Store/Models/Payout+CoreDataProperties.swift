@@ -24,10 +24,10 @@ extension Payout {
     @NSManaged public var currency: String
     @NSManaged public var payoutDescription: String?
     @NSManaged public var destination: String?
-    @NSManaged public var type: String
-    @NSManaged public var status: String
-    @NSManaged public var method: String
-    @NSManaged public var sourceType: String
+    @NSManaged public var type: String // bank_account or card
+//    @NSManaged public var status: String // paid, pending, in_transit, canceled or failed
+    @NSManaged public var method: String // standard or instant
+    @NSManaged public var sourceType: String // card, bank_account, or alipay_account
     @NSManaged public var statementDescriptor: String?
     @NSManaged public var failureMessage: String?
     @NSManaged public var failureCode: String?

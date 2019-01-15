@@ -369,7 +369,6 @@ SWIFT_CLASS_NAMED("Payout")
 @property (nonatomic, copy) NSString * _Nullable payoutDescription;
 @property (nonatomic, copy) NSString * _Nullable destination;
 @property (nonatomic, copy) NSString * _Nonnull type;
-@property (nonatomic, copy) NSString * _Nonnull status;
 @property (nonatomic, copy) NSString * _Nonnull method;
 @property (nonatomic, copy) NSString * _Nonnull sourceType;
 @property (nonatomic, copy) NSString * _Nullable statementDescriptor;
