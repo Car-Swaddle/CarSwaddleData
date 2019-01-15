@@ -18,7 +18,7 @@ public class AuthService: Service {
     
     @discardableResult
     public func signUp(email: String, password: String, completion: @escaping (_ json: JSONObject?, _ token: String?, _ error: Error?) -> Void) -> URLSessionDataTask? {
-        let task = authTask(email: email, password: password, isMechanic: true, endpoint: .signup) { [weak self] data, error in
+        let task = authTask(email: email, password: password, isMechanic: false, endpoint: .signup) { [weak self] data, error in
             self?.complete(data: data, error: error, completion: completion)
         }
         task?.resume()
