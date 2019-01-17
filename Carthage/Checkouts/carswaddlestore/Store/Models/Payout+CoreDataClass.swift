@@ -74,7 +74,13 @@ final public class Payout: NSManagedObject, JSONInitable, NSManagedObjectFetchab
         
     }
     
+    public static var arrivalDateSortDescriptor: NSSortDescriptor {
+        return NSSortDescriptor(key: #keyPath(Payout.arrivalDate), ascending: false)
+    }
     
+    public static var currentMechanicPredicate: NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(Payout.mechanic.identifier), Mechanic.currentMechanicID ?? "")
+    }
     
     public convenience init?(json: JSONObject, context: NSManagedObjectContext) {
         guard let values = Payout.values(from: json) else { return nil }

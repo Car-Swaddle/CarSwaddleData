@@ -41,6 +41,15 @@ class StripeTests: XCTestCase {
         XCTAssert(transaction != nil, "Must have transaction from: \(json)")
     }
     
+    func testPayoutTransaction() {
+        let context = store.mainContext
+        let json = payoutTransaction
+        let transaction = Transaction(json: json, context: context)
+        transaction?.mechanic = Mechanic(json: mechanicJSON, context: context)
+        context.persist()
+        XCTAssert(transaction != nil, "Must have transaction from: \(json)")
+    }
+    
     func testPayout() {
         let context = store.mainContext
         let json = singlePayoutJSON
@@ -137,4 +146,22 @@ private let payoutJSON: [String: Any] = [
     "url": "/v1/payouts",
     "has_more": false,
     "data": [singlePayoutJSON],
+]
+
+
+private let payoutTransaction: [String: Any] = [
+    "id": "txn_1Dt2vhFJ56E8lSb9u4JFpEkN",
+    "object": "balance_transaction",
+    "amount": -14194,
+    "available_on": 1547683200,
+    "created": 1547601053,
+    "currency": "usd",
+    "description": "STRIPE PAYOUT",
+    "exchange_rate": NSNull(),
+    "fee": 0,
+    "fee_details": [],
+    "net": -14194,
+    "source": "po_1Dt2vhFJ56E8lSb9Err8HxqR",
+    "status": "pending",
+    "type": "payout"
 ]
