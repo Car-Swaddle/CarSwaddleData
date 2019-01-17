@@ -45,7 +45,7 @@ final public class Payout: NSManagedObject, JSONInitable, NSManagedObjectFetchab
         }
         set {
             willChangeValue(forKey: statusKey)
-            primitiveStatus = status.rawValue
+            primitiveStatus = newValue.rawValue
             didChangeValue(forKey: statusKey)
         }
     }
