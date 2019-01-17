@@ -517,6 +517,7 @@ SWIFT_CLASS_NAMED("Transaction")
 @property (nonatomic, copy) NSString * _Nonnull type;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @property (nonatomic, strong) Payout * _Nullable payout;
+@property (nonatomic, copy) NSString * _Nullable balanceTransactionID;
 @end
 
 
