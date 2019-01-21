@@ -12,6 +12,9 @@
 		995B9F4B2154D6670030A7CA /* Authentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 995B9F3D2154D6670030A7CA /* Authentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99B9E6BA2154D6B40004C6D7 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B9E6B92154D6B40004C6D7 /* AuthController.swift */; };
 		99C8DD85216AD03E00627E8A /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8DD84216AD03D00627E8A /* KeychainAccess.framework */; };
+		99D5D9E921F5D80500E6A511 /* KeychainAccess.framework in Resources */ = {isa = PBXBuildFile; fileRef = 99C8DD84216AD03D00627E8A /* KeychainAccess.framework */; };
+		99D5D9EA21F5D82000E6A511 /* Authentication.framework in Resources */ = {isa = PBXBuildFile; fileRef = 995B9F3A2154D6670030A7CA /* Authentication.framework */; };
+		99D5D9FA21F634B700E6A511 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99C8DD84216AD03D00627E8A /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +26,19 @@
 			remoteInfo = Authentication;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		99D5D9F921F634B300E6A511 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				99D5D9FA21F634B700E6A511 /* KeychainAccess.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		995B9F3A2154D6670030A7CA /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +138,7 @@
 				995B9F352154D6670030A7CA /* Headers */,
 				995B9F362154D6670030A7CA /* Sources */,
 				995B9F372154D6670030A7CA /* Frameworks */,
-				995B9F382154D6670030A7CA /* Resources */,
+				99D5D9F921F634B300E6A511 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -189,17 +205,12 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		995B9F382154D6670030A7CA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		995B9F412154D6670030A7CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D5D9EA21F5D82000E6A511 /* Authentication.framework in Resources */,
+				99D5D9E921F5D80500E6A511 /* KeychainAccess.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
