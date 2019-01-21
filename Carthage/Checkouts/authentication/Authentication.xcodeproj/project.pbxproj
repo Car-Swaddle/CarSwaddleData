@@ -123,7 +123,6 @@
 				995B9F362154D6670030A7CA /* Sources */,
 				995B9F372154D6670030A7CA /* Frameworks */,
 				995B9F382154D6670030A7CA /* Resources */,
-				99C8DD83216ACF5800627E8A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -205,27 +204,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		99C8DD83216ACF5800627E8A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		995B9F362154D6670030A7CA /* Sources */ = {
