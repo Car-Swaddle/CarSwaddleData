@@ -11,9 +11,6 @@
 		9912CDBB216C81760006FDDF /* CarSwaddleDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CDBA216C81760006FDDF /* CarSwaddleDataTests.swift */; };
 		9912CDBD216C81760006FDDF /* CarSwaddleData.h in Headers */ = {isa = PBXBuildFile; fileRef = 9912CDAF216C81760006FDDF /* CarSwaddleData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9912CDC7216C81AE0006FDDF /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CDC6216C81AE0006FDDF /* Auth.swift */; };
-		9912CDD3216C85540006FDDF /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9912CDCF216C842D0006FDDF /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		991375A62171D49000F15BEC /* CarSwaddleNetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375A42171D48500F15BEC /* CarSwaddleNetworkRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		991375B2217266F600F15BEC /* Store.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375B0217266EF00F15BEC /* Store.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		997714BD21CC5A5000E54F5B /* Price+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714BC21CC5A5000E54F5B /* Price+Request.swift */; };
 		997714C121CC9B8100E54F5B /* PriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997714C021CC9B8100E54F5B /* PriceTests.swift */; };
 		997DBC49219418830080F42C /* Mechanic+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC48219418830080F42C /* Mechanic+Requests.swift */; };
@@ -27,7 +24,6 @@
 		997DBC9A21A536BE0080F42C /* AutoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC9921A536BE0080F42C /* AutoServiceTests.swift */; };
 		997DBC9C21A537390080F42C /* AutoService+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC9B21A537390080F42C /* AutoService+Request.swift */; };
 		997DBC9E21B24CF00080F42C /* AuthTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DBC9D21B24CF00080F42C /* AuthTestCase.swift */; };
-		998D03D121F4281F00546C58 /* Authentication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 998D03CF21F4281400546C58 /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		998D3AD921DC9B72003DD717 /* Review+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998D3AD821DC9B72003DD717 /* Review+Requests.swift */; };
 		998D3AE121DD51DB003DD717 /* ReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998D3AE021DD51DB003DD717 /* ReviewTests.swift */; };
 		99A3A88D21D58E85009A1AD9 /* Stripe+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A3A88C21D58E85009A1AD9 /* Stripe+Requests.swift */; };
@@ -48,7 +44,6 @@
 		99D5D9C121F5A1A700E6A511 /* CarSwaddleNetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375A42171D48500F15BEC /* CarSwaddleNetworkRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99D5D9C221F5A1A700E6A511 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9912CDCF216C842D0006FDDF /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99E66D8E21E1890A00C6E3E1 /* FileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E66D8D21E1890A00C6E3E1 /* FileStore.swift */; };
-		99E66D9121E1934A00C6E3E1 /* NetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99E66D8F21E1933600C6E3E1 /* NetworkRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99E66D9B21E19C3800C6E3E1 /* smallMoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E66D9821E196EE00C6E3E1 /* smallMoreIcon.png */; };
 		99E66D9C21E19C3C00C6E3E1 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E66D9921E196F900C6E3E1 /* image.png */; };
 		99F026BC217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F026BB217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift */; };
@@ -69,20 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9912CDD2216C85470006FDDF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				998D03D121F4281F00546C58 /* Authentication.framework in CopyFiles */,
-				99E66D9121E1934A00C6E3E1 /* NetworkRequest.framework in CopyFiles */,
-				991375B2217266F600F15BEC /* Store.framework in CopyFiles */,
-				991375A62171D49000F15BEC /* CarSwaddleNetworkRequest.framework in CopyFiles */,
-				9912CDD3216C85540006FDDF /* KeychainAccess.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		99D5D9A321F5948D00E6A511 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,7 +276,6 @@
 				9912CDA8216C81760006FDDF /* Sources */,
 				9912CDA9216C81760006FDDF /* Frameworks */,
 				9912CDAA216C81760006FDDF /* Resources */,
-				9912CDD2216C85470006FDDF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -605,6 +585,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "x86_64 i386";
 			};
 			name = Debug;
 		};
@@ -638,6 +619,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "x86_64 i386";
 			};
 			name = Release;
 		};
