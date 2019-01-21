@@ -1,9 +1,9 @@
 {
-  "commitish" : "1.1992",
+  "commitish" : "1.1993",
   "iOS" : [
     {
       "name" : "CarSwaddleNetworkRequest",
-      "hash" : "40c57e44c9d3d830a3b48c1686e7f990665a0549e2b5fe70276f4981233d70de"
+      "hash" : "869cd3029499b8354c7326fc60ca3b51243ff46c9334de6060fffa510f16cab9"
     }
   ]
 }
