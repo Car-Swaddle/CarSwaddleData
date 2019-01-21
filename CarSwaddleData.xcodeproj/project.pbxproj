@@ -31,7 +31,6 @@
 		99D5D99C21F4E60800E6A511 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998D03CF21F4281400546C58 /* Authentication.framework */; };
 		99D5D99D21F4E60800E6A511 /* CarSwaddleNetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991375A42171D48500F15BEC /* CarSwaddleNetworkRequest.framework */; };
 		99D5D99E21F4E60800E6A511 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9912CDCF216C842D0006FDDF /* KeychainAccess.framework */; };
-		99D5D99F21F4E60800E6A511 /* NetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E66D8F21E1933600C6E3E1 /* NetworkRequest.framework */; };
 		99D5D9A021F4E60800E6A511 /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991375B0217266EF00F15BEC /* Store.framework */; };
 		99D5D9B921F5A19A00E6A511 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998D03CF21F4281400546C58 /* Authentication.framework */; };
 		99D5D9BA21F5A19A00E6A511 /* NetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E66D8F21E1933600C6E3E1 /* NetworkRequest.framework */; };
@@ -43,6 +42,7 @@
 		99D5D9C021F5A1A700E6A511 /* Store.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375B0217266EF00F15BEC /* Store.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99D5D9C121F5A1A700E6A511 /* CarSwaddleNetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375A42171D48500F15BEC /* CarSwaddleNetworkRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99D5D9C221F5A1A700E6A511 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9912CDCF216C842D0006FDDF /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		99D5D9ED21F5E0B800E6A511 /* NetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E66D8F21E1933600C6E3E1 /* NetworkRequest.framework */; };
 		99E66D8E21E1890A00C6E3E1 /* FileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E66D8D21E1890A00C6E3E1 /* FileStore.swift */; };
 		99E66D9B21E19C3800C6E3E1 /* smallMoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E66D9821E196EE00C6E3E1 /* smallMoreIcon.png */; };
 		99E66D9C21E19C3C00C6E3E1 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E66D9921E196F900C6E3E1 /* image.png */; };
@@ -115,13 +115,6 @@
 		99E66D9921E196F900C6E3E1 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		99F026BB217EFCD9005FEFC7 /* TemplateTimeSpan+Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TemplateTimeSpan+Requests.swift"; sourceTree = "<group>"; };
 		99F026BD217F061A005FEFC7 /* TemplateTimeSpanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTimeSpanTests.swift; sourceTree = "<group>"; };
-		99F026C521802131005FEFC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99F026C721802131005FEFC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		99F026CA21802131005FEFC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		99F026CC21802132005FEFC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		99F026CF21802132005FEFC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		99F026D121802132005FEFC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99F026E3218028B0005FEFC7 /* CarSwaddleDataHostApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarSwaddleDataHostApp.entitlements; sourceTree = "<group>"; };
 		99F026EB21803F4E005FEFC7 /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
 		99F02783218580C0005FEFC7 /* Region+Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Region+Requests.swift"; sourceTree = "<group>"; };
 		99F0278D21858983005FEFC7 /* RegionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTests.swift; sourceTree = "<group>"; };
@@ -133,9 +126,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				99D5D99C21F4E60800E6A511 /* Authentication.framework in Frameworks */,
+				99D5D9ED21F5E0B800E6A511 /* NetworkRequest.framework in Frameworks */,
 				99D5D99D21F4E60800E6A511 /* CarSwaddleNetworkRequest.framework in Frameworks */,
 				99D5D99E21F4E60800E6A511 /* KeychainAccess.framework in Frameworks */,
-				99D5D99F21F4E60800E6A511 /* NetworkRequest.framework in Frameworks */,
 				99D5D9A021F4E60800E6A511 /* Store.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,7 +154,6 @@
 			children = (
 				9912CDAE216C81760006FDDF /* CarSwaddleData */,
 				9912CDB9216C81760006FDDF /* CarSwaddleDataTests */,
-				99F026C421802131005FEFC7 /* CarSwaddleDataHostApp */,
 				9912CDAD216C81760006FDDF /* Products */,
 				9912CDC8216C84280006FDDF /* Frameworks */,
 			);
@@ -238,20 +230,6 @@
 				99E66D9821E196EE00C6E3E1 /* smallMoreIcon.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		99F026C421802131005FEFC7 /* CarSwaddleDataHostApp */ = {
-			isa = PBXGroup;
-			children = (
-				99F026E3218028B0005FEFC7 /* CarSwaddleDataHostApp.entitlements */,
-				99F026C521802131005FEFC7 /* AppDelegate.swift */,
-				99F026C721802131005FEFC7 /* ViewController.swift */,
-				99F026C921802131005FEFC7 /* Main.storyboard */,
-				99F026CC21802132005FEFC7 /* Assets.xcassets */,
-				99F026CE21802132005FEFC7 /* LaunchScreen.storyboard */,
-				99F026D121802132005FEFC7 /* Info.plist */,
-			);
-			path = CarSwaddleDataHostApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,25 +389,6 @@
 			targetProxy = 9912CDB7216C81760006FDDF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		99F026C921802131005FEFC7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				99F026CA21802131005FEFC7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		99F026CE21802132005FEFC7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				99F026CF21802132005FEFC7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9912CDBE216C81760006FDDF /* Debug */ = {

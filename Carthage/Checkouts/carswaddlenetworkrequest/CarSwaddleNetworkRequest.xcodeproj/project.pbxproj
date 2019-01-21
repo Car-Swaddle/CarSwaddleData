@@ -107,12 +107,6 @@
 		99E66D2C21E0A41D00C6E3E1 /* FileServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceTests.swift; sourceTree = "<group>"; };
 		99E66D2E21E0A5EB00C6E3E1 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		99E66D3121E136BE00C6E3E1 /* NetworkRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkRequest.framework; path = Carthage/Build/iOS/NetworkRequest.framework; sourceTree = "<group>"; };
-		99E66D7021E13BE100C6E3E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99E66D7221E13BE100C6E3E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		99E66D7521E13BE100C6E3E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		99E66D7721E13BE200C6E3E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		99E66D7A21E13BE200C6E3E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		99E66D7C21E13BE200C6E3E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E66D8B21E14DFE00C6E3E1 /* smallImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallImage.png; sourceTree = "<group>"; };
 		99F02696217B9FB8005FEFC7 /* AvailabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityService.swift; sourceTree = "<group>"; };
 		99F02698217BA048005FEFC7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -154,7 +148,6 @@
 			children = (
 				992C53BF2150C59B0076949C /* CarSwaddleNetworkRequest */,
 				992C53CA2150C59B0076949C /* CarSwaddleNetworkRequestTests */,
-				99E66D6F21E13BE100C6E3E1 /* HostTestApp */,
 				992C53BE2150C59B0076949C /* Products */,
 				99C791BA2150C5E5000167CB /* Frameworks */,
 			);
@@ -241,19 +234,6 @@
 				99E66D2E21E0A5EB00C6E3E1 /* image.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		99E66D6F21E13BE100C6E3E1 /* HostTestApp */ = {
-			isa = PBXGroup;
-			children = (
-				99E66D7021E13BE100C6E3E1 /* AppDelegate.swift */,
-				99E66D7221E13BE100C6E3E1 /* ViewController.swift */,
-				99E66D7421E13BE100C6E3E1 /* Main.storyboard */,
-				99E66D7721E13BE200C6E3E1 /* Assets.xcassets */,
-				99E66D7921E13BE200C6E3E1 /* LaunchScreen.storyboard */,
-				99E66D7C21E13BE200C6E3E1 /* Info.plist */,
-			);
-			path = HostTestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,25 +397,6 @@
 			targetProxy = 992C53C82150C59B0076949C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		99E66D7421E13BE100C6E3E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				99E66D7521E13BE100C6E3E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		99E66D7921E13BE200C6E3E1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				99E66D7A21E13BE200C6E3E1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		992C53CF2150C59B0076949C /* Debug */ = {
