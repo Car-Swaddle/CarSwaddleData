@@ -43,11 +43,6 @@
 		99D5D9C121F5A1A700E6A511 /* CarSwaddleNetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375A42171D48500F15BEC /* CarSwaddleNetworkRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99D5D9C221F5A1A700E6A511 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9912CDCF216C842D0006FDDF /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99D5D9ED21F5E0B800E6A511 /* NetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E66D8F21E1933600C6E3E1 /* NetworkRequest.framework */; };
-		99D5D9F421F6349D00E6A511 /* Authentication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 998D03CF21F4281400546C58 /* Authentication.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		99D5D9F521F6349D00E6A511 /* NetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99E66D8F21E1933600C6E3E1 /* NetworkRequest.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		99D5D9F621F6349D00E6A511 /* Store.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375B0217266EF00F15BEC /* Store.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		99D5D9F721F6349D00E6A511 /* CarSwaddleNetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375A42171D48500F15BEC /* CarSwaddleNetworkRequest.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		99D5D9F821F6349D00E6A511 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9912CDCF216C842D0006FDDF /* KeychainAccess.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		99E66D8E21E1890A00C6E3E1 /* FileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E66D8D21E1890A00C6E3E1 /* FileStore.swift */; };
 		99E66D9B21E19C3800C6E3E1 /* smallMoreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E66D9821E196EE00C6E3E1 /* smallMoreIcon.png */; };
 		99E66D9C21E19C3C00C6E3E1 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E66D9921E196F900C6E3E1 /* image.png */; };
@@ -89,11 +84,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				99D5D9F421F6349D00E6A511 /* Authentication.framework in CopyFiles */,
-				99D5D9F521F6349D00E6A511 /* NetworkRequest.framework in CopyFiles */,
-				99D5D9F621F6349D00E6A511 /* Store.framework in CopyFiles */,
-				99D5D9F721F6349D00E6A511 /* CarSwaddleNetworkRequest.framework in CopyFiles */,
-				99D5D9F821F6349D00E6A511 /* KeychainAccess.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

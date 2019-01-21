@@ -35,9 +35,6 @@
 		99D5D9C721F5A34300E6A511 /* Authentication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9943BCE921F4146100D553F6 /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99D5D9C821F5A34300E6A511 /* NetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99E66D3121E136BE00C6E3E1 /* NetworkRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99D5D9C921F5A34300E6A511 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99C8DD87216AD59C00627E8A /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		99D5D9F021F6343D00E6A511 /* Authentication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9943BCE921F4146100D553F6 /* Authentication.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		99D5D9F121F6343D00E6A511 /* NetworkRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99E66D3121E136BE00C6E3E1 /* NetworkRequest.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		99D5D9F221F6343D00E6A511 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99C8DD87216AD59C00627E8A /* KeychainAccess.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		99E66D2B21E0915400C6E3E1 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E66D2A21E0915400C6E3E1 /* FileService.swift */; };
 		99E66D2D21E0A41D00C6E3E1 /* FileServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E66D2C21E0A41D00C6E3E1 /* FileServiceTests.swift */; };
 		99E66D3021E0A73300C6E3E1 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E66D2E21E0A5EB00C6E3E1 /* image.png */; };
@@ -83,9 +80,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				99D5D9F021F6343D00E6A511 /* Authentication.framework in CopyFiles */,
-				99D5D9F121F6343D00E6A511 /* NetworkRequest.framework in CopyFiles */,
-				99D5D9F221F6343D00E6A511 /* KeychainAccess.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
