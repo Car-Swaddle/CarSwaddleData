@@ -50,7 +50,7 @@ public class AuthService: Service {
             json["deviceToken"] = deviceToken
         }
         guard let body = (try? JSONSerialization.data(withJSONObject: json, options: [])),
-            let urlRequest = serviceRequest.post(with: .logout, body: body) else { return nil }
+            let urlRequest = serviceRequest.post(with: .logout, body: body, contentType: .applicationJSON) else { return nil }
         let task = self.sendWithAuthentication(urlRequest: urlRequest) { data, error in
             completion(error)
         }
