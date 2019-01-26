@@ -10,7 +10,7 @@ import Foundation
 
 extension NetworkRequest.Request.Endpoint {
     fileprivate static let login = Request.Endpoint(rawValue: "/login")
-    fileprivate static let logout = Request.Endpoint(rawValue: "/logout")
+    fileprivate static let logout = Request.Endpoint(rawValue: "/api/logout")
     fileprivate static let signup = Request.Endpoint(rawValue: "/signup")
 }
 
