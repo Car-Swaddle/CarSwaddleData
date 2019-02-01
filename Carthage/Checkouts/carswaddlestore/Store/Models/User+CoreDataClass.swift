@@ -34,6 +34,7 @@ public final class User: NSManagedObject, NSManagedObjectFetchable, JSONInitable
         self.phoneNumber = json["phoneNumber"] as? String
         self.profileImageID = json["profileImageID"] as? String
         self.email = json["email"] as? String
+        self.isEmailVerified = (json["isEmailVerified"] as? Bool) ?? false
         
         guard let context = managedObjectContext else { return }
         
