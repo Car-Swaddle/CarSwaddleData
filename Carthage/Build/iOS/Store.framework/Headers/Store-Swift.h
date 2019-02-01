@@ -558,6 +558,7 @@ SWIFT_CLASS_NAMED("User")
 @property (nonatomic, copy) NSSet<Review *> * _Nonnull reviews;
 @property (nonatomic, strong) Mechanic * _Nullable mechanic;
 @property (nonatomic, copy) NSString * _Nullable profileImageID;
+@property (nonatomic, copy) NSString * _Nullable email;
 @property (nonatomic) BOOL isPhoneNumberVerified;
 @property (nonatomic) BOOL isEmailVerified;
 @property (nonatomic, copy) NSString * _Nullable pushDeviceToken;
