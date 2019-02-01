@@ -297,7 +297,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "setProfileImage(fileURL:in:completion:)"
+            landmarkName = "getProfileImage(userID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,7 +313,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "getProfileImage(userID:completion:)"
+            landmarkName = "getImage(imageName:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
