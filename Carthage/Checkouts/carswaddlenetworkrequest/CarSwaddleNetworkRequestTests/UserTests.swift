@@ -130,6 +130,16 @@ class UserTests: CarSwaddleLoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testGetCurrentUser() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        userService.getCurrentUser { json, error in
+            XCTAssert(json != nil && error == nil, "Should have gotten json")
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
 }
 
 
