@@ -55,4 +55,50 @@ final public class TransactionReceipt: NSManagedObject, NSManagedObjectFetchable
         }
     }
     
+    
+    public static func fetchReceipts(for transactionMetadata: TransactionMetadata, in context: NSManagedObjectContext) -> [TransactionReceipt] {
+        return (try? context.fetch(TransactionReceipt.fetchRequest(for: transactionMetadata))) ?? []
+    }
+    
+    public static func fetchRequest(for transactionMetadata: TransactionMetadata) -> NSFetchRequest<TransactionReceipt> {
+        let fetchRequest: NSFetchRequest<TransactionReceipt> = TransactionReceipt.fetchRequest()
+        fetchRequest.sortDescriptors = [TransactionReceipt.createdAtSortDescriptor]
+        fetchRequest.predicate = TransactionReceipt.predicate(for: transactionMetadata)
+        return fetchRequest
+    }
+    
+    public static func fetchReceipts(forTransactionMetadataID transactionMetadataID: String, in context: NSManagedObjectContext) -> [TransactionReceipt] {
+        return (try? context.fetch(TransactionReceipt.fetchRequest(forTransactionMetadataID: transactionMetadataID))) ?? []
+    }
+    
+    public static func fetchRequest(forTransactionMetadataID transactionMetadataID: String) -> NSFetchRequest<TransactionReceipt> {
+        let fetchRequest: NSFetchRequest<TransactionReceipt> = TransactionReceipt.fetchRequest()
+        fetchRequest.sortDescriptors = [TransactionReceipt.createdAtSortDescriptor]
+        fetchRequest.predicate = TransactionReceipt.predicate(forTransactionMetadataID: transactionMetadataID)
+        return fetchRequest
+    }
+    
+    
+    public static func fetchAll(in context: NSManagedObjectContext) -> [TransactionReceipt] {
+        return (try? context.fetch(TransactionReceipt.allFetchRequest())) ?? []
+    }
+    
+    public static func allFetchRequest() -> NSFetchRequest<TransactionReceipt> {
+        let fetchRequest: NSFetchRequest<TransactionReceipt> = TransactionReceipt.fetchRequest()
+        fetchRequest.sortDescriptors = [TransactionReceipt.createdAtSortDescriptor]
+        return fetchRequest
+    }
+    
+    public static var createdAtSortDescriptor: NSSortDescriptor {
+        return NSSortDescriptor(key: #keyPath(TransactionReceipt.createdAt), ascending: true)
+    }
+    
+    public static func predicate(forTransactionMetadataID transactionMetadataID: String) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(TransactionReceipt.transactionMetadata.identifier), transactionMetadataID)
+    }
+    
+    public static func predicate(for transactionMetadata: TransactionMetadata) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(TransactionReceipt.transactionMetadata), transactionMetadata)
+    }
+    
 }
