@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-typealias TransactionReceiptValues = (identifier: String, receiptPhotoID: String)
+typealias TransactionReceiptValues = (identifier: String, receiptPhotoID: String, createdAt: Date)
 
 @objc(TransactionReceipt)
 final public class TransactionReceipt: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
@@ -38,13 +38,16 @@ final public class TransactionReceipt: NSManagedObject, NSManagedObjectFetchable
     
     static private func values(from json: JSONObject) -> TransactionReceiptValues? {
         guard let identifier = json["id"] as? String,
-            let receiptPhotoID = json["receiptPhotoID"] as? String else { return nil }
-        return (identifier, receiptPhotoID)
+            let receiptPhotoID = json["receiptPhotoID"] as? String,
+            let createdAtString = json["createdAt"] as? String,
+            let createdAt = serverDateFormatter.date(from: createdAtString) else { return nil }
+        return (identifier, receiptPhotoID, createdAt)
     }
     
     private func configure(with values: TransactionReceiptValues, json: JSONObject, in context: NSManagedObjectContext) {
         self.identifier = values.identifier
         self.receiptPhotoID = values.receiptPhotoID
+        self.createdAt = values.createdAt
         
         if let transactionMetadataID = json["transactionMetadataID"] as? String,
             let transactionMetadata = TransactionMetadata.fetch(with: transactionMetadataID, in: context) {

@@ -250,6 +250,7 @@ SWIFT_CLASS_NAMED("AutoService")
 @property (nonatomic, strong) Review * _Nullable reviewFromUser;
 @property (nonatomic, strong) Review * _Nullable reviewFromMechanic;
 @property (nonatomic, copy) NSSet<ServiceEntity *> * _Nonnull serviceEntities;
+@property (nonatomic, copy) NSString * _Nullable balanceTransactionID;
 @end
 
 
@@ -568,6 +569,7 @@ SWIFT_CLASS_NAMED("TransactionReceipt")
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic, copy) NSString * _Nonnull receiptPhotoID;
 @property (nonatomic, strong) TransactionMetadata * _Nullable transactionMetadata;
+@property (nonatomic, copy) NSDate * _Nonnull createdAt;
 @end
 
 
