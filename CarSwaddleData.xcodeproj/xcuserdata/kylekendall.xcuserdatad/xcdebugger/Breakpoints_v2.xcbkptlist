@@ -116,7 +116,7 @@
                   moduleName = "CarSwaddleDataTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kylekendall/Projects/carswaddledata/CarSwaddleDataTests/AuthTestCase.swift"
-                  timestampString = "571045351.084326"
+                  timestampString = "571402675.5377671"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -131,7 +131,7 @@
                   moduleName = "CarSwaddleDataTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kylekendall/Projects/carswaddledata/CarSwaddleDataTests/AuthTestCase.swift"
-                  timestampString = "571045351.086311"
+                  timestampString = "571402675.539739"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -196,7 +196,7 @@
                   moduleName = "CarSwaddleDataTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kylekendall/Projects/carswaddledata/CarSwaddleDataTests/MechanicTests.swift"
-                  timestampString = "571045351.0953569"
+                  timestampString = "571402675.5504791"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "298"
@@ -211,7 +211,7 @@
                   moduleName = "CarSwaddleDataTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kylekendall/Projects/carswaddledata/CarSwaddleDataTests/MechanicTests.swift"
-                  timestampString = "571045351.097412"
+                  timestampString = "571402675.552471"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "299"
@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarSwaddleDataTests/UserTests.swift"
-            timestampString = "570751933.831491"
+            timestampString = "571402674.740801"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "testUploadUserImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarSwaddleDataTests/UserTests.swift"
-            timestampString = "570751933.831986"
+            timestampString = "571402674.741343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "testUploadUserImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -259,28 +259,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CarSwaddleData/Stripe+Requests.swift"
-            timestampString = "571045350.342738"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "updateCurrentUserVerification(in:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CarSwaddleDataTests/UserTests.swift"
-            timestampString = "570751933.832477"
+            timestampString = "571402674.741725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "testGetCurrentUser()"
             landmarkType = "7">
          </BreakpointContent>

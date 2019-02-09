@@ -81,7 +81,7 @@ final public class StripeService: Service {
         
         var distanceInMeters: Int?
         if let drivingDistanceMiles = drivingDistanceMiles {
-            distanceInMeters = Int(CGFloat(drivingDistanceMiles) * metersToMilesConstant)
+            distanceInMeters = Int(ceil(CGFloat(drivingDistanceMiles) * metersToMilesConstant))
         }
         
         return updateTransactionDetails(transactionID: transactionID, mechanicCostCents: mechanicCostCents, drivingDistanceMeters: distanceInMeters, completion: completion)
