@@ -70,6 +70,7 @@ public class Auth {
                 }
                 if let mechanicJSON = json["mechanic"] as? JSONObject {
                     let mechanic = Mechanic.fetchOrCreate(json: mechanicJSON, context: context)
+                    mechanic?.user = user
                     if let mechanicID = mechanic?.identifier {
                         Mechanic.setCurrentMechanicID(mechanicID)
                     }
