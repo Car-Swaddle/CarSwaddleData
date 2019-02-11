@@ -33,6 +33,11 @@ public class TaxInfo: NSManagedObject {
         self.configure(with: values, json: json, in: context)
     }
     
+    public static func fetchOrCreate(with json: JSONObject, in context: NSManagedObjectContext) -> TaxInfo? {
+        guard let values = TaxInfo.values(from: json) else { return nil }
+        return TaxInfo.fetchTaxInfo(withYear: values.year, in: context) ?? TaxInfo(json: json, context: context)
+    }
+    
     private static func values(from json: JSONObject) -> TaxInfoValues? {
         guard let metersDriven = json["metersDriven"] as? Int,
             let mechanicCostInCents = json["mechanicCostInCents"] as? Int,
@@ -52,6 +57,39 @@ public class TaxInfo: NSManagedObject {
         fetchRequest.fetchLimit = 1
         
         return (try? context.fetch(fetchRequest))?.first
+    }
+    
+    public static func fetchAll(in context: NSManagedObjectContext) -> [TaxInfo] {
+        return (try? context.fetch(TaxInfo.allFetchRequest())) ?? []
+    }
+    
+    public static func fetch(for mechanic: Mechanic, in context: NSManagedObjectContext) -> [TaxInfo] {
+        return (try? context.fetch(TaxInfo.fetchRequest(for: mechanic))) ?? []
+    }
+    
+    public static func allFetchRequest() -> NSFetchRequest<TaxInfo> {
+        let fetchRequest: NSFetchRequest<TaxInfo> = TaxInfo.fetchRequest()
+        fetchRequest.sortDescriptors = [TaxInfo.taxInfoYearSortDescriptor]
+        return fetchRequest
+    }
+    
+    public static func fetchRequest(for mechanic: Mechanic) -> NSFetchRequest<TaxInfo> {
+        let fetchRequest: NSFetchRequest<TaxInfo> = TaxInfo.fetchRequest()
+        fetchRequest.predicate = TaxInfo.predicate(for: mechanic)
+        fetchRequest.sortDescriptors = [TaxInfo.taxInfoYearSortDescriptor]
+        return fetchRequest
+    }
+    
+    public static var taxInfoYearSortDescriptor: NSSortDescriptor {
+        return NSSortDescriptor(key: #keyPath(TaxInfo.year), ascending: true)
+    }
+    
+    public static func predicate(forMechanicID mechanicID: String) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(TaxInfo.mechanic.identifier), mechanicID)
+    }
+    
+    public static func predicate(for mechanic: Mechanic) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(TaxInfo.mechanic), mechanic)
     }
     
 }

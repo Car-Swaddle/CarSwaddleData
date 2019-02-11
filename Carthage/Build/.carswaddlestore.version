@@ -1,9 +1,9 @@
 {
-  "commitish" : "cfa00d8b9e94851c4fca7bbffd08f27c442dfa39",
+  "commitish" : "055e95a645076b88ae3b0ca01434f3c522573acc",
   "iOS" : [
     {
       "name" : "Store",
-      "hash" : "1a3b643f4f4f3e4e2171364e07339bd28e3e16a365a3a6b14c085006b62d3aec"
+      "hash" : "d713bcbd70dd4f42f91b3e1537ebecfb7da775c614e11ad8206db57d93d3bbf5"
     }
   ]
 }

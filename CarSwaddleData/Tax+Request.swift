@@ -54,7 +54,7 @@ final public class TaxNetwork: Network {
                 }
                 guard let json = json,
                     let mechanic = Mechanic.currentLoggedInMechanic(in: context) else { return }
-                let taxInfo = TaxInfo.fetchTaxInfo(withYear: year, in: context) ?? TaxInfo(year: year, context: context)
+                let taxInfo = TaxInfo.fetchOrCreate(with: json, in: context)
                 try? taxInfo?.configure(with: json)
                 taxInfo?.mechanic = mechanic
                 context.persist()
