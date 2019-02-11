@@ -60,7 +60,7 @@ class AutoServiceTests: LoginTestCase {
         
         autoServiceNetwork.createAutoService(autoService: autoService, sourceID: "", in: context) { newAutoService, error in
             self.autoServiceNetwork.getAutoServices(mechanicID: defaultMechanicID, startDate: self.startDate, endDate: self.endDate, filterStatus: [.inProgress, .scheduled, .completed], in: context) { autoServiceIDs, error in
-                context.perform {
+                context.performOnImportQueue {
                     let autoServices = AutoService.fetchObjects(with: autoServiceIDs, in: context)
                     
                     XCTAssert(autoServices.count > 0, "Should have auto services")

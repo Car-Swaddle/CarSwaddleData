@@ -24,7 +24,7 @@ final public class TaxNetwork: Network {
     @discardableResult
     public func requestTaxYears(in context: NSManagedObjectContext, completion: @escaping (_ taxInfoObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return taxService.getTaxYears { years, error in
-            context.perform {
+            context.performOnImportQueueOnImportQueue {
                 var taxInfoObjectIDs: [NSManagedObjectID] = []
                 defer {
                     completion(taxInfoObjectIDs, error)
@@ -32,7 +32,7 @@ final public class TaxNetwork: Network {
                 guard let years = years,
                 let mechanic = Mechanic.currentLoggedInMechanic(in: context) else { return }
                 for year in years {
-                    guard let taxInfo = TaxInfo(year: year, context: context) else { continue }
+                    let taxInfo = TaxInfo.fetchTaxInfo(withYear: year, in: context) ?? TaxInfo(year: year, context: context)
                     taxInfo.mechanic = mechanic
                     if taxInfo.objectID.isTemporaryID == true {
                         try? context.obtainPermanentIDs(for: [taxInfo])
@@ -47,7 +47,7 @@ final public class TaxNetwork: Network {
     @discardableResult
     public func requestTaxInfo(year: String, in context: NSManagedObjectContext, completion: @escaping (_ taxInfoObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         return taxService.getTaxes(year: year) { json, error in
-            context.perform {
+            context.performOnImportQueueOnImportQueue {
                 var taxInfoObjectID: NSManagedObjectID?
                 defer {
                     completion(taxInfoObjectID, error)

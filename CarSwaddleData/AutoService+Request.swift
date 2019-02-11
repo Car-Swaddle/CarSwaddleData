@@ -108,7 +108,7 @@ public final class AutoServiceNetwork: Network {
     }
     
     private func complete(originalAutoService: AutoService?, error: Error?, autoServiceJSON: JSONObject?, in context: NSManagedObjectContext, completion: @escaping (_ autoService: NSManagedObjectID?, _ error: Error?) -> Void) {
-        context.perform {
+        context.performOnImportQueue {
             var newAutoServiceObjectID: NSManagedObjectID?
             defer {
                 DispatchQueue.global().async {
@@ -128,7 +128,7 @@ public final class AutoServiceNetwork: Network {
     }
     
     private func complete(error: Error?, jsonArray: [JSONObject]?, in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) {
-        context.perform {
+        context.performOnImportQueue {
             var autoServiceIDs: [NSManagedObjectID] = []
             defer {
                 DispatchQueue.global().async {

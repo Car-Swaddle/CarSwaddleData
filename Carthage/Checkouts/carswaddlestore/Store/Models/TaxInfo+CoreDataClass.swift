@@ -16,7 +16,7 @@ typealias TaxInfoValues = (year: String, metersDriven: Int, mechanicCostInCents:
 @objc(TaxInfo)
 public class TaxInfo: NSManagedObject {
     
-    public convenience init?(year: String, context: NSManagedObjectContext) {
+    public convenience init(year: String, context: NSManagedObjectContext) {
         self.init(context: context)
         self.year = year
     }
