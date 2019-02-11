@@ -24,7 +24,7 @@ final public class TaxNetwork: Network {
     @discardableResult
     public func requestTaxYears(in context: NSManagedObjectContext, completion: @escaping (_ taxInfoObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return taxService.getTaxYears { years, error in
-            context.performOnImportQueueOnImportQueue {
+        context.performOnImportQueue {
                 var taxInfoObjectIDs: [NSManagedObjectID] = []
                 defer {
                     completion(taxInfoObjectIDs, error)
@@ -47,7 +47,7 @@ final public class TaxNetwork: Network {
     @discardableResult
     public func requestTaxInfo(year: String, in context: NSManagedObjectContext, completion: @escaping (_ taxInfoObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         return taxService.getTaxes(year: year) { json, error in
-            context.performOnImportQueueOnImportQueue {
+            context.performOnImportQueue {
                 var taxInfoObjectID: NSManagedObjectID?
                 defer {
                     completion(taxInfoObjectID, error)
