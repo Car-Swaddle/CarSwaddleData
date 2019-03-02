@@ -128,7 +128,7 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
     @NSManaged private var primitiveCreationDate: Date
     @NSManaged private var primitiveStatus: String
     
-    @NSManaged private var primitiveIsCanceled: Bool
+    @NSManaged private var primitiveIsCanceled: NSNumber
     
     public var status: Status {
         set {
@@ -137,7 +137,7 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
             didChangeValue(forKey: statusKey)
             
             willChangeValue(forKey: isCanceledKey)
-            primitiveIsCanceled = newValue == .canceled
+            primitiveIsCanceled = NSNumber(value: newValue == .canceled)
             didChangeValue(forKey: isCanceledKey)
         }
         get {
@@ -151,7 +151,7 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
     /// Bool value for data base usage. Reflects value found in `status`.
     @objc public var isCanceled: Bool {
         willAccessValue(forKey: isCanceledKey)
-        let value = primitiveIsCanceled
+        let value = primitiveIsCanceled.boolValue
         didAccessValue(forKey: isCanceledKey)
         return value
     }

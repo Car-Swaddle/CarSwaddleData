@@ -20,7 +20,7 @@
         <attribute name="balanceTransactionID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="creationDate" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
-        <attribute name="isCanceled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isCanceled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scheduledDate" optional="YES" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="status" attributeType="String" syncable="YES"/>
