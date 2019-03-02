@@ -33,7 +33,7 @@ public extension AutoService {
 
 private let statusKey = "status"
 private let typeKey = "type"
-private let isNotCanceledKey = "isNotCanceled"
+private let isCanceledKey = "isCanceled"
 
 let serverDateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
@@ -128,7 +128,7 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
     @NSManaged private var primitiveCreationDate: Date
     @NSManaged private var primitiveStatus: String
     
-    @NSManaged private var primitiveIsNotCanceled: NSNumber
+    @NSManaged private var primitiveIsCanceled: NSNumber
     
     public var status: Status {
         set {
@@ -136,9 +136,9 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
             primitiveStatus = newValue.rawValue
             didChangeValue(forKey: statusKey)
             
-            willChangeValue(forKey: isNotCanceledKey)
-            primitiveIsNotCanceled = NSNumber(value: newValue != .canceled)
-            didChangeValue(forKey: isNotCanceledKey)
+            willChangeValue(forKey: isCanceledKey)
+            primitiveIsCanceled = NSNumber(value: newValue == .canceled)
+            didChangeValue(forKey: isCanceledKey)
         }
         get {
             willAccessValue(forKey: statusKey)
@@ -149,10 +149,10 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
     }
     
     /// Bool value for data base usage. Reflects value found in `status`.
-    @objc public var isNotCanceled: Bool {
-        willAccessValue(forKey: isNotCanceledKey)
-        let value = primitiveIsNotCanceled.boolValue
-        didAccessValue(forKey: isNotCanceledKey)
+    @objc public var isCanceled: Bool {
+        willAccessValue(forKey: isCanceledKey)
+        let value = primitiveIsCanceled.boolValue
+        didAccessValue(forKey: isCanceledKey)
         return value
     }
     
