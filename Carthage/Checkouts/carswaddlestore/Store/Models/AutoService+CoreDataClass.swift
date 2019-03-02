@@ -149,7 +149,7 @@ public final class AutoService: NSManagedObject, NSManagedObjectFetchable, JSONI
     }
     
     /// Bool value for data base usage. Reflects value found in `status`.
-    public var isCanceled: Bool {
+    @objc public var isCanceled: Bool {
         willAccessValue(forKey: isCanceledKey)
         let value = primitiveIsCanceled
         didAccessValue(forKey: isCanceledKey)
