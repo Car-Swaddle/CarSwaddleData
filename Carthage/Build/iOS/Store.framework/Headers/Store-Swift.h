@@ -366,6 +366,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, copy) NSString * _Nullable identityDocumentID;
 @property (nonatomic, strong) Verification * _Nullable verification;
 @property (nonatomic, copy) NSSet<TaxInfo *> * _Nonnull taxYears;
+@property (nonatomic, strong) BankAccount * _Nullable bankAccount;
 @end
 
 
