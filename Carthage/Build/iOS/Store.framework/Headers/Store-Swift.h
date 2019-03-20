@@ -369,6 +369,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, copy) NSSet<TaxInfo *> * _Nonnull taxYears;
 @property (nonatomic, strong) BankAccount * _Nullable bankAccount;
 @property (nonatomic) BOOL hasSetAvailability;
+@property (nonatomic) BOOL hasSetServiceRegion;
 @end
 
 
