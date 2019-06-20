@@ -20,7 +20,7 @@ class AuthorityTests: LoginTestCase {
     func testGetAuthorities() {
         let exp = expectation(description: "\(#function)\(#line)")
         store.privateContext { privateContext in
-            self.authorityNetwork.getAuthorities(in: privateContext) { authorityIDs, error in
+            self.authorityNetwork.getAuthorities(limit: 30, offset: 0, in: privateContext) { authorityIDs, error in
                 XCTAssert(authorityIDs.count > 0, "Should have reviews")
                 exp.fulfill()
             }
@@ -31,7 +31,7 @@ class AuthorityTests: LoginTestCase {
     func testGetAuthorityRequests() {
         let exp = expectation(description: "\(#function)\(#line)")
         store.privateContext { privateContext in
-            self.authorityNetwork.getAuthorityRequests(in: privateContext) { authorityRequestIDs, error in
+            self.authorityNetwork.getAuthorityRequests(limit: 30, offset: 0, pending: false, in: privateContext) { authorityRequestIDs, error in
                 XCTAssert(authorityRequestIDs.count > 0, "Should have reviews")
                 exp.fulfill()
             }

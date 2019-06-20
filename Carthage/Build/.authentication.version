@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "Authentication",
-      "hash" : "d33c3699d536c11114a87a1555068cc926eda017205881bb453f58f676511609",
+      "hash" : "b10e75cbeafd2d9625467856fca963b5a1a7f776c9c28ac1d22cd140234e2a9d",
       "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     }
   ]

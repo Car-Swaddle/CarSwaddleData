@@ -20,8 +20,8 @@ final public class AuthorityNetwork: Network {
     }
     
     @discardableResult
-    public func getAuthorities(in context: NSManagedObjectContext, completion: @escaping (_ authorityObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
-        return authorityService.getAuthorities { jsonArray, error in
+    public func getAuthorities(limit: Int? = nil, offset: Int? = nil, in context: NSManagedObjectContext, completion: @escaping (_ authorityObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return authorityService.getAuthorities(limit: limit, offset: offset) { jsonArray, error in
             context.performOnImportQueue {
                 var authorityObjectIDs: [NSManagedObjectID] = []
                 defer {
@@ -40,8 +40,8 @@ final public class AuthorityNetwork: Network {
     }
     
     @discardableResult
-    public func getAuthorityRequests(in context: NSManagedObjectContext, completion: @escaping (_ authorityRequestObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
-        return authorityService.getAuthorityRequests { jsonArray, error in
+    public func getAuthorityRequests(limit: Int? = nil, offset: Int? = nil, pending: Bool? = nil, in context: NSManagedObjectContext, completion: @escaping (_ authorityRequestObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return authorityService.getAuthorityRequests(limit: limit, offset: offset, pending: pending) { jsonArray, error in
             context.performOnImportQueue {
                 var authorityObjectIDs: [NSManagedObjectID] = []
                 defer {
