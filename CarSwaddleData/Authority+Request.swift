@@ -43,16 +43,16 @@ final public class AuthorityNetwork: Network {
     public func getAuthorityRequests(limit: Int? = nil, offset: Int? = nil, pending: Bool? = nil, in context: NSManagedObjectContext, completion: @escaping (_ authorityRequestObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return authorityService.getAuthorityRequests(limit: limit, offset: offset, pending: pending) { jsonArray, error in
             context.performOnImportQueue {
-                var authorityObjectIDs: [NSManagedObjectID] = []
+                var authorityRequestObjectIDs: [NSManagedObjectID] = []
                 defer {
-                    completion(authorityObjectIDs , error)
+                    completion(authorityRequestObjectIDs , error)
                 }
-                for authorityJSON in jsonArray ?? [] {
-                    guard let authority = Authority.fetchOrCreate(json: authorityJSON, context: context) else { continue }
-                    if authority.objectID.isTemporaryID == true {
-                        try? context.obtainPermanentIDs(for: [authority])
+                for authorityRequestJSON in jsonArray ?? [] {
+                    guard let authorityRequest = AuthorityRequest.fetchOrCreate(json: authorityRequestJSON, context: context) else { continue }
+                    if authorityRequest.objectID.isTemporaryID == true {
+                        try? context.obtainPermanentIDs(for: [authorityRequest])
                     }
-                    authorityObjectIDs.append(authority.objectID)
+                    authorityRequestObjectIDs.append(authorityRequest.objectID)
                 }
                 context.persist()
             }
