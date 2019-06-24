@@ -55,6 +55,45 @@ final public class Authority: NSManagedObject, NSManagedObjectFetchable, JSONIni
     
 }
 
+extension Authority {
+    
+    public static func currentUserHas(authority: String, in context: NSManagedObjectContext) -> Bool {
+        let fetchRequest: NSFetchRequest<Authority> = Authority.fetchRequest()
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [Authority.currentUserAuthoritiesPredicate(), Authority.currentUserHasAuthorities(withName: authority)])
+        fetchRequest.sortDescriptors = [Authority.creationDateSortDescriptor]
+        
+        return ((try? context.count(for: fetchRequest)) ?? 0) != 0
+    }
+    
+    public static func fetchCurrentUserAuthorities(in context: NSManagedObjectContext) -> [Authority] {
+        let fetchRequest: NSFetchRequest<Authority> = Authority.fetchRequest()
+        fetchRequest.predicate = Authority.currentUserAuthoritiesPredicate()
+        fetchRequest.sortDescriptors = [Authority.creationDateSortDescriptor]
+        
+        return (try? context.fetch(fetchRequest)) ?? []
+    }
+    
+    public static func currentUserHasAuthorities(withName name: String) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(Authority.name), name)
+    }
+    
+    public static func currentUserAuthoritiesPredicate() -> NSPredicate {
+        guard let currentUserID = User.currentUserID else {
+            return NSPredicate(value: false)
+        }
+        return Authority.authoritiesPredicate(forUserID: currentUserID)
+    }
+    
+    public static func authoritiesPredicate(forUserID userID: String) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(Authority.userID), userID)
+    }
+    
+    public static var creationDateSortDescriptor: NSSortDescriptor {
+        return NSSortDescriptor(key: #keyPath(Authority.creationDate), ascending: true)
+    }
+    
+}
+
 /*
  {
  "id": "5c37d130-8e5f-11e9-8136-ffee546f26bb",

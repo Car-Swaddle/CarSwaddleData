@@ -97,12 +97,32 @@ final public class AuthorityNetwork: Network {
             context.performOnImportQueue {
                 var authorityConfirmationObjectID: NSManagedObjectID?
                 defer {
-                    completion(authorityConfirmationObjectID , error)
+                    completion(authorityConfirmationObjectID, error)
                 }
                 guard let json = json,
                     let authorityConfirmation = AuthorityConfirmation.fetchOrCreate(json: json, context: context) else { return }
                 context.persist()
                 authorityConfirmationObjectID = authorityConfirmation.objectID
+            }
+        }
+    }
+    
+    @discardableResult
+    public func getCurrentUserAuthorities(in context: NSManagedObjectContext, completion: @escaping (_ authorityObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return authorityService.getCurrentUserAuthorities { jsonArray, error in
+            context.performOnImportQueue {
+                var authorityObjectIDs: [NSManagedObjectID] = []
+                defer {
+                    completion(authorityObjectIDs , error)
+                }
+                for authorityJSON in jsonArray ?? [] {
+                    guard let authority = Authority.fetchOrCreate(json: authorityJSON, context: context) else { continue }
+                    if authority.objectID.isTemporaryID == true {
+                        try? context.obtainPermanentIDs(for: [authority])
+                    }
+                    authorityObjectIDs.append(authority.objectID)
+                }
+                context.persist()
             }
         }
     }

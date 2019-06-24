@@ -30,18 +30,6 @@ class AuthoritiesTests: XCTestCase {
         XCTAssert(result, "Should be true")
     }
     
-    func testCreateAuthority2() {
-        let authority = Authority.fetchOrCreate(json: testAuthorityJSON, context: store.mainContext)
-        XCTAssert(authority != nil, "Should have authority")
-        XCTAssert(authority?.authorityConfirmation != nil, "Should have confirmation")
-        XCTAssert(authority?.authorityConfirmation?.confirmer != nil, "Should have confirmation")
-        XCTAssert(authority?.user != nil, "Should have confirmation")
-        
-        let result = store.mainContext.persist()
-        
-        XCTAssert(result, "Should be true")
-    }
-    
     func testCreateAuthorityRequest() {
         let authorityRequest = AuthorityRequest.fetchOrCreate(json: authorityRequestJSON, context: store.mainContext)
         XCTAssert(authorityRequest != nil, "Should have authority")
@@ -128,25 +116,6 @@ private let authorityRequestJSON: [String: Any] = [
 ]
 
 
-
-private let testAuthorityJSON: [String: Any] = [
-    "requesterID": "ad1b8fe0-92a3-11e9-92eb-bb97e25e7bcd",
-    "authorityName": "someAuthorityA9408C3E-8493-40DD-A47B-FC04BE6AC8A7",
-    "authorityConfirmation": NSNull(),
-    "user": [
-        "email": "mechanic@carswaddle.com",
-        "firstName": NSNull(),
-        "id": "ad1b8fe0-92a3-11e9-92eb-bb97e25e7bcd",
-        "lastName": NSNull(),
-        "phoneNumber": NSNull(),
-        "profileImageID": NSNull(),
-        "timeZone": "America/Denver"
-    ],
-    "secretID": "5e15a741-92a4-11e9-92eb-bb97e25e7bcd",
-    "expirationDate": "2019-06-20T15:10:26.228Z", "id": "5e15a740-92a4-11e9-92eb-bb97e25e7bcd",
-    "authorityID": NSNull()
-]
-
 private let authorityRequestJSON2: [String: Any] = [
     "secretID": "62f30781-8f2f-11e9-a954-6b4feb351242",
     "updatedAt": "2019-06-15T05:35:29.785Z",
@@ -165,6 +134,27 @@ private let authorityRequestJSON2: [String: Any] = [
         "profileImageID": NSNull(),
         "timeZone": "America/Denver",
     ]
+]
+
+private let authorityRequestJSON3: [String: Any] = [
+    "authorityName": "readAuthorities",
+    "id": "4f096250-93cb-11e9-98c1-3744ad4d525f",
+    "expirationDate": "2019-06-22T02:21:42.517Z",
+    "authorityID": NSNull(),
+    "requesterID": "3933ba30-8fd8-11e9-a0b9-ff60380afd50",
+    "createdAt": "2019-06-21T02:21:42.518Z",
+    "secretID": "4f096251-93cb-11e9-98c1-3744ad4d525f",
+    "user": [
+        "firstName": NSNull(),
+        "lastName": NSNull(),
+        "id": "3933ba30-8fd8-11e9-a0b9-ff60380afd50",
+        "profileImageID": NSNull(),
+        "email": "kyle@carswaddle.com",
+        "phoneNumber": NSNull(),
+        "timeZone": "America/Denver"
+    ],
+    "authorityConfirmation": NSNull(),
+    "authority": NSNull()
 ]
 
 
