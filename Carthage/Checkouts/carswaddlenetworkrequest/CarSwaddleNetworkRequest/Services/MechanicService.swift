@@ -13,6 +13,7 @@ extension NetworkRequest.Request.Endpoint {
     fileprivate static let updateMechanic = Request.Endpoint(rawValue: "/api/update-mechanic")
     fileprivate static let currentMechanic = Request.Endpoint(rawValue: "/api/current-mechanic")
     fileprivate static let stats = Request.Endpoint(rawValue: "/api/stats")
+    fileprivate static let mechanics = Request.Endpoint(rawValue: "/api/mechanics")
 }
 
 final public class MechanicService: Service {
@@ -84,6 +85,17 @@ final public class MechanicService: Service {
         guard let urlRequest = serviceRequest.get(with: .stats, queryItems: queryItems) else { return nil }
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
             self?.completeWithJSON(data: data, error: error, completion: completion)
+        }
+    }
+    
+    @discardableResult
+    public func getMechanics(limit: Int = 30, offset: Int = 0, sortType: SortType = .descending, completion: @escaping JSONArrayCompletion) -> URLSessionDataTask? {
+        let queryItems: [URLQueryItem] = [URLQueryItem(name: "limit", value: "\(limit)"),
+                                          URLQueryItem(name: "offset", value: "\(offset)"),
+                                          URLQueryItem(name: "sortType", value: "\(sortType.rawValue)")]
+        guard let urlRequest = serviceRequest.get(with: .mechanics, queryItems: queryItems) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSONArray(data: data, error: error, completion: completion)
         }
     }
     

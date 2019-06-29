@@ -305,4 +305,25 @@ class MechanicTests: LoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testGetMechanics() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        store.privateContext { [weak self] context in
+            self?.mechanicNetwork.getMechanics(limit: 30, offset: 0, sortType: .descending, in: context) { mechanicIDs, error in
+                XCTAssert(mechanicIDs.count > 0, "Should have 1 mechanic, got: \(mechanicIDs.count)")
+                
+                for mechanicID in mechanicIDs {
+                    let mechanic = context.object(with: mechanicID) as? Mechanic
+                    XCTAssert(mechanic != nil, "Mechanic is nil, should have gotten a mechanic")
+                    XCTAssert(mechanic?.user != nil, "User is nil, should have gotten a user")
+//                    XCTAssert(mechanic?.serviceRegion != nil, "serviceRegion is nil, should have gotten a serviceRegion")
+                }
+                
+                exp.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
 }

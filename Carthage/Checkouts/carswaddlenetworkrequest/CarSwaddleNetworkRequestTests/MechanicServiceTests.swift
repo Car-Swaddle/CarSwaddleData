@@ -219,4 +219,19 @@ class MechanicServiceTests: CarSwaddleLoginTestCase {
         }
     }
     
+    func testGetMechanics() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        service.getMechanics(limit: 30, offset: 0, sortType: .ascending) { jsonArray, err in
+            if let jsonArray = jsonArray {
+                XCTAssert(jsonArray.count > 0, "Should have gotten at least one mechanic")
+            } else {
+                XCTAssert(false, "Should have gotten jsonArray")
+            }
+            
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
 }

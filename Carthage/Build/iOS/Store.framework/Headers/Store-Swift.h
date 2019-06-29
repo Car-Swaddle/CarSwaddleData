@@ -235,6 +235,8 @@ SWIFT_CLASS_NAMED("Authority")
 
 
 
+
+
 @class User;
 @class AuthorityConfirmation;
 @class AuthorityRequest;
@@ -384,14 +386,14 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class Transaction;
+@class TemplateTimeSpan;
 @class NSSet;
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
-- (void)addTransactionsObject:(Transaction * _Nonnull)value;
-- (void)removeTransactionsObject:(Transaction * _Nonnull)value;
-- (void)addTransactions:(NSSet * _Nonnull)values;
-- (void)removeTransactions:(NSSet * _Nonnull)values;
+- (void)addScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
+- (void)removeScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
+- (void)addScheduleTimeSpans:(NSSet * _Nonnull)values;
+- (void)removeScheduleTimeSpans:(NSSet * _Nonnull)values;
 @end
 
 
@@ -402,13 +404,13 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (void)removeServices:(NSSet * _Nonnull)values;
 @end
 
-@class TemplateTimeSpan;
+@class Transaction;
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
-- (void)addScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
-- (void)removeScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
-- (void)addScheduleTimeSpans:(NSSet * _Nonnull)values;
-- (void)removeScheduleTimeSpans:(NSSet * _Nonnull)values;
+- (void)addTransactionsObject:(Transaction * _Nonnull)value;
+- (void)removeTransactionsObject:(Transaction * _Nonnull)value;
+- (void)addTransactions:(NSSet * _Nonnull)values;
+- (void)removeTransactions:(NSSet * _Nonnull)values;
 @end
 
 @class Region;
@@ -1048,6 +1050,8 @@ SWIFT_CLASS_NAMED("Authority")
 
 
 
+
+
 @class User;
 @class AuthorityConfirmation;
 @class AuthorityRequest;
@@ -1197,14 +1201,14 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class Transaction;
+@class TemplateTimeSpan;
 @class NSSet;
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
-- (void)addTransactionsObject:(Transaction * _Nonnull)value;
-- (void)removeTransactionsObject:(Transaction * _Nonnull)value;
-- (void)addTransactions:(NSSet * _Nonnull)values;
-- (void)removeTransactions:(NSSet * _Nonnull)values;
+- (void)addScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
+- (void)removeScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
+- (void)addScheduleTimeSpans:(NSSet * _Nonnull)values;
+- (void)removeScheduleTimeSpans:(NSSet * _Nonnull)values;
 @end
 
 
@@ -1215,13 +1219,13 @@ SWIFT_CLASS_NAMED("Mechanic")
 - (void)removeServices:(NSSet * _Nonnull)values;
 @end
 
-@class TemplateTimeSpan;
+@class Transaction;
 
 @interface Mechanic (SWIFT_EXTENSION(Store))
-- (void)addScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
-- (void)removeScheduleTimeSpansObject:(TemplateTimeSpan * _Nonnull)value;
-- (void)addScheduleTimeSpans:(NSSet * _Nonnull)values;
-- (void)removeScheduleTimeSpans:(NSSet * _Nonnull)values;
+- (void)addTransactionsObject:(Transaction * _Nonnull)value;
+- (void)removeTransactionsObject:(Transaction * _Nonnull)value;
+- (void)addTransactions:(NSSet * _Nonnull)values;
+- (void)removeTransactions:(NSSet * _Nonnull)values;
 @end
 
 @class Region;

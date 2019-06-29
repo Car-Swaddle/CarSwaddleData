@@ -59,7 +59,15 @@ extension Authority {
     
     public static func currentUserHas(authority: String, in context: NSManagedObjectContext) -> Bool {
         let fetchRequest: NSFetchRequest<Authority> = Authority.fetchRequest()
-        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [Authority.currentUserAuthoritiesPredicate(), Authority.currentUserHasAuthorities(withName: authority)])
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [Authority.currentUserAuthoritiesPredicate(), Authority.currentUserHasAuthority(withName: authority)])
+        fetchRequest.sortDescriptors = [Authority.creationDateSortDescriptor]
+        
+        return ((try? context.count(for: fetchRequest)) ?? 0) != 0
+    }
+    
+    public static func currentUser(has authority: Authority.Name, in context: NSManagedObjectContext) -> Bool {
+        let fetchRequest: NSFetchRequest<Authority> = Authority.fetchRequest()
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [Authority.currentUserAuthoritiesPredicate(), Authority.currentUser(has: authority)])
         fetchRequest.sortDescriptors = [Authority.creationDateSortDescriptor]
         
         return ((try? context.count(for: fetchRequest)) ?? 0) != 0
@@ -73,8 +81,12 @@ extension Authority {
         return (try? context.fetch(fetchRequest)) ?? []
     }
     
-    public static func currentUserHasAuthorities(withName name: String) -> NSPredicate {
+    public static func currentUserHasAuthority(withName name: String) -> NSPredicate {
         return NSPredicate(format: "%K == %@", #keyPath(Authority.name), name)
+    }
+    
+    public static func currentUser(has authority: Authority.Name) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(Authority.name), authority.rawValue)
     }
     
     public static func currentUserAuthoritiesPredicate() -> NSPredicate {
@@ -90,6 +102,17 @@ extension Authority {
     
     public static var creationDateSortDescriptor: NSSortDescriptor {
         return NSSortDescriptor(key: #keyPath(Authority.creationDate), ascending: true)
+    }
+    
+}
+
+
+extension Authority {
+    
+    public enum Name: String {
+        case coupons = "createCarSwaddleCoupon"
+        case readAuthorities = "readAuthorities"
+        case editAuthorities = "editAuthorities"
     }
     
 }
