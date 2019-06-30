@@ -110,9 +110,11 @@ extension Authority {
 extension Authority {
     
     public enum Name: String {
-        case coupons = "createCarSwaddleCoupon"
+        case createCoupons = "createCarSwaddleCoupon"
         case readAuthorities = "readAuthorities"
         case editAuthorities = "editAuthorities"
+        case readMechanics = "readMechanics"
+        case editMechanics = "editMechanics"
     }
     
 }
