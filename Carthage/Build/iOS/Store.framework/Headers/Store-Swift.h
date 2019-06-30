@@ -422,6 +422,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @interface Mechanic (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic) BOOL isActive;
+@property (nonatomic) BOOL isAllowed;
 @property (nonatomic, strong) User * _Nullable user;
 @property (nonatomic, copy) NSSet<TemplateTimeSpan *> * _Nonnull scheduleTimeSpans;
 @property (nonatomic, copy) NSSet<AutoService *> * _Nonnull services;
@@ -1238,6 +1239,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @interface Mechanic (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic) BOOL isActive;
+@property (nonatomic) BOOL isAllowed;
 @property (nonatomic, strong) User * _Nullable user;
 @property (nonatomic, copy) NSSet<TemplateTimeSpan *> * _Nonnull scheduleTimeSpans;
 @property (nonatomic, copy) NSSet<AutoService *> * _Nonnull services;
