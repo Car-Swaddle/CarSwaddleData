@@ -99,6 +99,7 @@
         <relationship name="autoService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AutoService" inverseName="location" inverseEntity="AutoService" syncable="YES"/>
     </entity>
     <entity name="Mechanic" representedClassName="Mechanic" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="hasSetAvailability" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="hasSetServiceRegion" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -297,7 +298,7 @@
         <element name="Balance" positionX="-27" positionY="135" width="128" height="105"/>
         <element name="BankAccount" positionX="-27" positionY="135" width="128" height="240"/>
         <element name="Location" positionX="-36" positionY="27" width="128" height="120"/>
-        <element name="Mechanic" positionX="-27" positionY="99" width="128" height="375"/>
+        <element name="Mechanic" positionX="-27" positionY="99" width="128" height="390"/>
         <element name="OilChange" positionX="-18" positionY="54" width="128" height="90"/>
         <element name="Payout" positionX="-27" positionY="135" width="128" height="315"/>
         <element name="Price" positionX="-9" positionY="90" width="128" height="105"/>

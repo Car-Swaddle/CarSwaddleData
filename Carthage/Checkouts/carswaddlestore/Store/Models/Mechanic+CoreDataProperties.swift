@@ -38,6 +38,7 @@ extension Mechanic {
     @NSManaged public var bankAccount: BankAccount?
     @NSManaged public var hasSetAvailability: Bool
     @NSManaged public var hasSetServiceRegion: Bool
+    @NSManaged public var creationDate: Date
 
 }
 

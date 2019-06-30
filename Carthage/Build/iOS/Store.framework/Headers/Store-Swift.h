@@ -442,6 +442,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, strong) BankAccount * _Nullable bankAccount;
 @property (nonatomic) BOOL hasSetAvailability;
 @property (nonatomic) BOOL hasSetServiceRegion;
+@property (nonatomic, copy) NSDate * _Nonnull creationDate;
 @end
 
 
@@ -1257,6 +1258,7 @@ SWIFT_CLASS_NAMED("Mechanic")
 @property (nonatomic, strong) BankAccount * _Nullable bankAccount;
 @property (nonatomic) BOOL hasSetAvailability;
 @property (nonatomic) BOOL hasSetServiceRegion;
+@property (nonatomic, copy) NSDate * _Nonnull creationDate;
 @end
 
 
