@@ -276,22 +276,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarSwaddleData/Mechanic+Requests.swift"
-            timestampString = "583632568.725559"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "updateMechanicCorperate(mechanicID:isAllowed:in:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CarSwaddleData/Mechanic+Requests.swift"
             timestampString = "583632568.725606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

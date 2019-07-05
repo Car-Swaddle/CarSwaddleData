@@ -498,34 +498,17 @@ SWIFT_CLASS_NAMED("Price")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class PricePart;
-
-@interface Price (SWIFT_EXTENSION(Store))
-- (void)addPartsObject:(PricePart * _Nonnull)value;
-- (void)removePartsObject:(PricePart * _Nonnull)value;
-- (void)addParts:(NSSet * _Nonnull)values;
-- (void)removeParts:(NSSet * _Nonnull)values;
-@end
-
 
 @interface Price (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
-@property (nonatomic) NSInteger totalPrice;
-@property (nonatomic, copy) NSSet<PricePart *> * _Nonnull parts;
 @property (nonatomic, strong) AutoService * _Nullable autoService;
-@end
-
-
-SWIFT_CLASS_NAMED("PricePart")
-@interface PricePart : NSManagedObject
-- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface PricePart (SWIFT_EXTENSION(Store))
-@property (nonatomic, copy) NSString * _Nonnull key;
-@property (nonatomic) NSInteger value;
-@property (nonatomic, strong) Price * _Nonnull price;
+@property (nonatomic) NSInteger oilChangeCost;
+@property (nonatomic) NSInteger distanceCost;
+@property (nonatomic) NSInteger bookingFee;
+@property (nonatomic) NSInteger processingFee;
+@property (nonatomic) NSInteger subtotal;
+@property (nonatomic) NSInteger taxes;
+@property (nonatomic) NSInteger total;
 @end
 
 
@@ -1315,34 +1298,17 @@ SWIFT_CLASS_NAMED("Price")
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class PricePart;
-
-@interface Price (SWIFT_EXTENSION(Store))
-- (void)addPartsObject:(PricePart * _Nonnull)value;
-- (void)removePartsObject:(PricePart * _Nonnull)value;
-- (void)addParts:(NSSet * _Nonnull)values;
-- (void)removeParts:(NSSet * _Nonnull)values;
-@end
-
 
 @interface Price (SWIFT_EXTENSION(Store))
 @property (nonatomic, copy) NSString * _Nonnull identifier;
-@property (nonatomic) NSInteger totalPrice;
-@property (nonatomic, copy) NSSet<PricePart *> * _Nonnull parts;
 @property (nonatomic, strong) AutoService * _Nullable autoService;
-@end
-
-
-SWIFT_CLASS_NAMED("PricePart")
-@interface PricePart : NSManagedObject
-- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface PricePart (SWIFT_EXTENSION(Store))
-@property (nonatomic, copy) NSString * _Nonnull key;
-@property (nonatomic) NSInteger value;
-@property (nonatomic, strong) Price * _Nonnull price;
+@property (nonatomic) NSInteger oilChangeCost;
+@property (nonatomic) NSInteger distanceCost;
+@property (nonatomic) NSInteger bookingFee;
+@property (nonatomic) NSInteger processingFee;
+@property (nonatomic) NSInteger subtotal;
+@property (nonatomic) NSInteger taxes;
+@property (nonatomic) NSInteger total;
 @end
 
 
