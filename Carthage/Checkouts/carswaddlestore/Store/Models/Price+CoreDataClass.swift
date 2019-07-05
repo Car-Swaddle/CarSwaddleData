@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-typealias PriceValues = (identifier: String, totalPrice: Int, taxes: Int, processingFee: Int, bookingFee: Int, distance: Int, oilChange: Int, couponDiscount: Int?)
+typealias PriceValues = (identifier: String, totalPrice: Int, taxes: Int, subtotal: Int, processingFee: Int, bookingFee: Int, distance: Int, oilChange: Int, couponDiscount: Int?)
 
 @objc(Price)
 public final class Price: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
@@ -32,9 +32,10 @@ public final class Price: NSManagedObject, NSManagedObjectFetchable, JSONInitabl
             let bookingFee = json["bookingFee"] as? Int,
             let distance = json["distance"] as? Int,
             let oilChange = json["oilChange"] as? Int,
-            let taxes = json["taxes"] as? Int else { return nil }
+            let taxes = json["taxes"] as? Int,
+            let subtotal = json["subtotal"] as? Int else { return nil }
         
-        return (id, totalPrice, taxes, processingFee, bookingFee, distance, oilChange, json["couponDiscount"] as? Int)
+        return (id, totalPrice, taxes, subtotal, processingFee, bookingFee, distance, oilChange, json["couponDiscount"] as? Int)
     }
     
     private func configure(from values: PriceValues, json: JSONObject)  {
@@ -45,6 +46,7 @@ public final class Price: NSManagedObject, NSManagedObjectFetchable, JSONInitabl
         self.bookingFee = values.bookingFee
         self.distanceCost = values.distance
         self.oilChangeCost = values.oilChange
+        self.subtotal = values.subtotal
         
         guard let context = managedObjectContext else { return }
         

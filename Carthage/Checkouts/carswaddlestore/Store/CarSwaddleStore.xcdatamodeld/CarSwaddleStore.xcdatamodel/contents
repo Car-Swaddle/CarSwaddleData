@@ -150,15 +150,15 @@
         <relationship name="transactions" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="payout" inverseEntity="Transaction" syncable="YES"/>
     </entity>
     <entity name="Price" representedClassName="Price" syncable="YES">
-        <attribute name="bookingFee" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="couponDiscount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="distanceCost" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bookingFee" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="couponDiscount" optional="YES" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="distanceCost" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
-        <attribute name="oilChangeCost" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="processingFee" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="subtotal" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="taxes" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="total" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="oilChangeCost" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="processingFee" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="subtotal" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="taxes" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="total" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="autoService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AutoService" inverseName="price" inverseEntity="AutoService" syncable="YES"/>
     </entity>
     <entity name="Region" representedClassName="Region" syncable="YES">
