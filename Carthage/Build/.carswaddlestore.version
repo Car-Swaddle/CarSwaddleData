@@ -1,9 +1,9 @@
 {
-  "commitish" : "656f4a9a8a5b365307ae371c9b8ceb4880760c21",
+  "commitish" : "b6279c9acad64968fa1e0ee1078c0d95307d7f7c",
   "iOS" : [
     {
       "name" : "Store",
-      "hash" : "afae62c7958acc2e33b56ba37db4fa50145fd60cea0dd02abfc22082a18924ad",
+      "hash" : "7b43574017abbb23633df036575dfe655b43f001c6e80671f74b2af229197da0",
       "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     }
   ]
