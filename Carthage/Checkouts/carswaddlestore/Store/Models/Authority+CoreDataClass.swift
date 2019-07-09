@@ -109,12 +109,14 @@ extension Authority {
 
 extension Authority {
     
-    public struct Name {
+    public struct Name: Equatable {
+        
         public let rawValue: String
         
         public init(rawValue: String) {
             self.rawValue = rawValue
         }
+        
     }
     
 }
