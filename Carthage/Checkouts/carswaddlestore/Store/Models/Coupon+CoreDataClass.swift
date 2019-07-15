@@ -17,7 +17,6 @@ struct CouponCodable: Codable {
     public var amountOff: Int?
     public var creationDate: Date
     public var createdByUserID: String
-    public var autoServiceID: String?
     public var discountBookingFee: Bool
     public var isCorporate: Bool
     public var maxRedemptions: Int?
@@ -65,7 +64,6 @@ final public class Coupon: NSManagedObject, NSManagedObjectFetchable, JSONInitab
         amountOff = codable.amountOff
         creationDate = codable.creationDate
         createdByUserID = codable.createdByUserID
-        autoServiceID = codable.autoServiceID
         discountBookingFee = codable.discountBookingFee
         isCorporate = codable.isCorporate
         maxRedemptions = codable.maxRedemptions
@@ -78,12 +76,6 @@ final public class Coupon: NSManagedObject, NSManagedObjectFetchable, JSONInitab
         guard let context = managedObjectContext else { return }
         
         user = User.fetch(with: createdByUserID, in: context)
-        
-        if let autoServiceID = autoServiceID {
-            autoservice = AutoService.fetch(with: autoServiceID, in: context)
-        } else {
-            autoservice = nil
-        }
     }
     
     private static func values(from json: JSONObject) -> CouponCodable? {
@@ -103,9 +95,8 @@ final public class Coupon: NSManagedObject, NSManagedObjectFetchable, JSONInitab
         let amountOff = json["amountOff"] as? Int
         let maxRedemptions = json["maxRedemptions"] as? Int
         let percentOff = json["percentOff"] as? CGFloat
-        let autoServiceID = json["autoServiceID"] as? String
         
-        return CouponCodable(identifier: id, amountOff: amountOff, creationDate: creationDate, createdByUserID: createdByUserID, autoServiceID: autoServiceID, discountBookingFee: discountBookingFee, isCorporate: isCorporate, maxRedemptions: maxRedemptions, name: name, percentOff: percentOff, redeemBy: redeemBy, redemptions: redemptions, updatedAt: updatedAt)
+        return CouponCodable(identifier: id, amountOff: amountOff, creationDate: creationDate, createdByUserID: createdByUserID, discountBookingFee: discountBookingFee, isCorporate: isCorporate, maxRedemptions: maxRedemptions, name: name, percentOff: percentOff, redeemBy: redeemBy, redemptions: redemptions, updatedAt: updatedAt)
     }
     
     

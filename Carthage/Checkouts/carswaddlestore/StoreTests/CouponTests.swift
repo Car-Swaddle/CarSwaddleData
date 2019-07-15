@@ -25,7 +25,6 @@ class CouponTests: XCTestCase {
         XCTAssert(coupon != nil, "Should have coupon")
         
         let result = store.mainContext.persist()
-        
         XCTAssert(result, "Should be true")
     }
     
