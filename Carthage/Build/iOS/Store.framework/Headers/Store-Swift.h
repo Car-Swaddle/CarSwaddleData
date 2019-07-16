@@ -379,6 +379,7 @@ SWIFT_CLASS_NAMED("Coupon")
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic, copy) NSDate * _Nonnull creationDate;
 @property (nonatomic, copy) NSString * _Nonnull createdByUserID;
+@property (nonatomic, copy) NSString * _Nullable createdByMechanicID;
 @property (nonatomic) BOOL discountBookingFee;
 @property (nonatomic) BOOL isCorporate;
 @property (nonatomic, copy) NSString * _Nonnull name;
@@ -1204,6 +1205,7 @@ SWIFT_CLASS_NAMED("Coupon")
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic, copy) NSDate * _Nonnull creationDate;
 @property (nonatomic, copy) NSString * _Nonnull createdByUserID;
+@property (nonatomic, copy) NSString * _Nullable createdByMechanicID;
 @property (nonatomic) BOOL discountBookingFee;
 @property (nonatomic) BOOL isCorporate;
 @property (nonatomic, copy) NSString * _Nonnull name;
