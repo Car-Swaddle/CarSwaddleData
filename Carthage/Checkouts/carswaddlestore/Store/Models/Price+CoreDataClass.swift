@@ -51,6 +51,7 @@ public final class Price: NSManagedObject, NSManagedObjectFetchable, JSONInitabl
         self.oilChangeCost = values.oilChange
         self.subtotal = values.subtotal
         self.bookingFeeDiscount = values.bookingFeeDiscount
+        self.couponDiscount = values.couponDiscount
         
         guard let context = managedObjectContext else { return }
         
