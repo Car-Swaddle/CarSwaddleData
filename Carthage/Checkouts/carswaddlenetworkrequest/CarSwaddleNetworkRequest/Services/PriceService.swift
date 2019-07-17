@@ -13,6 +13,13 @@ extension NetworkRequest.Request.Endpoint {
     fileprivate static let price = Request.Endpoint(rawValue: "/api/price")
 }
 
+public enum PriceError: String, Error {
+    case couponNotFound = "COUPON_NOT_FOUND"
+    case invalidCouponCode = "INVALID_COUPON_CODE"
+    case expired = "EXPIRED"
+    case invalidMechanic = "INVALID_MECHANIC"
+    case depletedRedemptions = "DEPLETED_REDEMPTIONS"
+}
 
 final public class PriceService: Service {
     
@@ -41,6 +48,19 @@ final public class PriceService: Service {
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
             self?.completeWithJSON(data: data, error: error, completion: completion)
         }
+    }
+    
+    func completeWithPriceJSON(data: Data?, error: Error?, completion: @escaping (_ json: JSONObject?, _ error: Error?) -> Void) {
+        var error = error
+        guard let data = data,
+            let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? JSONObject else {
+                completion(nil, error)
+                return
+        }
+        if error != nil, let errorCode = json["code"] as? String, let priceError = PriceError(rawValue: errorCode) {
+            error = priceError
+        }
+        completion(json, error)
     }
     
 }
