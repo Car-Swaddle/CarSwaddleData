@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "KeychainAccess",
-      "hash" : "c69ef79192bed004360b0a34713f841776230dc8dce46955f5e0fe5934c932d6",
+      "hash" : "c6fa777c7fe036d04b306f7a2bcae37458e4e2b78a9f6f7344dd912be13a0899",
       "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     }
   ]

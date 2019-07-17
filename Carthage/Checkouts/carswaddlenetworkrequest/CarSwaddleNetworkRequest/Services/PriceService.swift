@@ -33,7 +33,7 @@ final public class PriceService: Service {
         guard let body = (try? JSONSerialization.data(withJSONObject: json, options: [])),
             let urlRequest = serviceRequest.post(with: .price, body: body, contentType: .applicationJSON) else { return nil }
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
-            self?.completeWithJSON(data: data, error: error, completion: completion)
+            self?.completeWithPriceJSON(data: data, error: error, completion: completion)
         }
     }
     
@@ -46,7 +46,7 @@ final public class PriceService: Service {
         guard let body = (try? JSONSerialization.data(withJSONObject: json, options: [])),
             let urlRequest = serviceRequest.post(with: .price, body: body, contentType: .applicationJSON) else { return nil }
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
-            self?.completeWithJSON(data: data, error: error, completion: completion)
+            self?.completeWithPriceJSON(data: data, error: error, completion: completion)
         }
     }
     
