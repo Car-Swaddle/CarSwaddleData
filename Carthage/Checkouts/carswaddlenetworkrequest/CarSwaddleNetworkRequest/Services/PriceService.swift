@@ -14,11 +14,11 @@ extension NetworkRequest.Request.Endpoint {
 }
 
 public enum PriceError: String, Error {
-    case couponNotFound = "COUPON_NOT_FOUND"
-    case invalidCouponCode = "INVALID_COUPON_CODE"
+    case invalidCouponCode = "INCORRECT_CODE"
     case expired = "EXPIRED"
-    case invalidMechanic = "INVALID_MECHANIC"
+    case invalidMechanic = "INCORRECT_MECHANIC"
     case depletedRedemptions = "DEPLETED_REDEMPTIONS"
+    case couponCodeNotFound = "OTHER"
 }
 
 final public class PriceService: Service {
