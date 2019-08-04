@@ -88,17 +88,19 @@ public final class UserNetwork: Network {
     }
     
     @discardableResult
-    public func getProfileImage(userID: String, completion: @escaping (_ fileURL: URL?, _ error: Error?) -> Void) -> URLSessionDownloadTask? {
+    public func getProfileImage(userID: String, in context: NSManagedObjectContext, completion: @escaping (_ fileURL: URL?, _ error: Error?) -> Void) -> URLSessionDownloadTask? {
         return fileService.getProfileImage(userID: userID) { url, responseError in
-            var completionError: Error? = responseError
-            var permanentURL: URL?
-            defer {
-                completion(permanentURL, completionError)
+            context.perform {
+                var completionError: Error? = responseError
+                var permanentURL: URL?
+                defer {
+                    completion(permanentURL, completionError)
+                }
+                guard let url = url else { return }
+                do {
+                    permanentURL = try profileImageStore.storeFile(at: url, userID: userID, in: context)
+                } catch { completionError = error }
             }
-            guard let url = url else { return }
-            do {
-                permanentURL = try profileImageStore.storeFile(at: url, fileName: userID)
-            } catch { completionError = error }
         }
     }
     
