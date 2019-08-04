@@ -74,13 +74,14 @@ public final class UserNetwork: Network {
                     }
                 }
                 
-                if let currentUserID = User.currentUserID {
-                    _ = try? profileImageStore.storeFile(url: fileURL, userID: currentUserID)
-                }
-                
                 guard let currentUser = User.currentUser(context: context), error == nil else { return }
                 currentUser.profileImageID = json?["profileImageID"] as? String
                 context.persist()
+                
+                if let currentUserID = User.currentUserID {
+                    _ = try? profileImageStore.storeFile(at: fileURL, userID: currentUserID, in: context)
+                }
+                
                 userObjectID = currentUser.objectID
             }
         }
@@ -96,7 +97,7 @@ public final class UserNetwork: Network {
             }
             guard let url = url else { return }
             do {
-                permanentURL = try profileImageStore.storeFile(url: url, fileName: userID)
+                permanentURL = try profileImageStore.storeFile(at: url, fileName: userID)
             } catch { completionError = error }
         }
     }
@@ -111,7 +112,7 @@ public final class UserNetwork: Network {
             }
             guard let url = url else { return }
             do {
-                permanentURL = try profileImageStore.storeFile(url: url, fileName: imageName)
+                permanentURL = try profileImageStore.storeFile(at: url, fileName: imageName)
             } catch {
                 completionError = error
             }

@@ -252,7 +252,7 @@ class MechanicTests: LoginTestCase {
                         XCTAssert(false, "mechanicObjectID doesn't exist")
                         return
                     }
-                    let image = profileImageStore.getImage(forMechanicWithID: currentMechanicID)
+                    let image = profileImageStore.getImage(forMechanicWithID: currentMechanicID, in: store.mainContext)
                     XCTAssert(image != nil, "Should have that image yall")
                     let mechanic = mainContext.object(with: mechanicObjectID) as? Mechanic
                     XCTAssert(mechanic != nil, "User doesn't exist")
@@ -294,9 +294,9 @@ class MechanicTests: LoginTestCase {
         let mechanicID = currentMechanicID
         let exp = expectation(description: "\(#function)\(#line)")
         store.privateContext { [weak self] context in
-            self?.mechanicNetwork.getProfileImage(mechanicID: mechanicID) { url, error in
+            self?.mechanicNetwork.getProfileImage(mechanicID: mechanicID, in: context) { url, error in
                 store.mainContext { mainContext in
-                    let image = profileImageStore.getImage(forMechanicWithID: mechanicID)
+                    let image = profileImageStore.getImage(forMechanicWithID: mechanicID, in: store.mainContext)
                     XCTAssert(image != nil, "Should have that image yall")
                     exp.fulfill()
                 }
