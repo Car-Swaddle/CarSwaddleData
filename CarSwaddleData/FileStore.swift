@@ -37,10 +37,10 @@ public class FileStore {
     public let folderName: String
     
     public func getFile(name: String, allowExpired: Bool = false) throws -> Data? {
-        let datedData = try Disk.retrieve(folderName + "/" + name, from: directory, as: DatedData.self)
         if let dataHolder = fileCache.object(forKey: name as NSString) {
             return dataHolder.data
         }
+        let datedData: DatedData = try Disk.retrieve(folderName + "/" + name, from: directory)
         guard allowExpired == false, datedData.dateFirstStored.timeIntervalSince(Date()) < defaultExpirationTimeInterval else {
             return nil
         }

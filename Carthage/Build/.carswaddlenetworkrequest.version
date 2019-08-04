@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "CarSwaddleNetworkRequest",
-      "hash" : "d8c569c1eec198066d505b3c56ff9ac0dae0b3c378f715da25585040b904455b",
+      "hash" : "0f76a712494e46a42262a1e23f29ec3059f7a12a2d0a4f361b1db68779fe4dbf",
       "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     }
   ]
