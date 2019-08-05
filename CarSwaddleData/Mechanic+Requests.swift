@@ -157,7 +157,7 @@ public final class MechanicNetwork: Network {
     @discardableResult
     public func getProfileImage(mechanicID: String, in context: NSManagedObjectContext, completion: @escaping (_ fileURL: URL?, _ error: Error?) -> Void) -> URLSessionDownloadTask? {
         return fileService.getMechanicProfileImage(mechanicID: mechanicID) { url, responseError in
-            context.perform {
+            context.performAndWait {
                 var completionError: Error? = responseError
                 var permanentURL: URL?
                 defer {
@@ -166,7 +166,9 @@ public final class MechanicNetwork: Network {
                 guard let url = url else { return }
                 do {
                     permanentURL = try profileImageStore.storeFile(at: url, mechanicID: mechanicID, in: context)
-                } catch { completionError = error }
+                } catch {
+                    completionError = error
+                }
             }
         }
     }

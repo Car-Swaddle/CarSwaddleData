@@ -327,7 +327,7 @@ class MechanicTests: LoginTestCase {
     }
     
     
-    func testUpdateMechanicCorperate() {
+    func testUpdateMechanicCorporate() {
         let exp = expectation(description: "\(#function)\(#line)")
         let mechanicID = "39895440-8fd8-11e9-a0b9-ff60380afd50"
         let isAllowed = false

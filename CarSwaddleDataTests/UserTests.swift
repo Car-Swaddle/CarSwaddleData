@@ -123,7 +123,7 @@ class UserTests: LoginTestCase {
     func testGetProfileImage() {
         let exp = expectation(description: "\(#function)\(#line)")
         store.privateContext { [weak self] context in
-            self?.userNetwork.getProfileImage(userID: currentUserID) { url, error in
+            self?.userNetwork.getProfileImage(userID: currentUserID, in: context) { url, error in
                 store.mainContext { mainContext in
                     let image = profileImageStore.getImage(forUserWithID: currentUserID, in: store.mainContext)
                     XCTAssert(image != nil, "Should have that image yall")
