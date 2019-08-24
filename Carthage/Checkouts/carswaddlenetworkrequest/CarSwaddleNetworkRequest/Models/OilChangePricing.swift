@@ -38,8 +38,8 @@ public struct OilChangePricingUpdate: Encodable {
         self.highMileage = highMileage
     }
     
-    public let conventional: Int
-    public let blend: Int
-    public let synthetic: Int
-    public let highMileage: Int
+    public var conventional: Int
+    public var blend: Int
+    public var synthetic: Int
+    public var highMileage: Int
 }
