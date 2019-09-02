@@ -50,6 +50,8 @@ public final class Vehicle: NSManagedObject, NSManagedObjectFetchable, JSONInita
         self.licensePlate = values.licensePlate
         self.state = values.state
         self.vin = values.vin
+        self.state = values.state
+        
         if let userID = json["userID"] as? String,
             let context = managedObjectContext,
             let user = User.fetch(with: userID, in: context) {
