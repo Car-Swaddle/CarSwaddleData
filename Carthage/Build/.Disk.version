@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "Disk",
-      "hash" : "3600d3724860673ae32b0a61bcb19046f2b867585fe4dea137bcc547d428213b",
+      "hash" : "53fd75440d0ca49872332e18b3080ea44d8fe2b5137a18612399c26792d8e8da",
       "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
     }
   ]
