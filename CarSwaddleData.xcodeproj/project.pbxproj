@@ -36,9 +36,7 @@
 		99C217E0240650FC0005888E /* CarSwaddleNetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C217C4240650900005888E /* CarSwaddleNetworkRequest.framework */; };
 		99C217E8240651180005888E /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C217D8240650980005888E /* Authentication.framework */; };
 		99C217EE240651190005888E /* NetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C217CF240650940005888E /* NetworkRequest.framework */; };
-		99D5D9A021F4E60800E6A511 /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991375B0217266EF00F15BEC /* Store.framework */; };
-		99D5D9BB21F5A19A00E6A511 /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991375B0217266EF00F15BEC /* Store.framework */; };
-		99D5D9C021F5A1A700E6A511 /* Store.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991375B0217266EF00F15BEC /* Store.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		99C2180A240654590005888E /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C21807240654520005888E /* Store.framework */; };
 		99D5DA2921F6F8F200E6A511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5DA2821F6F8F200E6A511 /* AppDelegate.swift */; };
 		99D5DA2B21F6F8F200E6A511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D5DA2A21F6F8F200E6A511 /* ViewController.swift */; };
 		99D5DA2E21F6F8F200E6A511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D5DA2C21F6F8F200E6A511 /* Main.storyboard */; };
@@ -116,6 +114,20 @@
 			remoteGlobalIDString = 995B9F432154D6670030A7CA;
 			remoteInfo = AuthenticationTests;
 		};
+		99C21806240654520005888E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99C217FA240654520005888E /* Store.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 99DED71B214B80D30061CFE0;
+			remoteInfo = Store;
+		};
+		99C21808240654520005888E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99C217FA240654520005888E /* Store.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 99DED724214B80D40061CFE0;
+			remoteInfo = StoreTests;
+		};
 		99D5DA3921F6F8FE00E6A511 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9912CDA3216C81760006FDDF /* Project object */;
@@ -133,7 +145,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9952C20A22F7FA9100027D8F /* Disk.framework in CopyFiles */,
-				99D5D9C021F5A1A700E6A511 /* Store.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +158,6 @@
 		9912CDBA216C81760006FDDF /* CarSwaddleDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSwaddleDataTests.swift; sourceTree = "<group>"; };
 		9912CDBC216C81760006FDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9912CDC6216C81AE0006FDDF /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		991375B0217266EF00F15BEC /* Store.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Store.framework; path = Carthage/Build/iOS/Store.framework; sourceTree = "<group>"; };
 		9952C20022F2BF8100027D8F /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		9952C20822F7FA8B00027D8F /* Disk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Disk.framework; path = Carthage/Build/iOS/Disk.framework; sourceTree = "<group>"; };
 		997714BC21CC5A5000E54F5B /* Price+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Price+Request.swift"; sourceTree = "<group>"; };
@@ -172,6 +182,7 @@
 		99C217BA2406508F0005888E /* CarSwaddleNetworkRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CarSwaddleNetworkRequest.xcodeproj; path = Carthage/Checkouts/carswaddlenetworkrequest/CarSwaddleNetworkRequest.xcodeproj; sourceTree = "<group>"; };
 		99C217C9240650940005888E /* NetworkRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkRequest.xcodeproj; path = Carthage/Checkouts/networkrequest/NetworkRequest.xcodeproj; sourceTree = "<group>"; };
 		99C217D2240650980005888E /* Authentication.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Authentication.xcodeproj; path = Carthage/Checkouts/authentication/Authentication.xcodeproj; sourceTree = "<group>"; };
+		99C217FA240654520005888E /* Store.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Store.xcodeproj; path = Carthage/Checkouts/carswaddlestore/Store.xcodeproj; sourceTree = "<group>"; };
 		99D5DA2621F6F8F200E6A511 /* TestHostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestHostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D5DA2821F6F8F200E6A511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99D5DA2A21F6F8F200E6A511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,7 +214,7 @@
 				99C217EE240651190005888E /* NetworkRequest.framework in Frameworks */,
 				99C217E8240651180005888E /* Authentication.framework in Frameworks */,
 				9952C20922F7FA8B00027D8F /* Disk.framework in Frameworks */,
-				99D5D9A021F4E60800E6A511 /* Store.framework in Frameworks */,
+				99C2180A240654590005888E /* Store.framework in Frameworks */,
 				99C217E0240650FC0005888E /* CarSwaddleNetworkRequest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +223,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99D5D9BB21F5A19A00E6A511 /* Store.framework in Frameworks */,
 				9912CDB6216C81760006FDDF /* CarSwaddleData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,11 +312,11 @@
 		9912CDC8216C84280006FDDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99C217FA240654520005888E /* Store.xcodeproj */,
 				99C217D2240650980005888E /* Authentication.xcodeproj */,
 				99C217C9240650940005888E /* NetworkRequest.xcodeproj */,
 				99C217BA2406508F0005888E /* CarSwaddleNetworkRequest.xcodeproj */,
 				9952C20822F7FA8B00027D8F /* Disk.framework */,
-				991375B0217266EF00F15BEC /* Store.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,6 +345,15 @@
 			children = (
 				99C217D8240650980005888E /* Authentication.framework */,
 				99C217DA240650980005888E /* AuthenticationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99C217FB240654520005888E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99C21807240654520005888E /* Store.framework */,
+				99C21809240654520005888E /* StoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -483,6 +502,10 @@
 					ProductGroup = 99C217CA240650940005888E /* Products */;
 					ProjectRef = 99C217C9240650940005888E /* NetworkRequest.xcodeproj */;
 				},
+				{
+					ProductGroup = 99C217FB240654520005888E /* Products */;
+					ProjectRef = 99C217FA240654520005888E /* Store.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -541,6 +564,20 @@
 			fileType = wrapper.cfbundle;
 			path = AuthenticationTests.xctest;
 			remoteRef = 99C217D9240650980005888E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99C21807240654520005888E /* Store.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Store.framework;
+			remoteRef = 99C21806240654520005888E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99C21809240654520005888E /* StoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StoreTests.xctest;
+			remoteRef = 99C21808240654520005888E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
