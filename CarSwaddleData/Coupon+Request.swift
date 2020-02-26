@@ -99,23 +99,6 @@ final public class CouponNetwork: Network {
     
 }
 
-
-//public extension Array where Iterator.Element: NSManagedObjectFetchable {
-//
-//    func fetchOrCreate(with jsonArray: [JSONObject], in context: NSManagedObjectContext) -> [NSManagedObjectID] {
-//        var objectIDs: [NSManagedObjectID] = []
-//        for json in jsonArray {
-//            guard let object = .fetchOrCreate(json: json, context: context) else { continue }
-//            if object.objectID.isTemporaryID == true {
-//                try? context.obtainPermanentIDs(for: [object])
-//            }
-//            objectIDs.append(object.objectID)
-//        }
-//        return objectIDs
-//    }
-//
-//}
-
 public extension JSONInitable where Self: NSManagedObject {
     
     static func fetchOrCreate(with jsonArray: [JSONObject], in context: NSManagedObjectContext) -> [NSManagedObjectID] {

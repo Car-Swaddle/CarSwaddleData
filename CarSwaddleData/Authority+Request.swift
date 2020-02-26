@@ -23,20 +23,11 @@ final public class AuthorityNetwork: Network {
     public func getAuthorities(limit: Int? = nil, offset: Int? = nil, in context: NSManagedObjectContext, completion: @escaping (_ authorityObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return authorityService.getAuthorities(limit: limit, offset: offset) { jsonArray, error in
             context.performOnImportQueue {
-                var authorityObjectIDs: [NSManagedObjectID] = []
-                defer {
-                    DispatchQueue.global().async {
-                        completion(authorityObjectIDs, error)
-                    }
-                }
-                for authorityJSON in jsonArray ?? [] {
-                    guard let authority = Authority.fetchOrCreate(json: authorityJSON, context: context) else { continue }
-                    if authority.objectID.isTemporaryID == true {
-                        try? context.obtainPermanentIDs(for: [authority])
-                    }
-                    authorityObjectIDs.append(authority.objectID)
-                }
+                let authorityObjectIDs = Authority.fetchOrCreate(with: jsonArray ?? [], in: context)
                 context.persist()
+                DispatchQueue.global().async {
+                    completion(authorityObjectIDs, error)
+                }
             }
         }
     }
@@ -45,20 +36,11 @@ final public class AuthorityNetwork: Network {
     public func getAuthorityRequests(limit: Int? = nil, offset: Int? = nil, pending: Bool? = nil, in context: NSManagedObjectContext, completion: @escaping (_ authorityRequestObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return authorityService.getAuthorityRequests(limit: limit, offset: offset, pending: pending) { jsonArray, error in
             context.performOnImportQueue {
-                var authorityRequestObjectIDs: [NSManagedObjectID] = []
-                defer {
-                    DispatchQueue.global().async {
-                        completion(authorityRequestObjectIDs , error)
-                    }
-                }
-                for authorityRequestJSON in jsonArray ?? [] {
-                    guard let authorityRequest = AuthorityRequest.fetchOrCreate(json: authorityRequestJSON, context: context) else { continue }
-                    if authorityRequest.objectID.isTemporaryID == true {
-                        try? context.obtainPermanentIDs(for: [authorityRequest])
-                    }
-                    authorityRequestObjectIDs.append(authorityRequest.objectID)
-                }
+                let authorityObjectIDs = Authority.fetchOrCreate(with: jsonArray ?? [], in: context)
                 context.persist()
+                DispatchQueue.global().async {
+                    completion(authorityObjectIDs, error)
+                }
             }
         }
     }
@@ -121,20 +103,11 @@ final public class AuthorityNetwork: Network {
     public func getCurrentUserAuthorities(in context: NSManagedObjectContext, completion: @escaping (_ authorityObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return authorityService.getCurrentUserAuthorities { jsonArray, error in
             context.performOnImportQueue {
-                var authorityObjectIDs: [NSManagedObjectID] = []
-                defer {
-                    DispatchQueue.global().async {
-                        completion(authorityObjectIDs , error)
-                    }
-                }
-                for authorityJSON in jsonArray ?? [] {
-                    guard let authority = Authority.fetchOrCreate(json: authorityJSON, context: context) else { continue }
-                    if authority.objectID.isTemporaryID == true {
-                        try? context.obtainPermanentIDs(for: [authority])
-                    }
-                    authorityObjectIDs.append(authority.objectID)
-                }
+                let authorityObjectIDs = Authority.fetchOrCreate(with: jsonArray ?? [], in: context)
                 context.persist()
+                DispatchQueue.global().async {
+                    completion(authorityObjectIDs, error)
+                }
             }
         }
     }

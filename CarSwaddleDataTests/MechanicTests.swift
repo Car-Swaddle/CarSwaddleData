@@ -240,7 +240,7 @@ class MechanicTests: LoginTestCase {
     }
     
     func testUploadUserImage() {
-        guard let fileURL = Bundle(for: type(of: self)).url(forResource: "image", withExtension: "png") else {
+        guard let fileURL = Bundle(for: type(of: self)).url(forResource: "image", withExtension: "jpeg") else {
             XCTAssert(false, "Should have file: image.png in test bundle")
             return
         }
