@@ -32,9 +32,9 @@ public final class MechanicNetwork: Network {
     }
     
     @discardableResult
-    public func update(isActive: Bool? = nil, token: String? = nil, dateOfBirth: Date? = nil, address: Address? = nil, externalAccount: String? = nil, socialSecurityNumberLast4: String? = nil, personalIDNumber: String? = nil, in context: NSManagedObjectContext, completion: @escaping ObjectIDCompletion) -> URLSessionDataTask? {
+    public func update(isActive: Bool? = nil, token: String? = nil, dateOfBirth: Date? = nil, address: Address? = nil, externalAccount: String? = nil, socialSecurityNumberLast4: String? = nil, personalIDNumber: String? = nil, chargeForTravel: Bool? = nil, in context: NSManagedObjectContext, completion: @escaping ObjectIDCompletion) -> URLSessionDataTask? {
         let addressJSON: JSONObject? = address?.toJSON
-        return mechanicService.updateCurrentMechanic(isActive: isActive, token: token, dateOfBirth: dateOfBirth, addressJSON: addressJSON, externalAccount: externalAccount, socialSecurityNumberLast4: socialSecurityNumberLast4, personalIDNumber: personalIDNumber) { [weak self] json, error in
+        return mechanicService.updateCurrentMechanic(isActive: isActive, token: token, dateOfBirth: dateOfBirth, addressJSON: addressJSON, externalAccount: externalAccount, socialSecurityNumberLast4: socialSecurityNumberLast4, personalIDNumber: personalIDNumber, chargeForTravel: chargeForTravel) { [weak self] json, error in
             self?.completeMechanic(json: json, error: error, in: context, completion: completion)
         }
     }

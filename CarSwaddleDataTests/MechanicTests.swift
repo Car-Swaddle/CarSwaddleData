@@ -387,4 +387,36 @@ class MechanicTests: LoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    func testUpdateChargeForTravel() {
+            let exp = expectation(description: "\(#function)\(#line)")
+            
+            store.privateContext { [weak self] context in
+                self?.mechanicNetwork.update(chargeForTravel: true, in: context) { mechanicID, error in
+                    guard let mechanicID = mechanicID else {
+                        XCTAssert(false, "Should have mechanicID")
+                        return
+                    }
+                    
+                    let mechanic = context.object(with: mechanicID) as? Mechanic
+                    XCTAssert(mechanic != nil, "Mechanic is nil, should have gotten a mechanic")
+                    XCTAssert(mechanic?.chargeForTravel == true, "Should be isActive. is \(mechanic!.chargeForTravel) should be \(true)")
+                    
+                    self?.mechanicNetwork.update(chargeForTravel: false, in: context) { mechanicID, error in
+                        guard let mechanicID = mechanicID else {
+                            XCTAssert(false, "Should have mechanicID")
+                            return
+                        }
+                        
+                        let mechanic = context.object(with: mechanicID) as? Mechanic
+                        XCTAssert(mechanic != nil, "Mechanic is nil, should have gotten a mechanic")
+                        XCTAssert(mechanic?.chargeForTravel == false, "Should be isActive. is \(mechanic!.chargeForTravel) should be \(false)")
+                        
+                        exp.fulfill()
+                    }
+                }
+            }
+            
+            waitForExpectations(timeout: 40, handler: nil)
+        }
+    
 }
