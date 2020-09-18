@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Authentication",
+        "repositoryURL": "https://github.com/Car-Swaddle/Authentication.git",
+        "state": {
+          "branch": "master",
+          "revision": "830a1619637eb31372804c12352ca6e0843ff3d3",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
