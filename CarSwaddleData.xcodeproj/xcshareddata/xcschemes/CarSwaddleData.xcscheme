@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "1200"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9912CDAB216C81760006FDDF"
+               BlueprintIdentifier = "CarSwaddleData::CarSwaddleData"
                BuildableName = "CarSwaddleData.framework"
                BlueprintName = "CarSwaddleData"
                ReferencedContainer = "container:CarSwaddleData.xcodeproj">
@@ -27,29 +27,27 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CarSwaddleData::CarSwaddleData"
+            BuildableName = "CarSwaddleData.framework"
+            BlueprintName = "CarSwaddleData"
+            ReferencedContainer = "container:CarSwaddleData.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9912CDB4216C81760006FDDF"
+               BlueprintIdentifier = "CarSwaddleData::CarSwaddleDataTests"
                BuildableName = "CarSwaddleDataTests.xctest"
                BlueprintName = "CarSwaddleDataTests"
                ReferencedContainer = "container:CarSwaddleData.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9912CDAB216C81760006FDDF"
-            BuildableName = "CarSwaddleData.framework"
-            BlueprintName = "CarSwaddleData"
-            ReferencedContainer = "container:CarSwaddleData.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -64,14 +62,12 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9912CDAB216C81760006FDDF"
+            BlueprintIdentifier = "CarSwaddleData::CarSwaddleData"
             BuildableName = "CarSwaddleData.framework"
             BlueprintName = "CarSwaddleData"
             ReferencedContainer = "container:CarSwaddleData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -82,7 +78,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9912CDAB216C81760006FDDF"
+            BlueprintIdentifier = "CarSwaddleData::CarSwaddleData"
             BuildableName = "CarSwaddleData.framework"
             BlueprintName = "CarSwaddleData"
             ReferencedContainer = "container:CarSwaddleData.xcodeproj">

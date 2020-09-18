@@ -6,21 +6,11 @@
 	objectVersion = 52;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		"CarSwaddleData::CarSwaddleDataPackageTests::ProductTarget" /* CarSwaddleDataPackageTests */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_87 /* Build configuration list for PBXAggregateTarget "CarSwaddleDataPackageTests" */;
-			buildPhases = (
-			);
-			dependencies = (
-				OBJ_90 /* PBXTargetDependency */,
-			);
-			name = CarSwaddleDataPackageTests;
-			productName = CarSwaddleDataPackageTests;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
+		994224412514A58D00FF40B0 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 994224402514A58D00FF40B0 /* KeychainAccess */; };
+		9980AA872514B234007A6B31 /* CarSwaddleStore in Frameworks */ = {isa = PBXBuildFile; productRef = 9980AA862514B234007A6B31 /* CarSwaddleStore */; };
+		99B5F7982514AB5600DF3F12 /* CarSwaddleNetworkRequest in Frameworks */ = {isa = PBXBuildFile; productRef = 99B5F7972514AB5600DF3F12 /* CarSwaddleNetworkRequest */; };
+		99B5F7AC2514ABE900DF3F12 /* NetworkRequest in Frameworks */ = {isa = PBXBuildFile; productRef = 99B5F7AB2514ABE900DF3F12 /* NetworkRequest */; };
 		99D11CCC25149FE800373E93 /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 99D11CCB25149FE800373E93 /* Authentication */; };
 		OBJ_100 /* CouponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* CouponTests.swift */; };
 		OBJ_101 /* FileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* FileTests.swift */; };
@@ -53,7 +43,6 @@
 		OBJ_76 /* TemplateTimeSpan+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* TemplateTimeSpan+Requests.swift */; };
 		OBJ_77 /* User+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* User+Requests.swift */; };
 		OBJ_78 /* Vehicle+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Vehicle+Requests.swift */; };
-		OBJ_85 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_96 /* AuthTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* AuthTestCase.swift */; };
 		OBJ_97 /* AuthorityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* AuthorityTests.swift */; };
 		OBJ_98 /* AutoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* AutoServiceTests.swift */; };
@@ -68,18 +57,11 @@
 			remoteGlobalIDString = "CarSwaddleData::CarSwaddleData";
 			remoteInfo = CarSwaddleData;
 		};
-		99D11CCF25149FE900373E93 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "CarSwaddleData::CarSwaddleDataTests";
-			remoteInfo = CarSwaddleDataTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		"CarSwaddleData::CarSwaddleData::Product" /* CarSwaddleData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CarSwaddleData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"CarSwaddleData::CarSwaddleDataTests::Product" /* CarSwaddleDataTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarSwaddleDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"CarSwaddleData::CarSwaddleDataTests::Product" /* CarSwaddleDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CarSwaddleDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_11 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Authority+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Authority+Request.swift"; sourceTree = "<group>"; };
@@ -117,8 +99,6 @@
 		OBJ_46 /* VehicleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTests.swift; sourceTree = "<group>"; };
 		OBJ_47 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_52 /* TestHostApp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestHostApp; sourceTree = SOURCE_ROOT; };
-		OBJ_53 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
-		OBJ_54 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		OBJ_55 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* CarSwaddleData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarSwaddleData.h; sourceTree = "<group>"; };
@@ -137,6 +117,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				99B5F7982514AB5600DF3F12 /* CarSwaddleNetworkRequest in Frameworks */,
+				99B5F7AC2514ABE900DF3F12 /* NetworkRequest in Frameworks */,
+				9980AA872514B234007A6B31 /* CarSwaddleStore in Frameworks */,
+				994224412514A58D00FF40B0 /* KeychainAccess in Frameworks */,
 				99D11CCC25149FE800373E93 /* Authentication in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,8 +179,6 @@
 				OBJ_28 /* Tests */,
 				OBJ_48 /* Products */,
 				OBJ_52 /* TestHostApp */,
-				OBJ_53 /* Cartfile.resolved */,
-				OBJ_54 /* Cartfile */,
 				OBJ_55 /* README.md */,
 			);
 			sourceTree = "<group>";
@@ -249,11 +231,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				994224382514A52300FF40B0 /* PBXTargetDependency */,
 			);
 			name = CarSwaddleData;
 			packageProductDependencies = (
 				99D11CCB25149FE800373E93 /* Authentication */,
+				994224402514A58D00FF40B0 /* KeychainAccess */,
+				99B5F7972514AB5600DF3F12 /* CarSwaddleNetworkRequest */,
+				99B5F7AB2514ABE900DF3F12 /* NetworkRequest */,
+				9980AA862514B234007A6B31 /* CarSwaddleStore */,
 			);
 			productName = CarSwaddleData;
 			productReference = "CarSwaddleData::CarSwaddleData::Product" /* CarSwaddleData.framework */;
@@ -276,20 +261,6 @@
 			productReference = "CarSwaddleData::CarSwaddleDataTests::Product" /* CarSwaddleDataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		"CarSwaddleData::SwiftPMPackageDescription" /* CarSwaddleDataPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_81 /* Build configuration list for PBXNativeTarget "CarSwaddleDataPackageDescription" */;
-			buildPhases = (
-				OBJ_84 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CarSwaddleDataPackageDescription;
-			productName = CarSwaddleDataPackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -297,7 +268,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 9999;
-				LastUpgradeCheck = 9999;
+				LastUpgradeCheck = 1200;
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "CarSwaddleData" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -305,18 +276,21 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = OBJ_5;
 			packageReferences = (
 				99D11CCA25149FE800373E93 /* XCRemoteSwiftPackageReference "Authentication" */,
+				9942243F2514A58D00FF40B0 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				99B5F7962514AB5600DF3F12 /* XCRemoteSwiftPackageReference "CarSwaddleNetworkRequest" */,
+				99B5F7AA2514ABE900DF3F12 /* XCRemoteSwiftPackageReference "NetworkRequest" */,
+				9980AA852514B234007A6B31 /* XCRemoteSwiftPackageReference "CarSwaddleStore" */,
 			);
 			productRefGroup = OBJ_48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				"CarSwaddleData::CarSwaddleData" /* CarSwaddleData */,
-				"CarSwaddleData::SwiftPMPackageDescription" /* CarSwaddleDataPackageDescription */,
-				"CarSwaddleData::CarSwaddleDataPackageTests::ProductTarget" /* CarSwaddleDataPackageTests */,
 				"CarSwaddleData::CarSwaddleDataTests" /* CarSwaddleDataTests */,
 			);
 		};
@@ -347,14 +321,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_84 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_85 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -382,19 +348,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		994224382514A52300FF40B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 994224372514A52300FF40B0 /* Authentication */;
-		};
 		OBJ_115 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "CarSwaddleData::CarSwaddleData" /* CarSwaddleData */;
 			targetProxy = 99D11CC925149FBF00373E93 /* PBXContainerItemProxy */;
-		};
-		OBJ_90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "CarSwaddleData::CarSwaddleDataTests" /* CarSwaddleDataTests */;
-			targetProxy = 99D11CCF25149FE900373E93 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -403,17 +360,45 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SWIFT_PACKAGE=1",
 					"DEBUG=1",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
@@ -430,15 +415,42 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SWIFT_PACKAGE=1",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -460,13 +472,13 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "Sources/CarSwaddleData/Info,plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/CarSwaddleData/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -477,7 +489,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = CarSwaddleData;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -491,13 +503,13 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "Sources/CarSwaddleData/Info,plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/CarSwaddleData/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -508,53 +520,23 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = CarSwaddleData;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		OBJ_82 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.3.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		OBJ_83 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.3.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		OBJ_88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_89 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
 			};
 			name = Release;
 		};
 		OBJ_93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CarSwaddleData.xcodeproj/CarSwaddleDataTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks",
@@ -567,7 +549,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = CarSwaddleDataTests;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -575,15 +557,15 @@
 		OBJ_94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CarSwaddleData.xcodeproj/CarSwaddleDataTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks",
@@ -596,7 +578,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = CarSwaddleDataTests;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
@@ -622,24 +604,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_81 /* Build configuration list for PBXNativeTarget "CarSwaddleDataPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_82 /* Debug */,
-				OBJ_83 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_87 /* Build configuration list for PBXAggregateTarget "CarSwaddleDataPackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_88 /* Debug */,
-				OBJ_89 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		OBJ_92 /* Build configuration list for PBXNativeTarget "CarSwaddleDataTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -652,6 +616,38 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9942243F2514A58D00FF40B0 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+		9980AA852514B234007A6B31 /* XCRemoteSwiftPackageReference "CarSwaddleStore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleStore.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		99B5F7962514AB5600DF3F12 /* XCRemoteSwiftPackageReference "CarSwaddleNetworkRequest" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleNetworkRequest.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		99B5F7AA2514ABE900DF3F12 /* XCRemoteSwiftPackageReference "NetworkRequest" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Car-Swaddle/NetworkRequest.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		99D11CCA25149FE800373E93 /* XCRemoteSwiftPackageReference "Authentication" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Car-Swaddle/Authentication.git";
@@ -663,10 +659,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		994224372514A52300FF40B0 /* Authentication */ = {
+		994224402514A58D00FF40B0 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 99D11CCA25149FE800373E93 /* XCRemoteSwiftPackageReference "Authentication" */;
-			productName = Authentication;
+			package = 9942243F2514A58D00FF40B0 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		9980AA862514B234007A6B31 /* CarSwaddleStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9980AA852514B234007A6B31 /* XCRemoteSwiftPackageReference "CarSwaddleStore" */;
+			productName = CarSwaddleStore;
+		};
+		99B5F7972514AB5600DF3F12 /* CarSwaddleNetworkRequest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B5F7962514AB5600DF3F12 /* XCRemoteSwiftPackageReference "CarSwaddleNetworkRequest" */;
+			productName = CarSwaddleNetworkRequest;
+		};
+		99B5F7AB2514ABE900DF3F12 /* NetworkRequest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B5F7AA2514ABE900DF3F12 /* XCRemoteSwiftPackageReference "NetworkRequest" */;
+			productName = NetworkRequest;
 		};
 		99D11CCB25149FE800373E93 /* Authentication */ = {
 			isa = XCSwiftPackageProductDependency;
