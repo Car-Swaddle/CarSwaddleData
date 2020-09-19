@@ -10,7 +10,7 @@ import XCTest
 @testable import CarSwaddleData
 import CarSwaddleNetworkRequest
 import Authentication
-import Store
+import CarSwaddleStore
 
 
 public var currentMechanicID: String = ""

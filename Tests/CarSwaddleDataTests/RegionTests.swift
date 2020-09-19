@@ -9,7 +9,7 @@
 import XCTest
 @testable import CarSwaddleData
 import CoreData
-import Store
+import CarSwaddleStore
 
 let testMechanicRadius: Double = 5000
 let testMechanicLatitude: Double = 40.38754862123388

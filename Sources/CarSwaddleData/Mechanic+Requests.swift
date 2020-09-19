@@ -7,7 +7,7 @@
 //
 
 import CoreData
-import Store
+import CarSwaddleStore
 import CarSwaddleNetworkRequest
 import CoreLocation
 
@@ -263,7 +263,7 @@ public final class MechanicNetwork: Network {
     
 }
 
-public extension Store.OilChangePricing {
+public extension CarSwaddleStore.OilChangePricing {
     
     convenience init(oilChangePricing: CarSwaddleNetworkRequest.OilChangePricing, context: NSManagedObjectContext) {
         self.init(context: context)
@@ -285,7 +285,7 @@ public extension Store.OilChangePricing {
         }
     }
     
-    static func fetchOrCreate(model: CarSwaddleNetworkRequest.OilChangePricing, in context: NSManagedObjectContext) -> Store.OilChangePricing {
+    static func fetchOrCreate(model: CarSwaddleNetworkRequest.OilChangePricing, in context: NSManagedObjectContext) -> CarSwaddleStore.OilChangePricing {
         if let oilChangePricing = OilChangePricing.fetch(with: model.id, in: context) {
             oilChangePricing.update(with: model)
             return oilChangePricing

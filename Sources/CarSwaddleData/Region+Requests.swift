@@ -7,7 +7,7 @@
 //
 
 import CoreData
-import Store
+import CarSwaddleStore
 import CarSwaddleNetworkRequest
 
 

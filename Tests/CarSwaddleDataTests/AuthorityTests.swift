@@ -10,7 +10,7 @@
 import XCTest
 @testable import CarSwaddleData
 import CoreData
-import Store
+import CarSwaddleStore
 
 
 class AuthorityTests: LoginTestCase {

@@ -9,7 +9,7 @@
 import UIKit
 import CarSwaddleNetworkRequest
 import CoreData
-import Store
+import CarSwaddleStore
 
 public final class UserNetwork: Network {
     

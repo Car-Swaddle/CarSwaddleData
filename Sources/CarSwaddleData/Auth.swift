@@ -9,7 +9,7 @@
 import Authentication
 import CarSwaddleNetworkRequest
 import CoreData
-import Store
+import CarSwaddleStore
 
 extension Notification.Name {
     static let willLogout = Notification.Name(rawValue: "CarSwaddleData.Auth.willLogout")

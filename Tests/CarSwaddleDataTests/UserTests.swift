@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Store
+import CarSwaddleStore
 @testable import CarSwaddleData
 import CarSwaddleNetworkRequest
 

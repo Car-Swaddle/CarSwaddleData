@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import Store
+import CarSwaddleStore
 import Disk
 
 private let defaultExpirationTimeInterval: TimeInterval = 60 * 60 * 24 * 2
@@ -17,6 +17,7 @@ public enum FileStoreError: Error {
     case noContext
     case unableToFetchUser
     case unableToFetchMechanic
+    case invalidURL
 }
 
 public class FileStore {
@@ -40,7 +41,7 @@ public class FileStore {
         if let dataHolder = fileCache.object(forKey: name as NSString) {
             return dataHolder.data
         }
-        let datedData: DatedData = try Disk.retrieve(folder(with: name), from: directory)
+        let datedData: DatedData = try Disk.retrieve(folder(with: name), from: directory, as: DatedData.self)
         guard allowExpired == false, datedData.dateFirstStored.timeIntervalSince(Date()) < defaultExpirationTimeInterval else {
             return nil
         }
@@ -60,7 +61,14 @@ public class FileStore {
     public func storeFile(data: Data, fileName: String) throws -> URL {
         let datedData = DatedData(data: data)
         fileCache.setObject(DataHolder(data: data), forKey: fileName as NSString)
-        return try Disk.save(datedData, to: directory, as: folder(with: fileName))
+        
+        let path = folder(with: fileName)
+        try Disk.save(datedData, to: directory, as: path)
+        if let url = URL(string: directory.pathDescription + path) {
+            return url
+        } else {
+            throw FileStoreError.invalidURL
+        }
     }
     
     private func folder(with fileName: String) -> String {

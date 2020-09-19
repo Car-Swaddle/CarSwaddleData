@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Store
+import CarSwaddleStore
 
 //extension Dictionary where Key: String, Value: Any {
 

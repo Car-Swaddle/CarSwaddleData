@@ -12,6 +12,7 @@
 		99B5F7982514AB5600DF3F12 /* CarSwaddleNetworkRequest in Frameworks */ = {isa = PBXBuildFile; productRef = 99B5F7972514AB5600DF3F12 /* CarSwaddleNetworkRequest */; };
 		99B5F7AC2514ABE900DF3F12 /* NetworkRequest in Frameworks */ = {isa = PBXBuildFile; productRef = 99B5F7AB2514ABE900DF3F12 /* NetworkRequest */; };
 		99D11CCC25149FE800373E93 /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = 99D11CCB25149FE800373E93 /* Authentication */; };
+		99F79EFE2515C21900998616 /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = 99F79EFD2515C21900998616 /* Disk */; };
 		OBJ_100 /* CouponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* CouponTests.swift */; };
 		OBJ_101 /* FileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* FileTests.swift */; };
 		OBJ_102 /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* LoginTestCase.swift */; };
@@ -118,6 +119,7 @@
 			buildActionMask = 0;
 			files = (
 				99B5F7982514AB5600DF3F12 /* CarSwaddleNetworkRequest in Frameworks */,
+				99F79EFE2515C21900998616 /* Disk in Frameworks */,
 				99B5F7AC2514ABE900DF3F12 /* NetworkRequest in Frameworks */,
 				9980AA872514B234007A6B31 /* CarSwaddleStore in Frameworks */,
 				994224412514A58D00FF40B0 /* KeychainAccess in Frameworks */,
@@ -239,6 +241,7 @@
 				99B5F7972514AB5600DF3F12 /* CarSwaddleNetworkRequest */,
 				99B5F7AB2514ABE900DF3F12 /* NetworkRequest */,
 				9980AA862514B234007A6B31 /* CarSwaddleStore */,
+				99F79EFD2515C21900998616 /* Disk */,
 			);
 			productName = CarSwaddleData;
 			productReference = "CarSwaddleData::CarSwaddleData::Product" /* CarSwaddleData.framework */;
@@ -285,6 +288,7 @@
 				99B5F7962514AB5600DF3F12 /* XCRemoteSwiftPackageReference "CarSwaddleNetworkRequest" */,
 				99B5F7AA2514ABE900DF3F12 /* XCRemoteSwiftPackageReference "NetworkRequest" */,
 				9980AA852514B234007A6B31 /* XCRemoteSwiftPackageReference "CarSwaddleStore" */,
+				99F79EFC2515C21900998616 /* XCRemoteSwiftPackageReference "Disk" */,
 			);
 			productRefGroup = OBJ_48 /* Products */;
 			projectDirPath = "";
@@ -656,6 +660,14 @@
 				kind = branch;
 			};
 		};
+		99F79EFC2515C21900998616 /* XCRemoteSwiftPackageReference "Disk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/saoudrizwan/Disk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -683,6 +695,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 99D11CCA25149FE800373E93 /* XCRemoteSwiftPackageReference "Authentication" */;
 			productName = Authentication;
+		};
+		99F79EFD2515C21900998616 /* Disk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F79EFC2515C21900998616 /* XCRemoteSwiftPackageReference "Disk" */;
+			productName = Disk;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,7 +9,7 @@
 import XCTest
 @testable import CarSwaddleData
 import CoreData
-import Store
+import CarSwaddleStore
 import MapKit
 
 private let defaultMechanicID = "8ba0ded0-febd-11e8-9811-059afcb3ba5e"

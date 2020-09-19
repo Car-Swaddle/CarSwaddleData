@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import CarSwaddleData
-import Store
+import CarSwaddleStore
 
 let transactionID = "txn_1DzuNcEUGV6ByO73IAFoguV7"
 

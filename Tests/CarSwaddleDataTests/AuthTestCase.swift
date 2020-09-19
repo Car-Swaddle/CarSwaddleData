@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import CarSwaddleData
-import Store
+import CarSwaddleStore
 
 class AuthTestCase: XCTestCase {
     
