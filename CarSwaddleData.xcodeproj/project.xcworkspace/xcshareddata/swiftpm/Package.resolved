@@ -3,19 +3,19 @@
     "pins": [
       {
         "package": "Authentication",
-        "repositoryURL": "https://github.com/Car-Swaddle/Authentication.git",
+        "repositoryURL": "https://github.com/Car-Swaddle/Authentication",
         "state": {
           "branch": "master",
-          "revision": "3bb729f46187811711094e748394d1fe29b76e71",
+          "revision": "43742146c380cd78a03c43da7905771d732a46c5",
           "version": null
         }
       },
       {
         "package": "CarSwaddleNetworkRequest",
-        "repositoryURL": "https://github.com/Car-Swaddle/CarSwaddleNetworkRequest.git",
+        "repositoryURL": "https://github.com/Car-Swaddle/CarSwaddleNetworkRequest",
         "state": {
           "branch": "master",
-          "revision": "0e90de1b1806f1466efa0eaf5298cda191df35b3",
+          "revision": "7d35261252e011b1e2fd6d41b35892b9445387d2",
           "version": null
         }
       },
@@ -48,7 +48,7 @@
       },
       {
         "package": "NetworkRequest",
-        "repositoryURL": "https://github.com/Car-Swaddle/NetworkRequest.git",
+        "repositoryURL": "https://github.com/Car-Swaddle/NetworkRequest",
         "state": {
           "branch": "master",
           "revision": "296de25f7b5f9643bdab625af72593a8e4a77b72",
