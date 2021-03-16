@@ -36,7 +36,7 @@ final public class AuthorityNetwork: Network {
     public func getAuthorityRequests(limit: Int? = nil, offset: Int? = nil, pending: Bool? = nil, in context: NSManagedObjectContext, completion: @escaping (_ authorityRequestObjectIDs: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return authorityService.getAuthorityRequests(limit: limit, offset: offset, pending: pending) { jsonArray, error in
             context.performOnImportQueue {
-                let authorityObjectIDs = Authority.fetchOrCreate(with: jsonArray ?? [], in: context)
+                let authorityObjectIDs = AuthorityRequest.fetchOrCreate(with: jsonArray ?? [], in: context)
                 context.persist()
                 DispatchQueue.global().async {
                     completion(authorityObjectIDs, error)
