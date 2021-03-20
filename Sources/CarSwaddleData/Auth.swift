@@ -11,7 +11,7 @@ import CarSwaddleNetworkRequest
 import CoreData
 import CarSwaddleStore
 
-extension Notification.Name {
+public extension Notification.Name {
     static let willLogout = Notification.Name(rawValue: "CarSwaddleData.Auth.willLogout")
     static let didLogout = Notification.Name(rawValue: "CarSwaddleData.Auth.didLogout")
     
@@ -30,8 +30,8 @@ public class Auth {
     }
     
     @discardableResult
-    public func signUp(email: String, password: String, context: NSManagedObjectContext, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
-        return authService.signUp(email: email, password: password) { [weak self] json, token, error in
+    public func signUp(email: String, password: String, referrerID: String?, context: NSManagedObjectContext, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
+        return authService.signUp(email: email, password: password, referrerID: referrerID) { [weak self] json, token, error in
             self?.complete(json: json, token: token, error: error, context: context, completion: completion)
         }
     }
@@ -59,7 +59,7 @@ public class Auth {
     
     private func complete(json: JSONObject?, token: String?, error: Error?, context: NSManagedObjectContext, completion: @escaping (_ error: Error?) -> Void) {
         context.performOnImportQueue { [weak self] in
-            var error: Error? = error
+            let error: Error? = error
             defer {
                 completion(error)
             }

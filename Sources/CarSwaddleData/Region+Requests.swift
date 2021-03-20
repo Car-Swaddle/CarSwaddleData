@@ -21,7 +21,7 @@ public final class RegionNetwork: Network {
     }
     
     @discardableResult
-    public func postRegion(region: Region, in context: NSManagedObjectContext, completion: @escaping (_ regionID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func postRegion(region: CarSwaddleStore.Region, in context: NSManagedObjectContext, completion: @escaping (_ regionID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         return postRegion(latitude: region.latitude, longitude: region.longitude, radius: region.radius, in: context, completion: completion)
     }
     

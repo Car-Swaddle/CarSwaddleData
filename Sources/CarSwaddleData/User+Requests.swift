@@ -22,14 +22,22 @@ public final class UserNetwork: Network {
         super.init(serviceRequest: serviceRequest)
     }
     
+    
     @discardableResult
-    public func update(user: User, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
-        return update(firstName: user.firstName, lastName: user.lastName, phoneNumber: user.phoneNumber, token: nil, timeZone: user.timeZone , in: context, completion: completion)
+    public func update(user: UpdateUser, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return userService.updateCurrentUser(updateUser: user) { user, error in
+            
+        }
     }
     
     @discardableResult
-    public func update(firstName: String?, lastName: String?, phoneNumber: String?, token: String?, timeZone: String?, adminKey: String? = nil, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
-        return userService.updateCurrentUser(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, token: token, timeZone: timeZone, adminKey: adminKey) { json, error in
+    public func update(user: CarSwaddleStore.User, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return update(firstName: user.firstName, lastName: user.lastName, phoneNumber: user.phoneNumber, token: nil, timeZone: user.timeZone, referrerID: nil, in: context, completion: completion)
+    }
+    
+    @discardableResult
+    public func update(firstName: String?, lastName: String?, phoneNumber: String?, token: String?, timeZone: String?, referrerID: String?, adminKey: String? = nil, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+        return userService.updateCurrentUser(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, token: token, timeZone: timeZone, referrerID: nil, adminKey: adminKey) { json, error in
             context.performOnImportQueue {
                 var userObjectID: NSManagedObjectID?
                 defer {
@@ -138,6 +146,67 @@ public final class UserNetwork: Network {
                 userObjectID = user?.objectID
             }
         }
+    }
+    
+}
+
+extension CarSwaddleStore.User {
+    
+    public convenience init?(user: CarSwaddleNetworkRequest.User, context: NSManagedObjectContext) {
+//        guard let values = User.values(from: json) else { return nil }
+        self.init(context: context)
+//        configure(with: values, json: json)
+        
+        self.identifier = user.id
+        self.firstName = user.firstName
+        self.lastName = user.lastName
+        self.phoneNumber = user.phoneNumber
+        self.profileImageID = user.profileImageID
+        self.email = user.email
+        if let isEmailVerified = user.isEmailVerified {
+            self.isEmailVerified = isEmailVerified
+        }
+        if let isPhoneNumberVerified = user.isPhoneNumberVerified {
+            self.isPhoneNumberVerified = isPhoneNumberVerified
+        }
+        self.timeZone = user.timeZone
+        
+//        if let firstName = json["firstName"] as? String {
+//            self.firstName = firstName
+//        }
+//        if let lastName = json["lastName"] as? String {
+//            self.lastName = lastName
+//        }
+//        if let phoneNumber = json["phoneNumber"] as? String {
+//            self.phoneNumber = phoneNumber
+//        }
+//
+//        if let imageID = json["profileImageID"] as? String {
+//            self.profileImageID = imageID
+//        }
+//        if let email = json["email"] as? String {
+//            self.email = email
+//        }
+//        if let verified = (json["isEmailVerified"] as? Bool) {
+//            self.isEmailVerified = verified
+//        }
+//        if let verified = (json["isPhoneNumberVerified"] as? Bool) {
+//            self.isPhoneNumberVerified = verified
+//        }
+//        if let timeZone = json["timeZone"] as? String {
+//            self.timeZone = timeZone
+//        }
+//
+//        guard let context = managedObjectContext else { return }
+//
+//        if let mechanicJSON = json["mechanic"] as? JSONObject,
+//           let mechanic = Mechanic.fetchOrCreate(json: mechanicJSON, context: context) {
+//            self.mechanic = mechanic
+//        } else if let mechanicID = json["mechanicID"] as? String,
+//                  let mechanic = Mechanic.fetch(with: mechanicID, in: context) {
+//            self.mechanic = mechanic
+//        }
+        
     }
     
 }

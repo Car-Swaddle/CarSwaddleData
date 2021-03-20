@@ -147,7 +147,7 @@ final public class StripeNetwork: Network {
                 hasMore = (json["has_more"] as? Bool) ?? false
                 
                 let mechanic = Mechanic.currentLoggedInMechanic(in: context)
-                var payout: Payout?
+                var payout: CarSwaddleStore.Payout?
                 if let payoutID = payoutID, let fetchedPayout = Payout.fetch(with: payoutID, in: context) {
                     payout = fetchedPayout
                 }
@@ -171,7 +171,7 @@ final public class StripeNetwork: Network {
     }
     
     @discardableResult
-    public func requestPayouts(startingAfterID: String? = nil, status: Payout.Status? = nil, limit: Int? = nil, in context: NSManagedObjectContext, completion: @escaping (_ transactionIDs: [NSManagedObjectID], _ lastID: String?, _ hasMore: Bool, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func requestPayouts(startingAfterID: String? = nil, status: CarSwaddleStore.Payout.Status? = nil, limit: Int? = nil, in context: NSManagedObjectContext, completion: @escaping (_ transactionIDs: [NSManagedObjectID], _ lastID: String?, _ hasMore: Bool, _ error: Error?) -> Void) -> URLSessionDataTask? {
         return stripeService.getPayouts(startingAfterID: startingAfterID, status: status?.rawValue, limit: limit) { json, error in
             context.performOnImportQueue {
                 var objectIDs: [NSManagedObjectID] = []

@@ -31,7 +31,7 @@ public final class TemplateTimeSpanNetwork: Network {
                     }
                 }
                 
-                let mechanic: Mechanic?
+                let mechanic: CarSwaddleStore.Mechanic?
                 if let mechanicID = mechanicID {
                     mechanic = Mechanic.fetch(with: mechanicID, in: context)
                 } else {
@@ -58,7 +58,7 @@ public final class TemplateTimeSpanNetwork: Network {
     }
     
     @discardableResult
-    public func postTimeSpans(templateTimeSpans: [TemplateTimeSpan], in context: NSManagedObjectContext, completion: @escaping (_ timeSpans: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func postTimeSpans(templateTimeSpans: [CarSwaddleStore.TemplateTimeSpan], in context: NSManagedObjectContext, completion: @escaping (_ timeSpans: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         
         var jsonArray: [JSONObject] = []
         for timeSpan in templateTimeSpans {

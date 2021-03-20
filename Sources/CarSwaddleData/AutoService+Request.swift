@@ -50,7 +50,7 @@ public final class AutoServiceNetwork: Network {
     }
     
     @discardableResult
-    public func createAutoService(autoService originalAutoService: AutoService, sourceID: String, in context: NSManagedObjectContext, completion: @escaping (_ autoServiceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func createAutoService(autoService originalAutoService: CarSwaddleStore.AutoService, sourceID: String, in context: NSManagedObjectContext, completion: @escaping (_ autoServiceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         guard let json = try? originalAutoService.toJSON() else {
             completion(nil, AutoServiceError.unableToGetJSON)
             return nil
@@ -61,21 +61,21 @@ public final class AutoServiceNetwork: Network {
     }
     
     @discardableResult
-    public func getAutoServices(mechanicID: String, startDate: Date, endDate: Date, filterStatus: [AutoService.Status], in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func getAutoServices(mechanicID: String, startDate: Date, endDate: Date, filterStatus: [CarSwaddleStore.AutoService.Status], in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return autoServiceService.getAutoServices(mechanicID: mechanicID, startDate: startDate, endDate: endDate, filterStatus: filterStatus.rawValues) { [weak self] jsonArray, error in
             self?.complete(error: error, jsonArray: jsonArray, in: context, completion: completion)
         }
     }
     
     @discardableResult
-    public func getAutoServices(limit: Int, offset: Int, sortStatus: [AutoService.Status], in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func getAutoServices(limit: Int, offset: Int, sortStatus: [CarSwaddleStore.AutoService.Status], in context: NSManagedObjectContext, completion: @escaping (_ autoServices: [NSManagedObjectID], _ error: Error?) -> Void) -> URLSessionDataTask? {
         return autoServiceService.getAutoServices(limit: limit, offset: offset, sortStatus: sortStatus.rawValues) { [weak self] jsonArray, error in
             self?.complete(error: error, jsonArray: jsonArray, in: context, completion: completion)
         }
     }
     
     @discardableResult
-    public func updateAutoService(autoServiceID: String, status: AutoService.Status?, notes: String?, vehicleID: String?, mechanicID: String?, locationID: String?, location: CLLocationCoordinate2D?, scheduledDate: Date?, in context: NSManagedObjectContext, completion: @escaping (_ autoServiceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func updateAutoService(autoServiceID: String, status: CarSwaddleStore.AutoService.Status?, notes: String?, vehicleID: String?, mechanicID: String?, locationID: String?, location: CLLocationCoordinate2D?, scheduledDate: Date?, in context: NSManagedObjectContext, completion: @escaping (_ autoServiceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         
         var json: JSONObject = [:]
         
@@ -91,7 +91,7 @@ public final class AutoServiceNetwork: Network {
     }
     
     @discardableResult
-    public func updateAutoService(autoServiceID: String, status: AutoService.Status, in context: NSManagedObjectContext, completion: @escaping (_ autoServiceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func updateAutoService(autoServiceID: String, status: CarSwaddleStore.AutoService.Status, in context: NSManagedObjectContext, completion: @escaping (_ autoServiceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         return updateAutoService(autoServiceID: autoServiceID, status: status, notes: nil, vehicleID: nil, mechanicID: nil, locationID: nil, location: nil, scheduledDate: nil, in: context, completion: completion)
     }
     
@@ -132,7 +132,7 @@ public final class AutoServiceNetwork: Network {
         }
     }
     
-    private func complete(originalAutoService: AutoService?, error: Error?, autoServiceJSON: JSONObject?, in context: NSManagedObjectContext, completion: @escaping (_ autoService: NSManagedObjectID?, _ error: Error?) -> Void) {
+    private func complete(originalAutoService: CarSwaddleStore.AutoService?, error: Error?, autoServiceJSON: JSONObject?, in context: NSManagedObjectContext, completion: @escaping (_ autoService: NSManagedObjectID?, _ error: Error?) -> Void) {
         context.performOnImportQueue {
             var newAutoServiceObjectID: NSManagedObjectID?
             defer {
@@ -178,7 +178,7 @@ public final class AutoServiceNetwork: Network {
     
 }
 
-fileprivate extension Array where Iterator.Element == AutoService.Status {
+fileprivate extension Array where Iterator.Element == CarSwaddleStore.AutoService.Status {
     
     var rawValues: [String] {
         var values: [String] = []

@@ -21,12 +21,12 @@ final public class PriceNetwork: Network {
     }
     
     @discardableResult
-    public func requestPrice(mechanicID: String, oilType: OilType, location: Location, couponCode: String?, in context: NSManagedObjectContext, completion: @escaping (_ priceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func requestPrice(mechanicID: String, oilType: CarSwaddleStore.OilType, location: Location, couponCode: String?, in context: NSManagedObjectContext, completion: @escaping (_ priceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         return self.requestPrice(mechanicID: mechanicID, oilType: oilType, location: location.coordinate, couponCode: couponCode, in: context, completion: completion)
     }
     
     @discardableResult
-    public func requestPrice(mechanicID: String, oilType: OilType, location: CLLocationCoordinate2D, couponCode: String?, in context: NSManagedObjectContext, completion: @escaping (_ priceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
+    public func requestPrice(mechanicID: String, oilType: CarSwaddleStore.OilType, location: CLLocationCoordinate2D, couponCode: String?, in context: NSManagedObjectContext, completion: @escaping (_ priceObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         return priceService.getPrice(mechanicID: mechanicID, oilType: oilType.rawValue, location: location, couponCode: couponCode) { [weak self] json, error in
             self?.complete(json: json, error: error, in: context, completion: completion)
         }

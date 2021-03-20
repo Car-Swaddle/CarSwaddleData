@@ -32,7 +32,7 @@ public final class MechanicNetwork: Network {
     }
     
     @discardableResult
-    public func update(isActive: Bool? = nil, token: String? = nil, dateOfBirth: Date? = nil, address: Address? = nil, externalAccount: String? = nil, socialSecurityNumberLast4: String? = nil, personalIDNumber: String? = nil, chargeForTravel: Bool? = nil, in context: NSManagedObjectContext, completion: @escaping ObjectIDCompletion) -> URLSessionDataTask? {
+    public func update(isActive: Bool? = nil, token: String? = nil, dateOfBirth: Date? = nil, address: CarSwaddleStore.Address? = nil, externalAccount: String? = nil, socialSecurityNumberLast4: String? = nil, personalIDNumber: String? = nil, chargeForTravel: Bool? = nil, in context: NSManagedObjectContext, completion: @escaping ObjectIDCompletion) -> URLSessionDataTask? {
         let addressJSON: JSONObject? = address?.toJSON
         return mechanicService.updateCurrentMechanic(isActive: isActive, token: token, dateOfBirth: dateOfBirth, addressJSON: addressJSON, externalAccount: externalAccount, socialSecurityNumberLast4: socialSecurityNumberLast4, personalIDNumber: personalIDNumber, chargeForTravel: chargeForTravel) { [weak self] json, error in
             self?.completeMechanic(json: json, error: error, in: context, completion: completion)
@@ -51,7 +51,7 @@ public final class MechanicNetwork: Network {
                 }
                 
                 guard let json = json?[mechanicID] as? JSONObject else { return }
-                var stats: Stats?
+                var stats: CarSwaddleStore.Stats?
                 if let previousStats = Mechanic.fetch(with: mechanicID, in: context)?.stats {
                     try? previousStats.configure(with: json, mechanicID: mechanicID)
                     stats = previousStats
@@ -175,7 +175,7 @@ public final class MechanicNetwork: Network {
     
     
     
-    private func createModel(from json: JSONObject, in context: NSManagedObjectContext) -> Mechanic? {
+    private func createModel(from json: JSONObject, in context: NSManagedObjectContext) -> CarSwaddleStore.Mechanic? {
         var regionJSON: JSONObject = json
         regionJSON["id"] = json["regionID"] as? String
         
