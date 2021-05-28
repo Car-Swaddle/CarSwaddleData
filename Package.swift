@@ -15,9 +15,9 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(name: "Authentication", url: "https://github.com/Car-Swaddle/Authentication", .branch("master")),
-        .package(name: "CarSwaddleNetworkRequest", url: "https://github.com/Car-Swaddle/CarSwaddleNetworkRequest", .branch("master")),
-        .package(name: "CarSwaddleStore", url: "https://github.com/Car-Swaddle/CarSwaddleStore", .branch("master")),
+        .package(name: "CarSwaddleNetworkRequest", url: "https://github.com/Car-Swaddle/CarSwaddleNetworkRequest", .upToNextMajor(from: "2.0.0")),
+        .package(name: "Authentication", url: "https://github.com/Car-Swaddle/Authentication", .upToNextMajor(from: "2.0.0")),
+        .package(name: "CarSwaddleStore", url: "https://github.com/Car-Swaddle/CarSwaddleStore", .upToNextMajor(from: "2.0.0")),
         .package(name: "Disk", url: "https://github.com/saoudrizwan/Disk.git", .upToNextMajor(from: "0.6.4")),
     ],
     targets: [
@@ -25,9 +25,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "CarSwaddleData",
-            dependencies: ["Authentication", "CarSwaddleNetworkRequest", "CarSwaddleStore", "Disk"]),
+            dependencies: ["CarSwaddleNetworkRequest", "Authentication", "Disk", "CarSwaddleStore"]),
         .testTarget(
             name: "CarSwaddleDataTests",
-            dependencies: ["CarSwaddleData"]),
+            dependencies: ["CarSwaddleNetworkRequest"]),
     ]
 )

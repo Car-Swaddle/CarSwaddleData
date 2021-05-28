@@ -59,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		998B76262661979000FE4C02 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		"CarSwaddleData::CarSwaddleData::Product" /* CarSwaddleData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CarSwaddleData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CarSwaddleData::CarSwaddleDataTests::Product" /* CarSwaddleDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CarSwaddleDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		OBJ_47 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_52 /* TestHostApp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestHostApp; sourceTree = SOURCE_ROOT; };
 		OBJ_55 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* CarSwaddleData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarSwaddleData.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,7 +172,7 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				OBJ_6 /* Package.swift */,
+				998B76262661979000FE4C02 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_28 /* Tests */,
 				OBJ_48 /* Products */,
@@ -616,24 +616,24 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Car-Swaddle/Authentication";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		99515A7D2515F8790018965D /* XCRemoteSwiftPackageReference "CarSwaddleNetworkRequest" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleNetworkRequest";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		9980AA852514B234007A6B31 /* XCRemoteSwiftPackageReference "CarSwaddleStore" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleStore.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		99F79EFC2515C21900998616 /* XCRemoteSwiftPackageReference "Disk" */ = {
