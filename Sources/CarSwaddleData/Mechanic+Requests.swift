@@ -244,6 +244,30 @@ public final class MechanicNetwork: Network {
     }
     
     @discardableResult
+    public func getOilChangePricingForMechanics(mechanicIDs: [String], in context: NSManagedObjectContext, completion: @escaping ObjectIDArrayCompletion) -> URLSessionDataTask? {
+        return mechanicService.getOilChangePricingForMechanics(mechanicIDs: mechanicIDs) { oilChangePricings, error in
+            context.performOnImportQueue {
+                var ids: [NSManagedObjectID] = []
+                defer {
+                    completion(ids, error)
+                }
+                guard let oilChangePricings = oilChangePricings,
+                      error == nil else {
+                    return
+                }
+                for oilChangePricing in oilChangePricings {
+                    let storeModel = OilChangePricing.fetchOrCreate(model: oilChangePricing, in: context)
+                    if storeModel.objectID.isTemporaryID {
+                        try? context.obtainPermanentIDs(for: [storeModel])
+                    }
+                    ids.append(storeModel.objectID)
+                }
+                context.persist()
+            }
+        }
+    }
+    
+    @discardableResult
     public func updateOilChangePricingForCurrentMechanic(newOilChangePriceUpdate: CarSwaddleNetworkRequest.OilChangePricingUpdate, in context: NSManagedObjectContext, completion: @escaping ObjectIDCompletion) -> URLSessionDataTask? {
         return mechanicService.updateOilChangePricingForCurrentMechanic(oilChangePricingUpdate: newOilChangePriceUpdate) { [weak self] oilChangePricing, error in
             context.performOnImportQueue {
@@ -278,7 +302,7 @@ public extension CarSwaddleStore.OilChangePricing {
         self.synthetic = Int64(model.synthetic)
         self.highMileage = Int64(model.highMileage)
         self.centsPerMile = Int64(model.centsPerMile)
-        self.mechanicID = model.mechanicID
+        self.mechanicID = model.mechanic.identifier
         
         if let context = managedObjectContext, let mechanic = Mechanic.fetch(with: mechanicID, in: context) {
             self.mechanic = mechanic
