@@ -227,7 +227,25 @@ public final class MechanicNetwork: Network {
     
     @discardableResult
     public func getOilChangePricingForCurrentMechanic(in context: NSManagedObjectContext, completion: @escaping ObjectIDCompletion) -> URLSessionDataTask? {
-        return mechanicService.getOilChangePricingForCurrentMechanic { [weak self] oilChangePricing, error in
+        return mechanicService.getOilChangePricingForCurrentMechanic { oilChangePricing, error in
+            context.performOnImportQueue {
+                var objectID: NSManagedObjectID?
+                defer {
+                    completion(objectID, error)
+                }
+                guard let oilChangePricing = oilChangePricing, error == nil else {
+                    return
+                }
+                let storeModel = OilChangePricing.fetchOrCreate(model: oilChangePricing, in: context)
+                context.persist()
+                objectID = storeModel.objectID
+            }
+        }
+    }
+    
+    @discardableResult
+    public func getOilChangePricingForMechanic(mechanicID: String, in context: NSManagedObjectContext, completion: @escaping ObjectIDCompletion) -> URLSessionDataTask? {
+        return mechanicService.getOilChangePricingForMechanic(mechanicID: mechanicID) { oilChangePricing, error in
             context.performOnImportQueue {
                 var objectID: NSManagedObjectID?
                 defer {
