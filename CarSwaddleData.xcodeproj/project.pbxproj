@@ -625,7 +625,7 @@
 			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleNetworkRequest";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 3.0.0;
 			};
 		};
 		9980AA852514B234007A6B31 /* XCRemoteSwiftPackageReference "CarSwaddleStore" */ = {

@@ -320,7 +320,7 @@ public extension CarSwaddleStore.OilChangePricing {
         self.synthetic = Int64(model.synthetic)
         self.highMileage = Int64(model.highMileage)
         self.centsPerMile = Int64(model.centsPerMile)
-        self.mechanicID = model.mechanic.identifier
+        self.mechanicID = model.mechanicID
         
         if let context = managedObjectContext, let mechanic = Mechanic.fetch(with: mechanicID, in: context) {
             self.mechanic = mechanic
