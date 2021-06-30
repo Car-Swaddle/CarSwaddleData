@@ -26,7 +26,15 @@ public final class UserNetwork: Network {
     @discardableResult
     public func update(user: UpdateUser, in context: NSManagedObjectContext, completion: @escaping (_ userObjectID: NSManagedObjectID?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         return userService.updateCurrentUser(updateUser: user) { user, error in
+            var userObjectID: NSManagedObjectID?
+            defer {
+                completion(userObjectID, error)
+            }
             
+            guard let user = user else { return }
+            let coreDataUser = CarSwaddleStore.User.fetchOrCreate(user: user, context: context)
+            context.persist()
+            userObjectID = coreDataUser.objectID
         }
     }
     
@@ -152,17 +160,24 @@ public final class UserNetwork: Network {
 
 extension CarSwaddleStore.User {
     
-    public convenience init?(user: CarSwaddleNetworkRequest.User, context: NSManagedObjectContext) {
-//        guard let values = User.values(from: json) else { return nil }
-        self.init(context: context)
-//        configure(with: values, json: json)
-        
+    public static func fetchOrCreate(user: CarSwaddleNetworkRequest.User, context: NSManagedObjectContext) -> CarSwaddleStore.User {
+        if let fetchedObject = fetch(with: user.id, in: context) {
+            fetchedObject.configure(user: user)
+            return fetchedObject
+        } else {
+            return CarSwaddleStore.User(user: user, context: context)
+        }
+    }
+    
+    public func configure(user: CarSwaddleNetworkRequest.User) {
         self.identifier = user.id
         self.firstName = user.firstName
         self.lastName = user.lastName
         self.phoneNumber = user.phoneNumber
         self.profileImageID = user.profileImageID
         self.email = user.email
+        self.signUpReferrerID = user.signUpReferrerID
+        self.activeReferrerID = user.activeReferrerID
         if let isEmailVerified = user.isEmailVerified {
             self.isEmailVerified = isEmailVerified
         }
@@ -170,43 +185,11 @@ extension CarSwaddleStore.User {
             self.isPhoneNumberVerified = isPhoneNumberVerified
         }
         self.timeZone = user.timeZone
-        
-//        if let firstName = json["firstName"] as? String {
-//            self.firstName = firstName
-//        }
-//        if let lastName = json["lastName"] as? String {
-//            self.lastName = lastName
-//        }
-//        if let phoneNumber = json["phoneNumber"] as? String {
-//            self.phoneNumber = phoneNumber
-//        }
-//
-//        if let imageID = json["profileImageID"] as? String {
-//            self.profileImageID = imageID
-//        }
-//        if let email = json["email"] as? String {
-//            self.email = email
-//        }
-//        if let verified = (json["isEmailVerified"] as? Bool) {
-//            self.isEmailVerified = verified
-//        }
-//        if let verified = (json["isPhoneNumberVerified"] as? Bool) {
-//            self.isPhoneNumberVerified = verified
-//        }
-//        if let timeZone = json["timeZone"] as? String {
-//            self.timeZone = timeZone
-//        }
-//
-//        guard let context = managedObjectContext else { return }
-//
-//        if let mechanicJSON = json["mechanic"] as? JSONObject,
-//           let mechanic = Mechanic.fetchOrCreate(json: mechanicJSON, context: context) {
-//            self.mechanic = mechanic
-//        } else if let mechanicID = json["mechanicID"] as? String,
-//                  let mechanic = Mechanic.fetch(with: mechanicID, in: context) {
-//            self.mechanic = mechanic
-//        }
-        
+    }
+    
+    public convenience init(user: CarSwaddleNetworkRequest.User, context: NSManagedObjectContext) {
+        self.init(context: context)
+        self.configure(user: user)
     }
     
 }
